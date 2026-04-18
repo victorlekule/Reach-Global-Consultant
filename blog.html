@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Insights & Blog | Reach Global Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+            --brand-gold: #F6C445;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .blog-card {
+            transition: all 0.25s ease;
+            border: 1px solid #f1f5f9;
+        }
+        .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-green);
+            box-shadow: 0 20px 25px -5px rgba(31, 171, 137, 0.08);
+        }
+        .category-pill {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .featured-overlay {
+            background: linear-gradient(to top, rgba(10,37,64,0.9) 0%, rgba(10,37,64,0.2) 100%);
+        }
+        .hover-underline {
+            background-image: linear-gradient(var(--brand-green), var(--brand-green));
+            background-size: 0% 2px;
+            background-position: 0% 100%;
+            background-repeat: no-repeat;
+            transition: background-size 0.3s;
+        }
+        .hover-underline:hover { background-size: 100% 2px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-container"></div>
+
+    <!-- ===== HERO SECTION WITH FEATURED POST ===== -->
+    <section class="relative py-16 md:py-24 mt-24 bg-white overflow-hidden border-b border-gray-100">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-blue/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-16 relative z-10">
+            <nav class="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-6">
+                <span>Home</span>
+                <span class="text-gray-300">/</span>
+                <span class="text-brand-green">Insights & Blog</span>
+            </nav>
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-brand-blue leading-[1.1] mb-4">
+                Insights & <br>
+                <span class="text-brand-green italic font-serif">Perspectives</span>
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mb-8">
+                Expert analysis, industry trends, and impact stories from Reach Global's consultants and partners.
+            </p>
+            
+            <!-- Featured Post Card -->
+            <div class="grid lg:grid-cols-2 gap-8 items-center mt-10">
+                <div class="relative rounded-2xl overflow-hidden h-80 lg:h-96">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200" alt="Featured post" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 featured-overlay"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <span class="category-pill bg-brand-green text-white mb-3 inline-block">Featured</span>
+                        <h2 class="text-2xl md:text-3xl font-bold mb-2">The Future of Audit: AI and Compliance in East Africa</h2>
+                        <p class="text-blue-100/80 text-sm mb-3">How technology is reshaping financial transparency and what it means for your business.</p>
+                        <div class="flex items-center gap-3 text-xs">
+                            <span><i class="fa-regular fa-user mr-1"></i> Victor Lekule</span>
+                            <span><i class="fa-regular fa-calendar mr-1"></i> April 10, 2026</span>
+                            <span><i class="fa-regular fa-clock mr-1"></i> 6 min read</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-brand-green transition">
+                        <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=200" class="w-full h-full object-cover"></div>
+                        <div><span class="category-pill bg-blue-100 text-brand-blue text-[10px]">Tax Advisory</span><h4 class="font-bold text-brand-blue mt-1">Navigating TRA's Digital Tax Reforms</h4><p class="text-gray-500 text-xs mt-1">April 8, 2026 · 4 min read</p></div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-brand-green transition">
+                        <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0"><img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=200" class="w-full h-full object-cover"></div>
+                        <div><span class="category-pill bg-brand-green/10 text-brand-green text-[10px]">Volunteer Impact</span><h4 class="font-bold text-brand-blue mt-1">How Micro‑Financing Transformed a Family</h4><p class="text-gray-500 text-xs mt-1">April 5, 2026 · 5 min read</p></div>
+                    </div>
+                    <div class="flex gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-brand-green transition">
+                        <div class="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=200" class="w-full h-full object-cover"></div>
+                        <div><span class="category-pill bg-amber-100 text-amber-700 text-[10px]">Market Entry</span><h4 class="font-bold text-brand-blue mt-1">East African Trade Corridors: 2026 Outlook</h4><p class="text-gray-500 text-xs mt-1">March 28, 2026 · 7 min read</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BLOG GRID + SIDEBAR ===== -->
+    <section class="py-20 md:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Main Content: Article Grid -->
+                <div class="lg:w-2/3">
+                    <div class="flex items-center justify-between mb-8">
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Latest Articles</h2>
+                        <div class="relative">
+                            <select class="appearance-none bg-white border border-gray-200 rounded-full px-4 py-2 text-sm font-medium text-brand-blue focus:border-brand-green outline-none">
+                                <option>Most Recent</option>
+                                <option>Most Popular</option>
+                                <option>Consulting</option>
+                                <option>Volunteer Hub</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-xs"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Article 1 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1554224155-1696413575b9?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition duration-500"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-blue-100 text-brand-blue">Consulting</span><span class="text-xs text-gray-400">5 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2 hover:text-brand-green transition">IFRS Implementation for Tanzanian SMEs</h3>
+                                <p class="text-gray-500 text-sm mb-4">Practical steps to align financial reporting with international standards.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> Sarah Mwakila</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                        <!-- Article 2 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-brand-green/10 text-brand-green">Volunteer Hub</span><span class="text-xs text-gray-400">4 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2">Amani's Story: From Eviction Risk to Top Student</h3>
+                                <p class="text-gray-500 text-sm mb-4">How community support changed the trajectory of a brilliant young mind.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> Elena Rossi</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                        <!-- Article 3 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-purple-100 text-purple-700">Leadership</span><span class="text-xs text-gray-400">6 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2">Building Resilient Teams in a Hybrid World</h3>
+                                <p class="text-gray-500 text-sm mb-4">Strategies for maintaining culture and productivity across distributed teams.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> David Chen</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                        <!-- Article 4 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-amber-100 text-amber-700">Market Analysis</span><span class="text-xs text-gray-400">7 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2">Tanzania's Investment Climate: Q2 2026 Update</h3>
+                                <p class="text-gray-500 text-sm mb-4">Sectoral opportunities and regulatory changes for foreign investors.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> Victor Lekule</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                        <!-- Article 5 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-brand-green/10 text-brand-green">Volunteer Hub</span><span class="text-xs text-gray-400">3 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2">Youth Mentorship: 30 Entrepreneurs, One Mission</h3>
+                                <p class="text-gray-500 text-sm mb-4">Recap of our first Biz Accelerator cohort and their progress.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> Reach Global Team</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                        <!-- Article 6 -->
+                        <div class="blog-card bg-white rounded-2xl overflow-hidden">
+                            <div class="h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1586282391129-59a998fd034c?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover hover:scale-105 transition"></div>
+                            <div class="p-6">
+                                <div class="flex items-center gap-2 mb-3"><span class="category-pill bg-blue-100 text-brand-blue">Compliance</span><span class="text-xs text-gray-400">5 min read</span></div>
+                                <h3 class="text-xl font-bold text-brand-blue mb-2">BRELA Registration: A Step‑by‑Step Guide</h3>
+                                <p class="text-gray-500 text-sm mb-4">Everything foreign investors need to know about company incorporation.</p>
+                                <div class="flex items-center justify-between"><span class="text-xs text-gray-400"><i class="fa-regular fa-user mr-1"></i> Sarah Mwakila</span><a href="#" class="text-brand-green font-medium text-sm hover-underline">Read →</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    <div class="flex justify-center mt-12">
+                        <nav class="flex items-center gap-2">
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-brand-blue hover:border-brand-green"><i class="fa-solid fa-chevron-left"></i></a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-brand-green text-white font-bold">1</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-brand-blue hover:border-brand-green">2</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-brand-blue hover:border-brand-green">3</a>
+                            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-gray-200 text-brand-blue hover:border-brand-green"><i class="fa-solid fa-chevron-right"></i></a>
+                        </nav>
+                    </div>
+                </div>
+                
+                <!-- Sidebar -->
+                <div class="lg:w-1/3 space-y-8">
+                    <!-- Search -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2"><i class="fa-regular fa-magnifying-glass text-brand-green"></i> Search</h4>
+                        <div class="relative">
+                            <input type="text" placeholder="Search articles..." class="w-full border border-gray-200 rounded-xl py-3 pl-4 pr-10 focus:border-brand-green outline-none">
+                            <button class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-brand-green"><i class="fa-regular fa-search"></i></button>
+                        </div>
+                    </div>
+                    
+                    <!-- Categories -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2"><i class="fa-regular fa-layer-group text-brand-green"></i> Categories</h4>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Consulting & Audit</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">12</span></li>
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Tax & Compliance</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">8</span></li>
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Market Entry & Trade</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">6</span></li>
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Volunteer Hub Stories</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">15</span></li>
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Leadership & Strategy</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">5</span></li>
+                            <li class="flex justify-between items-center"><a href="#" class="text-gray-600 hover:text-brand-green">Finance & Investment</a><span class="bg-gray-100 text-xs px-2 py-1 rounded-full">7</span></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Popular Posts -->
+                    <div class="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm">
+                        <h4 class="font-bold text-brand-blue mb-4 flex items-center gap-2"><i class="fa-regular fa-fire text-brand-green"></i> Trending Now</h4>
+                        <div class="space-y-4">
+                            <div class="flex gap-3"><span class="text-2xl font-black text-gray-200">01</span><div><h5 class="font-bold text-brand-blue text-sm">Navigating TRA Digital Tax Reforms</h5><p class="text-gray-400 text-xs">2.4k views</p></div></div>
+                            <div class="flex gap-3"><span class="text-2xl font-black text-gray-200">02</span><div><h5 class="font-bold text-brand-blue text-sm">East African Trade Corridors 2026</h5><p class="text-gray-400 text-xs">1.8k views</p></div></div>
+                            <div class="flex gap-3"><span class="text-2xl font-black text-gray-200">03</span><div><h5 class="font-bold text-brand-blue text-sm">Amani's Story: From Eviction to Education</h5><p class="text-gray-400 text-xs">1.2k views</p></div></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Newsletter CTA -->
+                    <div class="bg-brand-blue p-6 rounded-2xl text-white">
+                        <i class="fa-regular fa-envelope-open-text text-3xl text-brand-green mb-3"></i>
+                        <h4 class="text-xl font-bold mb-2">Stay Informed</h4>
+                        <p class="text-blue-100/70 text-sm mb-4">Get the latest insights and impact stories delivered to your inbox.</p>
+                        <form>
+                            <input type="email" placeholder="Your email" class="w-full bg-white/10 border border-white/20 rounded-xl py-3 px-4 text-white placeholder-white/50 mb-3 focus:border-brand-green outline-none">
+                            <button class="w-full bg-brand-green text-white py-3 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== AUTHOR SPOTLIGHT / CTA ===== -->
+    <section class="py-16 bg-white border-t border-gray-200">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h3 class="text-2xl md:text-3xl font-black text-brand-blue mb-4">Contribute to Our Blog</h3>
+            <p class="text-gray-500 max-w-2xl mx-auto mb-6">Are you an expert in audit, tax, market entry, or social impact? We welcome guest contributions that add value to our community.</p>
+            <a href="#" class="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-blue transition shadow-md"><i class="fa-regular fa-pen-to-square"></i> Become a Contributor</a>
+        </div>
+    </section>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <!-- <div id="footer-container"></div> -->
+
+    <script src="script.js"></script>
+</body>
+</html>

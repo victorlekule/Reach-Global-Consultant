@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Book Consultation | Reach Global Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+            --brand-gold: #F6C445;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: border-color 0.2s;
+        }
+        .form-input:focus {
+            border-color: var(--brand-green);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(31,171,137,0.1);
+        }
+        .whatsapp-btn {
+            background-color: #25D366;
+            transition: all 0.2s;
+        }
+        .whatsapp-btn:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #edf2f7;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div id="header-container"></div>
+
+    <!-- ===== HERO SECTION ===== -->
+    <section class="relative py-20 md:py-28  mt-24 bg-brand-blue overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="absolute -top-32 -right-32 w-80 h-80 bg-brand-green/20 rounded-full blur-3xl"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10 text-center">
+            <nav class="flex justify-center mb-5 text-brand-gold/80 text-xs font-bold uppercase tracking-[0.3em]">
+                <span>Home</span>
+                <span class="mx-3 text-white/20">/</span>
+                <span class="text-white border-b-2 border-brand-green pb-1">Book Consultation</span>
+            </nav>
+            <h1 class="text-4xl md:text-6xl font-black text-white mb-4 tracking-tight">
+                Schedule Your <span class="text-brand-green italic font-serif">Expert Session</span>
+            </h1>
+            <p class="text-blue-100/80 text-lg md:text-xl max-w-2xl mx-auto">
+                Connect with our specialists for tailored advice on audit, tax, market entry, or growth strategy.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0">
+            <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0 20L60 22C120 24 240 28 360 26C480 24 600 18 720 17C840 16 960 20 1080 22C1200 24 1320 22 1380 21L1440 20V40H1380C1320 40 1200 40 1080 40C960 40 840 40 720 40C600 40 480 40 360 40C240 40 120 40 60 40H0V20Z" fill="#f9fafb"/></svg>
+        </div>
+    </section>
+
+    <!-- ===== BOOKING FORM + WHATSAPP OPTION ===== -->
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8 items-start">
+                <!-- Form Column (spans 2) -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-3xl p-6 md:p-8 border border-gray-100 shadow-xl shadow-gray-200/50">
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue mb-2">Request a Consultation</h2>
+                        <p class="text-gray-500 mb-8">Fill in your details and we'll confirm your appointment within 2 hours.</p>
+                        
+                        <form id="consultation-form" class="space-y-6">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">First Name *</label>
+                                    <input type="text" required class="form-input" placeholder="John">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">Last Name *</label>
+                                    <input type="text" required class="form-input" placeholder="Doe">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">WhatsApp Number *</label>
+                                    <input type="tel" required class="form-input" placeholder="+255 123 456 789">
+                                    <p class="text-xs text-gray-400 mt-1">We'll confirm via WhatsApp</p>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">Email Address *</label>
+                                    <input type="email" required class="form-input" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">Consultation Type *</label>
+                                    <select required class="form-input bg-white">
+                                        <option value="">Select type</option>
+                                        <option value="online">Online (Zoom/Meet)</option>
+                                        <option value="physical">Physical (HQ Office)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-bold text-brand-blue mb-1">Topic / Service *</label>
+                                    <select required class="form-input bg-white">
+                                        <option value="">Select topic</option>
+                                        <option value="audit">Audit & Assurance</option>
+                                        <option value="tax">Tax Advisory & Compliance</option>
+                                        <option value="registration">Business Registration (BRELA/TRA)</option>
+                                        <option value="market">Market Entry & Expansion</option>
+                                        <option value="finance">Corporate Finance & Investment</option>
+                                        <option value="volunteer">Volunteer Hub / CSR</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <label class="block text-sm font-bold text-brand-blue mb-1">Message / Specific Needs</label>
+                                <textarea rows="4" class="form-input" placeholder="Tell us a bit about your business or the challenges you're facing..."></textarea>
+                            </div>
+                            
+                            <div class="flex items-center gap-2 text-sm text-gray-600">
+                                <input type="checkbox" id="consent" checked class="rounded border-gray-300 text-brand-green focus:ring-brand-green">
+                                <label for="consent">I agree to be contacted via WhatsApp/email regarding my consultation.</label>
+                            </div>
+                            
+                            <button type="submit" class="w-full bg-brand-green text-white font-bold py-4 rounded-xl hover:bg-brand-blue transition shadow-md text-lg flex items-center justify-center gap-2">
+                                <i class="fa-regular fa-calendar-check"></i> Submit Booking Request
+                            </button>
+                            <p class="text-xs text-gray-400 text-center">We respect your privacy. No spam, only consultation confirmations.</p>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Sidebar: Instant WhatsApp Booking & Info -->
+                <div class="space-y-6">
+                    <div class="bg-brand-green/5 rounded-3xl p-6 border border-brand-green/20">
+                        <div class="flex items-center gap-3 mb-4">
+                            <div class="w-12 h-12 bg-brand-green rounded-xl flex items-center justify-center"><i class="fa-brands fa-whatsapp text-2xl text-white"></i></div>
+                            <h3 class="text-xl font-black text-brand-blue">Book Instantly via WhatsApp</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm mb-5">Prefer a direct chat? Click below to open WhatsApp and send us a message. We'll respond within minutes.</p>
+                        <a href="https://wa.me/255123456789?text=Hello%20Reach%20Global%2C%20I'd%20like%20to%20book%20a%20consultation." target="_blank" class="whatsapp-btn w-full flex items-center justify-center gap-2 text-white font-bold py-4 rounded-xl shadow-lg">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Start WhatsApp Chat
+                        </a>
+                        <p class="text-xs text-gray-400 mt-4 text-center">Available 9am–6pm EAT, Mon–Fri</p>
+                    </div>
+                    
+                    <div class="bg-white rounded-3xl p-6 border border-gray-100 shadow-sm">
+                        <h4 class="font-bold text-brand-blue flex items-center gap-2 mb-3"><i class="fa-regular fa-clock text-brand-green"></i> Consultation Hours</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between"><span>Monday – Friday</span><span class="font-medium">9:00 AM – 6:00 PM</span></li>
+                            <li class="flex justify-between"><span>Saturday</span><span class="font-medium">10:00 AM – 2:00 PM</span></li>
+                            <li class="flex justify-between"><span>Sunday</span><span class="font-medium">Closed</span></li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <p class="text-sm"><i class="fa-regular fa-phone text-brand-green mr-2"></i> <span class="font-medium">+255 123 456 789</span></p>
+                            <p class="text-sm mt-2"><i class="fa-regular fa-envelope text-brand-green mr-2"></i> consult@reachglobal.co.tz</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-brand-blue rounded-3xl p-6 text-white">
+                        <i class="fa-regular fa-star-shooting text-3xl text-brand-gold mb-3"></i>
+                        <h4 class="font-bold text-lg mb-2">Why book with us?</h4>
+                        <ul class="space-y-2 text-sm text-blue-100/80">
+                            <li class="flex gap-2"><i class="fa-regular fa-check-circle text-brand-green mt-1"></i> 100% confidential initial session</li>
+                            <li class="flex gap-2"><i class="fa-regular fa-check-circle text-brand-green mt-1"></i> Tailored roadmap provided</li>
+                            <li class="flex gap-2"><i class="fa-regular fa-check-circle text-brand-green mt-1"></i> No obligation, expert advice</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP SECTION (HQ Location) ===== -->
+    <section class="py-16 md:py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <span class="text-brand-green text-xs font-bold uppercase tracking-widest bg-brand-green/10 px-4 py-1.5 rounded-full">Visit Us</span>
+                <h2 class="text-3xl md:text-4xl font-black text-brand-blue mt-4">Our Headquarters</h2>
+                <p class="text-gray-500 mt-2">Reach Global Consultant · Arusha, Tanzania</p>
+            </div>
+            <div class="map-container h-80 md:h-96">
+                <!-- Placeholder map - replace with actual Google Maps embed -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.745684123456!2d36.6825!3d-3.3667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x18371c8c8c8c8c8d%3A0x1234567890abcdef!2sArusha%2C%20Tanzania!5e0!3m2!1sen!2stz!4v1713000000000" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="w-full h-full"></iframe>
+            </div>
+            <div class="flex flex-wrap justify-center gap-6 mt-6 text-sm text-gray-600">
+                <span><i class="fa-regular fa-location-dot text-brand-green mr-2"></i> Plot 123, Njiro Road, Arusha, Tanzania</span>
+                <span><i class="fa-regular fa-directions text-brand-green mr-2"></i> 5 min from Clock Tower</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== NEWSLETTER CTA ===== -->
+    <section class="py-12 bg-white">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h3 class="text-2xl font-black text-brand-blue mb-3">Stay Updated</h3>
+            <p class="text-gray-500 mb-6">Get insights and event invitations straight to your inbox.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-xl px-5 py-4 focus:border-brand-green outline-none">
+                <button class="bg-brand-green text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-blue transition">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <!-- <div id="footer-container"></div> -->
+
+    <script>
+        // Form submit handler (demo)
+        document.getElementById('consultation-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you! Your consultation request has been received. We will contact you via WhatsApp shortly to confirm.');
+            // Could also open WhatsApp with pre-filled message if desired
+            this.reset();
+        });
+
+        // Optional: WhatsApp button dynamic message based on form? Not needed for demo.
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

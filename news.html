@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Updates & News | Reach Global Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+            --brand-gold: #F6C445;
+            --soft-bg: #F8FAFC;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        
+        .news-card {
+            transition: all 0.25s ease;
+            border: 1px solid #edf2f7;
+        }
+        .news-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--brand-green);
+            box-shadow: 0 20px 25px -5px rgba(31, 171, 137, 0.08);
+        }
+        .category-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 30px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+        /* Hide scrollbars for mobile horizontal swiping */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div id="header-container"></div>
+
+    <section class="relative pt-28 pb-16 md:py-28 mt-20 md:mt-24 bg-brand-blue overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-green/20 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-blue/80 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-10 md:gap-12 items-center text-center md:text-left">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 md:mb-6">
+                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
+                        <span class="text-brand-gold text-[10px] md:text-xs font-bold uppercase tracking-widest">Featured Story</span>
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
+                        Reach Global <br class="hidden md:block">
+                        <span class="text-brand-green italic font-serif">in the News</span>
+                    </h1>
+                    <p class="text-blue-100/80 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
+                        From corporate milestones to community impact — stay informed with the latest updates from our consulting practice and Volunteer Hub.
+                    </p>
+                    <div class="flex flex-row flex-wrap justify-center md:justify-start gap-3">
+                        <a href="#latest" class="flex-1 md:flex-none flex justify-center bg-brand-green text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition items-center gap-2 text-xs md:text-base whitespace-nowrap"><i class="fa-regular fa-newspaper"></i> Latest Updates</a>
+                        <a href="#impact" class="flex-1 md:flex-none flex justify-center border border-white/30 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold hover:bg-white/10 transition items-center gap-2 text-xs md:text-base whitespace-nowrap"><i class="fa-regular fa-heart"></i> Impact Stories</a>
+                    </div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/10 text-left">
+                    <div class="relative rounded-xl md:rounded-2xl overflow-hidden mb-4 md:mb-5">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team meeting" class="w-full h-40 md:h-56 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/60 to-transparent"></div>
+                        <span class="absolute bottom-3 left-3 bg-brand-green text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full">EXCLUSIVE</span>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 leading-snug">Reach Global Expands Volunteer Hub, Doubles Community Impact in Q1 2026</h3>
+                    <p class="text-blue-100/60 text-xs md:text-sm mb-4 line-clamp-2 md:line-clamp-none">Through strategic partnerships and verified case management, our Volunteer Hub has transformed over 340 lives this year alone.</p>
+                    <a href="#" class="text-brand-green font-bold text-xs md:text-sm flex items-center gap-1 hover:gap-2 transition-all">Read full story <i class="fa-regular fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="latest" class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 md:mb-12 gap-4">
+                <div>
+                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest bg-brand-green/10 px-3 py-1.5 rounded-full">Newsroom</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-brand-blue mt-3 md:mt-4">Latest Updates</h2>
+                </div>
+                <div class="flex flex-row overflow-x-auto scrollbar-hide gap-2 pb-2 md:pb-0 w-full md:w-auto">
+                    <button class="filter-btn active flex-shrink-0 bg-brand-blue text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium transition" data-filter="all">All</button>
+                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="consulting">Consulting</button>
+                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="volunteer">Volunteer Hub</button>
+                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="events">Events</button>
+                </div>
+            </div>
+
+            <div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide pb-6 md:pb-0" id="news-grid">
+                
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="consulting">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-blue-100 text-brand-blue">Consulting</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 2 days ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">New Tax Advisory Division Launched</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global introduces specialized tax advisory to help multinationals navigate TRA reforms.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="volunteer">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-brand-green/10 text-brand-green">Volunteer Hub</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 5 days ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Amani James: Fully Funded for School!</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Thanks to 14 donors, Amani's tuition and living expenses are covered for the entire year.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read impact story →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="events">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-amber-100 text-amber-700">Event</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 1 week ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Webinar: TRA Digital Tax Compliance</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Join our free webinar on April 28 to master the new e‑filing system.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Register →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="volunteer">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-brand-green/10 text-brand-green">Volunteer Hub</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 2 weeks ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Mwakila Family Poultry Farm Restocked</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Micro‑financing campaign successfully funded; family now self‑sustaining.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="consulting">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-blue-100 text-brand-blue">Consulting</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 3 weeks ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">500th Audit Milestone Achieved</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global completes 500 successful audits with 100% compliance rate.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="events">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="category-badge bg-amber-100 text-amber-700">Event</span>
+                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 1 month ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Dar Business Mixer – Recap & Photos</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Over 80 entrepreneurs and investors connected at our flagship networking event.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">View gallery →</a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center gap-2 mt-2 md:hidden" id="news-dots">
+                <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+            </div>
+
+            <div class="text-center mt-8 md:mt-10">
+                <button id="load-more-news" class="border border-gray-300 text-brand-blue px-6 md:px-8 py-3 rounded-full text-sm md:text-base font-medium hover:border-brand-green transition">Load more updates</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="impact" class="py-16 md:py-28 bg-brand-blue relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="text-center mb-10 md:mb-16">
+                <span class="text-brand-gold text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/10 px-4 py-1.5 rounded-full">Making a Difference</span>
+                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 md:mt-5">Impact by the Numbers</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center mb-12 md:mb-20">
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
+                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="342">0</span>
+                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Lives Transformed</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
+                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="18">0</span>
+                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Active Cases</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
+                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="500">0</span>
+                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Audits Done</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
+                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="12">0</span>
+                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Awards</p>
+                </div>
+            </div>
+
+            <div class="bg-transparent md:bg-white/5 backdrop-blur-sm rounded-3xl md:p-8 border-none md:border border-white/10">
+                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3"><i class="fa-regular fa-timeline text-brand-green"></i> Recent Milestones</h3>
+                
+                <div id="milestones-carousel" class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-4 md:gap-6 pb-4 md:pb-0">
+                    
+                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-calendar"></i></div>
+                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">MAR 2026</span><h4 class="text-white font-bold text-base md:text-lg">Awarded Top Consultant 2026</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Tanzania Business Awards recognition.</p></div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-hand-holding-heart"></i></div>
+                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">FEB 2026</span><h4 class="text-white font-bold text-base md:text-lg">Volunteer Hub surpasses 300 lives</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Milestone reached through verified case support.</p></div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
+                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-building"></i></div>
+                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">JAN 2026</span><h4 class="text-white font-bold text-base md:text-lg">Arusha office opened</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Expanded regional footprint.</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                
+                <div>
+                    <div class="flex items-center gap-3 mb-6 md:mb-8">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-brand-green/10 rounded-xl flex items-center justify-center"><i class="fa-regular fa-calendar-check text-brand-green"></i></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Upcoming Events</h2>
+                    </div>
+                    <div class="space-y-3 md:space-y-4">
+                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">APR</span><span class="block text-xl md:text-2xl font-black text-brand-blue">28</span></div>
+                            <div><span class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded-full">Webinar</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">TRA Digital Tax Compliance</h4><p class="text-gray-500 text-[11px] md:text-sm">11:00 AM EAT · Free</p></div>
+                        </div>
+                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">MAY</span><span class="block text-xl md:text-2xl font-black text-brand-blue">15</span></div>
+                            <div><span class="text-[10px] bg-blue-100 text-brand-blue px-2 py-0.5 rounded-full">In‑Person</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">Dar Business Mixer</h4><p class="text-gray-500 text-[11px] md:text-sm">6:00 PM · Serena Hotel</p></div>
+                        </div>
+                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
+                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">MAY</span><span class="block text-xl md:text-2xl font-black text-brand-blue">22</span></div>
+                            <div><span class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded-full">Workshop</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">Financial Modeling Masterclass</h4><p class="text-gray-500 text-[11px] md:text-sm">9:00 AM · Virtual</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-4 md:mt-0">
+                    <div class="flex items-center gap-3 mb-6 md:mb-8">
+                        <div class="w-8 h-8 md:w-10 md:h-10 bg-brand-blue/5 rounded-xl flex items-center justify-center"><i class="fa-regular fa-newspaper text-brand-blue"></i></div>
+                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Press & Media</h2>
+                    </div>
+                    
+                    <div id="press-carousel" class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-3 md:gap-0 pb-4 md:pb-0 bg-transparent md:bg-gray-50 rounded-none md:rounded-2xl md:divide-y border-none md:border border-gray-100">
+                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
+                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                        </div>
+                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
+                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                        </div>
+                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Daily News · Jan 2026</span>
+                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Victor Lekule on the future of tax compliance"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                        </div>
+                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Tanzania Business · Dec 2025</span>
+                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Volunteer Hub transforms community giving"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-4 md:mt-6 p-4 md:p-5 bg-brand-blue/5 rounded-2xl">
+                        <p class="text-xs md:text-sm"><i class="fa-regular fa-envelope text-brand-green mr-2"></i> Media inquiries: <a href="mailto:press@reachglobal.co.tz" class="text-brand-green font-bold">press@reachglobal.co.tz</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 md:py-16 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto text-center px-4">
+            <h3 class="text-xl md:text-3xl font-black text-brand-blue mb-2 md:mb-3">Never miss an update</h3>
+            <p class="text-gray-500 text-sm md:text-base mb-6 md:mb-8">Subscribe for the latest news, impact stories, and event invitations.</p>
+            <form class="flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-xl px-4 md:px-5 py-3 md:py-4 text-sm focus:border-brand-green outline-none">
+                <button class="bg-brand-green text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-brand-blue transition text-sm md:text-base">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // --- News Filter Logic ---
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('[data-category]');
+        
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Update active state
+                filterBtns.forEach(b => { 
+                    b.classList.remove('active', 'bg-brand-blue', 'text-white'); 
+                    b.classList.add('bg-gray-100', 'text-brand-blue'); 
+                });
+                btn.classList.add('active', 'bg-brand-blue', 'text-white');
+                btn.classList.remove('bg-gray-100', 'text-brand-blue');
+                
+                // Filter cards using Tailwind hidden class to preserve flex properties
+                const filter = btn.dataset.filter;
+                cards.forEach(card => {
+                    if (filter === 'all' || card.dataset.category === filter) {
+                        card.classList.remove('hidden');
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+            });
+        });
+
+        // --- Robust Animated Horizontal Carousel Logic (Mobile Only) ---
+        function setupAnimatedCarousel(carouselId, dotsContainerId = null) {
+            const carousel = document.getElementById(carouselId);
+            if (!carousel) return;
+            
+            const dots = dotsContainerId ? document.querySelectorAll(`#${dotsContainerId} button`) : [];
+            let autoPlayInterval;
+            let isUserInteracting = false;
+
+            // Sync dots on swipe
+            carousel.addEventListener('scroll', () => {
+                if (window.innerWidth >= 768 || dots.length === 0) return;
+                
+                const firstCard = carousel.firstElementChild;
+                const cardWidth = firstCard ? firstCard.offsetWidth : carousel.offsetWidth;
+                let activeIndex = Math.round(carousel.scrollLeft / cardWidth);
+                
+                dots.forEach((dot, index) => {
+                    dot.className = index === activeIndex 
+                        ? 'w-6 h-2 rounded-full bg-brand-green transition-all duration-300' 
+                        : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+                });
+            });
+
+            // Click dots to navigate
+            if (dots.length > 0) {
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        const firstCard = carousel.firstElementChild;
+                        const cardWidth = firstCard ? firstCard.offsetWidth : carousel.offsetWidth;
+                        carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                    });
+                });
+            }
+
+            // The Autoplay Animation (Animates right to left continuously)
+            const startAutoPlay = () => {
+                autoPlayInterval = setInterval(() => {
+                    if (window.innerWidth >= 768 || isUserInteracting) return; // Only animate on mobile
+                    
+                    // Calculate if we have reached the end of the scrollable container
+                    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                    
+                    // If we hit the end, smoothly rewind to the start
+                    if (carousel.scrollLeft >= maxScroll - 10) {
+                        carousel.scrollTo({ left: 0, behavior: 'smooth' }); 
+                    } else {
+                        // Smoothly scroll right by one card width
+                        const firstCard = carousel.firstElementChild;
+                        const pushAmount = firstCard ? firstCard.offsetWidth : 300;
+                        carousel.scrollBy({ left: pushAmount, behavior: 'smooth' });
+                    }
+                }, 2500); // Triggers every 2.5 seconds for a dynamic feel
+            };
+
+            // Pause animation when the user touches the screen so they can read
+            carousel.addEventListener('touchstart', () => {
+                isUserInteracting = true;
+                clearInterval(autoPlayInterval);
+            }, { passive: true });
+            
+            carousel.addEventListener('touchend', () => {
+                isUserInteracting = false;
+                startAutoPlay();
+            });
+
+            // Start the animation immediately
+            startAutoPlay();
+        }
+
+        // Initialize ALL mobile carousels with the fully rewritten animation
+        setupAnimatedCarousel('news-grid', 'news-dots'); 
+        setupAnimatedCarousel('milestones-carousel'); 
+        setupAnimatedCarousel('press-carousel');     
+
+        // --- Stats Counter Logic ---
+        const stats = document.querySelectorAll('.stat-number');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const target = parseInt(el.dataset.target);
+                    if (!el.hasAttribute('data-animated')) {
+                        el.setAttribute('data-animated', 'true');
+                        let start = 0; const duration = 1500; 
+                        const step = (t) => { 
+                            if (!start) start = t; 
+                            const p = Math.min((t-start)/duration,1); 
+                            el.textContent = Math.floor(p*target); 
+                            if (p<1) requestAnimationFrame(step); else el.textContent = target; 
+                        };
+                        requestAnimationFrame(step);
+                    }
+                }
+            });
+        }, {threshold:0.5});
+        stats.forEach(s => observer.observe(s));
+
+        // Load more dummy
+        document.getElementById('load-more-news')?.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('More updates coming soon!');
+        });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

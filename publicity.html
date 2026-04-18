@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Publicity & Journals | Reach Global Consultant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+            --accent-gold: #F6C445;
+            --paper: #F9F9F5;
+        }
+        .font-serif { font-family: 'Playfair Display', serif; }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .bg-paper { background-color: var(--paper); }
+        .hover-lift {
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.05), 0 10px 10px -5px rgba(0,0,0,0.02);
+        }
+        .book-shadow {
+            box-shadow: 0 10px 25px -8px rgba(0,0,0,0.1);
+        }
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(4px);
+        }
+        .modal-content {
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        /* Square cards */
+        .square-card {
+            aspect-ratio: 1 / 1;
+        }
+        .preview-image {
+            transition: transform 0.3s;
+        }
+        /* Mobile Scrollbar Hide */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-paper text-gray-800 antialiased">
+
+    <div id="header-container"></div>
+
+    <section class="relative pt-28 pb-16 md:py-32 mt-20 md:mt-24 bg-white overflow-hidden border-b border-gray-100">
+        <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-brand-blue/5 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center md:text-left">
+            <div class="max-w-3xl mx-auto md:mx-0">
+                <nav class="flex items-center justify-center md:justify-start gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-4 md:mb-6">
+                    <span>Home</span>
+                    <span class="text-gray-300">/</span>
+                    <span class="text-brand-green">Publicity & Journals</span>
+                </nav>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-brand-blue leading-[1.1] mb-4 md:mb-6 tracking-tight">
+                    Intelligence <br>
+                    <span class="text-brand-green italic font-serif">Published.</span>
+                </h1>
+                <p class="text-sm md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-8 px-2 md:px-0 text-justify md:text-left">
+                    Reach Global's publishing division delivers proprietary research, market analysis, and executive thought leadership. 
+                    Access our library of reports, journals, and limited‑edition print works.
+                </p>
+                <div class="flex flex-row flex-wrap justify-center md:justify-start gap-3 md:gap-4 px-2 md:px-0">
+                    <a href="#whitepapers" class="flex-1 md:flex-none flex justify-center items-center gap-2 bg-brand-blue text-white px-3 md:px-8 py-3 md:py-4 rounded-xl font-bold shadow-lg hover:bg-brand-green transition text-xs md:text-base whitespace-nowrap">
+                        Whitepapers <i class="fa-regular fa-arrow-right"></i>
+                    </a>
+                    <a href="#journals" class="flex-1 md:flex-none flex justify-center items-center gap-2 border-2 border-brand-blue text-brand-blue px-3 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-brand-blue hover:text-white transition text-xs md:text-base whitespace-nowrap">
+                        Journals <i class="fa-regular fa-newspaper"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:grid lg:grid-cols-2 gap-10 md:gap-16 items-center">
+                
+                <div class="w-full flex justify-center lg:justify-end order-1 lg:order-2 lg:hidden">
+                    <div class="relative w-48 md:w-80 aspect-[3/4] book-shadow rounded-2xl overflow-hidden rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800" alt="Book cover" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-4 text-white">
+                            <span class="bg-brand-green text-[10px] font-bold px-3 py-1 rounded-full">BESTSELLER</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-2 lg:order-1 text-center lg:text-left">
+                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest bg-brand-green/10 px-3 py-1 rounded-full">Featured Release</span>
+                    <h2 class="text-3xl md:text-5xl font-black text-brand-blue mt-4 mb-4 md:mb-6 leading-tight">
+                        The Global Bridge <br>Method <span class="text-brand-green italic">(2026 Edition)</span>
+                    </h2>
+                    <p class="text-gray-600 text-sm md:text-lg mb-6 leading-relaxed text-justify lg:text-left">
+                        The definitive playbook for navigating regulatory complexity and unlocking high‑growth opportunities across East Africa. Authored by Victor Lekule, Founder & CEO.
+                    </p>
+                    <ul class="space-y-2 md:space-y-3 mb-8 text-gray-600 text-xs md:text-base text-left inline-block lg:block">
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-green"></i> 320 pages · Hardcover & Digital</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-green"></i> Includes exclusive TRA templates</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-brand-green"></i> Foreword by Dr. Amina Salum</li>
+                    </ul>
+                    
+                    <div class="flex flex-row flex-wrap justify-center lg:justify-start gap-3 md:gap-4">
+                        <a href="#" class="flex-1 lg:flex-none flex justify-center items-center gap-2 bg-brand-green text-white px-3 md:px-6 py-3 rounded-xl font-bold hover:bg-brand-blue transition text-xs md:text-base">
+                            <i class="fa-solid fa-book-open"></i> Order Book
+                        </a>
+                        <button data-preview="global-bridge" class="flex-1 lg:flex-none preview-trigger flex justify-center items-center gap-2 border border-gray-300 text-brand-blue px-3 md:px-6 py-3 rounded-xl font-bold hover:border-brand-green transition text-xs md:text-base">
+                            <i class="fa-regular fa-eye"></i> Preview
+                        </button>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex relative justify-center order-2">
+                    <div class="relative w-80 lg:w-96 aspect-[3/4] book-shadow rounded-2xl overflow-hidden rotate-2 hover:rotate-0 transition duration-500">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&q=80&w=800" alt="Book cover" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                            <span class="bg-brand-green text-xs font-bold px-3 py-1 rounded-full">BESTSELLER</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="whitepapers" class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 md:mb-12">
+                <div class="text-center md:text-left">
+                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest">Strategic Intelligence</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-brand-blue mt-2">Whitepapers & Reports</h2>
+                </div>
+                <a href="#" class="text-brand-blue font-medium hover:text-brand-green transition hidden md:block">View all <i class="fa-regular fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="relative">
+                <div id="whitepapers-carousel" class="flex lg:grid lg:grid-cols-3 gap-4 md:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-hide pb-4 lg:pb-0" style="-ms-overflow-style: none; scrollbar-width: none;">
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] lg:w-auto snap-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-6 hover-lift">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="bg-brand-blue/5 text-brand-blue text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Q1 2026 · TAX</span>
+                            <i class="fa-regular fa-file-pdf text-xl md:text-2xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">Navigating TRA Digital Tax Reforms</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mb-5 md:mb-6 leading-relaxed">Comprehensive guide to automated tax clearance protocols.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs md:text-sm text-gray-400"><i class="fa-regular fa-download mr-1"></i> 2.4k DLs</span>
+                            <div class="flex gap-3">
+                                <button data-preview="tax-reforms" class="preview-trigger text-brand-green font-bold text-xs md:text-sm hover:underline">Preview</button>
+                                <a href="#" class="text-brand-blue font-bold text-xs md:text-sm hover:underline">PDF <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] lg:w-auto snap-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-6 hover-lift">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="bg-brand-blue/5 text-brand-blue text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">MARKET ANALYSIS</span>
+                            <i class="fa-regular fa-file-pdf text-xl md:text-2xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">East African Trade Corridors 2026</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mb-5 md:mb-6 leading-relaxed">Identifying high‑yield logistics opportunities within AfCFTA.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs md:text-sm text-gray-400"><i class="fa-regular fa-download mr-1"></i> 1.8k DLs</span>
+                            <div class="flex gap-3">
+                                <button data-preview="trade-corridors" class="preview-trigger text-brand-green font-bold text-xs md:text-sm hover:underline">Preview</button>
+                                <a href="#" class="text-brand-blue font-bold text-xs md:text-sm hover:underline">PDF <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] lg:w-auto snap-center bg-white rounded-2xl shadow-sm border border-gray-100 p-5 md:p-6 hover-lift">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="bg-brand-blue/5 text-brand-blue text-[9px] md:text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">FINANCE</span>
+                            <i class="fa-regular fa-file-pdf text-xl md:text-2xl text-red-500"></i>
+                        </div>
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">IFRS for East African SMEs</h3>
+                        <p class="text-gray-500 text-xs md:text-sm mb-5 md:mb-6 leading-relaxed">Practical implementation guide for Tanzanian businesses.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-xs md:text-sm text-gray-400"><i class="fa-regular fa-download mr-1"></i> 980 DLs</span>
+                            <div class="flex gap-3">
+                                <button data-preview="ifrs-sme" class="preview-trigger text-brand-green font-bold text-xs md:text-sm hover:underline">Preview</button>
+                                <a href="#" class="text-brand-blue font-bold text-xs md:text-sm hover:underline">PDF <i class="fa-solid fa-download ml-1 text-[10px]"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="flex justify-center items-center gap-2 mt-2 lg:hidden" id="whitepapers-dots">
+                    <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center md:hidden">
+                <a href="#" class="text-brand-blue font-bold text-sm border-b border-brand-blue pb-1">View all whitepapers</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="journals" class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12 gap-4 text-center md:text-left">
+                <div>
+                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest">Quarterly Publications</span>
+                    <h2 class="text-3xl md:text-4xl font-black text-brand-blue mt-2">The Reach Global Journal</h2>
+                    <p class="text-gray-500 text-sm md:text-base mt-2 max-w-2xl mx-auto md:mx-0">In‑depth analysis, executive interviews, and policy commentary.</p>
+                </div>
+                <a href="#" class="inline-flex justify-center items-center gap-2 border border-brand-blue/20 bg-brand-blue/5 text-brand-blue px-5 py-2 md:py-3 rounded-full text-xs md:text-sm font-medium hover:bg-brand-blue hover:text-white transition">Subscribe <i class="fa-regular fa-bell"></i></a>
+            </div>
+
+            <div class="bg-brand-blue rounded-2xl md:rounded-3xl p-5 md:p-10 text-white mb-10 md:mb-12">
+                <div class="flex flex-row md:grid md:grid-cols-3 gap-5 md:gap-8 items-center">
+                    
+                    <div class="w-2/5 md:w-auto md:col-span-1 flex justify-center">
+                        <div class="w-full md:w-64 aspect-[3/4] bg-white/10 backdrop-blur rounded-xl p-2 md:p-3 border border-white/20 shadow-2xl rotate-2 md:rotate-3 hover:rotate-0 transition">
+                            <img src="https://images.unsplash.com/photo-1589829085413-56de8ae18c73?auto=format&fit=crop&q=80&w=600" alt="Journal cover" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                    </div>
+                    
+                    <div class="w-3/5 md:w-auto md:col-span-2">
+                        <span class="text-brand-gold text-[9px] md:text-xs font-bold uppercase tracking-widest">Current Issue · Vol. 4</span>
+                        <h3 class="text-lg md:text-4xl font-black mt-1 md:mt-3 mb-2 md:mb-4 leading-tight">Special Edition: <br class="hidden md:block">Digital Finance</h3>
+                        <p class="text-blue-100/80 text-xs md:text-lg mb-4 md:mb-6 hidden sm:block">Featuring contributions from central bank advisors, fintech founders, and Reach Global's audit leadership.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-2 md:gap-4">
+                            <button data-preview="journal-vol4" class="preview-trigger text-center bg-brand-green text-white px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-white hover:text-brand-blue transition text-xs md:text-base">Preview</button>
+                            <a href="#" class="text-center border border-white/30 text-white px-3 md:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-bold hover:bg-white/10 transition text-xs md:text-base">Download PDF</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="space-y-3">
+                <div class="flex items-center gap-4 mb-4"><h4 class="font-bold text-brand-blue uppercase tracking-wider text-xs md:text-sm">Previous Issues</h4><div class="h-px flex-1 bg-gray-200"></div></div>
+                
+                <div class="journal-card flex items-center justify-between p-4 md:p-5 bg-gray-50 rounded-xl">
+                    <div class="flex-1"><span class="text-[10px] md:text-xs text-gray-400 block mb-1">Vol.3 · Dec 2025</span><h5 class="font-bold text-brand-blue text-sm md:text-base leading-tight">Cross‑Border Trade & Logistics</h5></div>
+                    <button data-preview="journal-vol3" class="preview-trigger text-brand-green text-xs md:text-sm font-bold bg-brand-green/10 px-3 py-2 rounded-lg flex-shrink-0 ml-2">Preview</button>
+                </div>
+                
+                <div class="journal-card flex items-center justify-between p-4 md:p-5 bg-gray-50 rounded-xl">
+                    <div class="flex-1"><span class="text-[10px] md:text-xs text-gray-400 block mb-1">Vol.2 · Sep 2025</span><h5 class="font-bold text-brand-blue text-sm md:text-base leading-tight">Audit Innovation & AI</h5></div>
+                    <button data-preview="journal-vol2" class="preview-trigger text-brand-green text-xs md:text-sm font-bold bg-brand-green/10 px-3 py-2 rounded-lg flex-shrink-0 ml-2">Preview</button>
+                </div>
+                
+                <div class="journal-card flex items-center justify-between p-4 md:p-5 bg-gray-50 rounded-xl">
+                    <div class="flex-1"><span class="text-[10px] md:text-xs text-gray-400 block mb-1">Vol.1 · Jun 2025</span><h5 class="font-bold text-brand-blue text-sm md:text-base leading-tight">Tanzania's Investment Landscape</h5></div>
+                    <button data-preview="journal-vol1" class="preview-trigger text-brand-green text-xs md:text-sm font-bold bg-brand-green/10 px-3 py-2 rounded-lg flex-shrink-0 ml-2">Preview</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-14">
+                <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest">Limited Print</span>
+                <h2 class="text-3xl md:text-5xl font-black text-brand-blue mt-2 md:mt-3">The Legacy Collection</h2>
+                <p class="text-gray-500 text-sm md:text-base max-w-2xl mx-auto mt-2 md:mt-3">Hand‑numbered, hardcover editions. Select titles below to pre‑order.</p>
+            </div>
+            
+            <div class="relative">
+                <div id="legacy-carousel" class="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0" style="-ms-overflow-style: none; scrollbar-width: none;">
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[300px] md:w-auto snap-center bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group">
+                        <div class="square-card overflow-hidden bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                            <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-brand-gold text-brand-blue text-[9px] md:text-[10px] font-black px-2 md:px-3 py-1 rounded-full">LIMITED</div>
+                        </div>
+                        <div class="p-5 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-brand-blue">Audit Protocol 2.0</h3>
+                            <p class="text-gray-500 text-xs md:text-sm mt-1">Digital transformation guide for audit firms.</p>
+                            <div class="mt-4"><span class="text-brand-green font-bold text-sm md:text-base">TZS 95,000</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[300px] md:w-auto snap-center bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group">
+                        <div class="square-card overflow-hidden bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition">
+                            <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-brand-gold text-brand-blue text-[9px] md:text-[10px] font-black px-2 md:px-3 py-1 rounded-full">LIMITED</div>
+                        </div>
+                        <div class="p-5 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-brand-blue">Corporate Tax Sovereignty</h3>
+                            <p class="text-gray-500 text-xs md:text-sm mt-1">Navigating international tax in East Africa.</p>
+                            <div class="mt-4"><span class="text-brand-green font-bold text-sm md:text-base">TZS 85,000</span></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[300px] md:w-auto snap-center bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100 group">
+                        <div class="square-card overflow-hidden bg-gray-200 relative">
+                            <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover group-hover:scale-105 transition">
+                            <div class="absolute top-3 right-3 md:top-4 md:right-4 bg-brand-gold text-brand-blue text-[9px] md:text-[10px] font-black px-2 md:px-3 py-1 rounded-full">LIMITED</div>
+                        </div>
+                        <div class="p-5 md:p-6">
+                            <h3 class="text-lg md:text-xl font-bold text-brand-blue">The Market Entry Codex</h3>
+                            <p class="text-gray-500 text-xs md:text-sm mt-1">Proven frameworks for African expansion.</p>
+                            <div class="mt-4"><span class="text-brand-green font-bold text-sm md:text-base">TZS 110,000</span></div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="flex justify-center items-center gap-2 mt-2 lg:hidden" id="legacy-dots">
+                    <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                </div>
+            </div>
+            
+            <div class="mt-8 md:mt-12 text-center">
+                <button id="open-preorder-modal" class="bg-brand-blue text-white px-6 md:px-8 py-3 md:py-4 rounded-xl text-sm md:text-base font-bold hover:bg-brand-green transition shadow-lg inline-flex items-center gap-2">
+                    <i class="fa-regular fa-cart-shopping"></i> Pre‑order Titles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:grid md:grid-cols-2 gap-10 md:gap-16">
+                <div>
+                    <h3 class="text-2xl font-black text-brand-blue mb-5 md:mb-6 flex items-center gap-3"><i class="fa-regular fa-newspaper text-brand-green"></i> In the Press</h3>
+                    <div class="space-y-5 md:space-y-6">
+                        <div class="border-b border-gray-100 pb-4 md:pb-5">
+                            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">Financial Times · Mar 2026</span>
+                            <h4 class="font-bold text-brand-blue text-base md:text-lg mt-1">"Reach Global's audit methodology sets new standard in East Africa"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm font-medium mt-2 inline-block">Read article →</a>
+                        </div>
+                        <div class="border-b border-gray-100 pb-4 md:pb-5">
+                            <span class="text-[10px] md:text-xs text-gray-400 uppercase tracking-wider">The Citizen · Feb 2026</span>
+                            <h4 class="font-bold text-brand-blue text-base md:text-lg mt-1">"How local consultancy is driving global investment into Tanzania"</h4>
+                            <a href="#" class="text-brand-green text-xs md:text-sm font-medium mt-2 inline-block">Read article →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-brand-blue rounded-2xl md:rounded-3xl p-6 md:p-10 text-white text-center md:text-left">
+                    <i class="fa-regular fa-microchip text-3xl md:text-4xl text-brand-green mb-3 md:mb-4"></i>
+                    <h3 class="text-2xl md:text-3xl font-black mb-2 md:mb-3">Official Media Kit</h3>
+                    <p class="text-blue-100/70 text-sm md:text-base mb-6 md:mb-8">Download high‑resolution logos, founder headshots, brand guidelines, and press releases.</p>
+                    <a href="#" class="inline-flex items-center justify-center w-full md:w-auto gap-2 bg-brand-green text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition shadow-lg text-xs md:text-base">
+                        <i class="fa-regular fa-cloud-arrow-down"></i> Download Kit (ZIP)
+                    </a>
+                    <p class="text-white/40 text-[10px] md:text-xs mt-5 md:mt-6">press@reachglobal.co.tz</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-20 bg-gray-50 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto text-center px-4 sm:px-6">
+            <h3 class="text-2xl md:text-4xl font-black text-brand-blue mb-3 md:mb-4">Stay ahead with Reach Global Insights</h3>
+            <p class="text-gray-600 text-sm md:text-base mb-6 md:mb-8">Subscribe to receive new whitepapers, journal releases, and exclusive event invitations.</p>
+            <form class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+                <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-xl px-4 md:px-5 py-3 md:py-4 text-sm focus:border-brand-green outline-none">
+                <button class="bg-brand-green text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-brand-blue transition text-sm md:text-base">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <div id="preview-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="relative bg-white rounded-2xl md:rounded-3xl max-w-3xl w-full mx-4 p-6 md:p-8 shadow-2xl modal-content">
+            <button class="close-modal absolute top-3 right-3 md:top-4 md:right-4 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-500 hover:text-gray-800"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div id="preview-content" class="prose max-w-none text-sm md:text-base pt-4">
+                </div>
+        </div>
+    </div>
+
+    <div id="preorder-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="relative bg-white rounded-2xl md:rounded-3xl max-w-2xl w-full mx-4 p-6 md:p-8 shadow-2xl modal-content">
+            <button class="close-modal absolute top-3 right-3 md:top-4 md:right-4 w-8 h-8 flex items-center justify-center bg-gray-100 rounded-full text-gray-500 hover:text-gray-800"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <h3 class="text-xl md:text-2xl font-black text-brand-blue mb-4 md:mb-6 pr-8">Pre‑order Legacy Collection</h3>
+            <form id="preorder-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5 mb-5 md:mb-6">
+                    <div><label class="block text-[10px] md:text-xs font-bold uppercase text-gray-500 mb-1">Full Name *</label><input type="text" required class="w-full border border-gray-200 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-sm"></div>
+                    <div><label class="block text-[10px] md:text-xs font-bold uppercase text-gray-500 mb-1">WhatsApp Number *</label><input type="tel" required placeholder="+255 xxx xxx xxx" class="w-full border border-gray-200 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 text-sm"></div>
+                    <div class="md:col-span-2">
+                        <label class="block text-[10px] md:text-xs font-bold uppercase text-gray-500 mb-1">Country *</label>
+                        <select required class="w-full border border-gray-200 rounded-lg md:rounded-xl px-3 md:px-4 py-2 md:py-3 bg-white text-sm">
+                            <option value="">Select country</option>
+                            <option>Tanzania</option>
+                            <option>Kenya</option>
+                            <option>Uganda</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="mb-5 md:mb-6">
+                    <h4 class="font-bold text-brand-blue mb-2 md:mb-3 text-sm md:text-base">Select titles to pre‑order:</h4>
+                    <div class="space-y-2 md:space-y-3">
+                        <label class="flex items-center gap-3 p-2 md:p-3 border border-gray-200 rounded-lg md:rounded-xl hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" class="book-checkbox rounded text-brand-green focus:ring-brand-green" value="Audit Protocol 2.0" data-price="95000">
+                            <span class="flex-1 font-medium text-xs md:text-sm">Audit Protocol 2.0</span>
+                            <span class="text-brand-green font-bold text-xs md:text-sm">TZS 95,000</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-2 md:p-3 border border-gray-200 rounded-lg md:rounded-xl hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" class="book-checkbox rounded text-brand-green focus:ring-brand-green" value="Corporate Tax Sovereignty" data-price="85000">
+                            <span class="flex-1 font-medium text-xs md:text-sm">Corporate Tax Sovereignty</span>
+                            <span class="text-brand-green font-bold text-xs md:text-sm">TZS 85,000</span>
+                        </label>
+                        <label class="flex items-center gap-3 p-2 md:p-3 border border-gray-200 rounded-lg md:rounded-xl hover:bg-gray-50 cursor-pointer">
+                            <input type="checkbox" class="book-checkbox rounded text-brand-green focus:ring-brand-green" value="The Market Entry Codex" data-price="110000">
+                            <span class="flex-1 font-medium text-xs md:text-sm">The Market Entry Codex</span>
+                            <span class="text-brand-green font-bold text-xs md:text-sm">TZS 110,000</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="flex items-center justify-between border-t border-gray-200 pt-4 mb-4 md:mb-6">
+                    <span class="font-bold text-brand-blue text-sm md:text-base">Total:</span>
+                    <span id="total-price" class="text-lg md:text-2xl font-black text-brand-green">TZS 0</span>
+                </div>
+                <button type="submit" class="w-full bg-brand-green text-white font-bold py-3 md:py-4 rounded-xl hover:bg-brand-blue transition text-sm md:text-base">Submit Pre‑order <i class="fa-regular fa-paper-plane ml-2"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            
+            // --- CAROUSEL LOGIC ---
+            function setupMobileCarousel(carouselId, dotsContainerId) {
+                const carousel = document.getElementById(carouselId);
+                const dots = document.querySelectorAll(`#${dotsContainerId} button`);
+                if (!carousel || dots.length === 0) return;
+
+                let activeIndex = 0;
+                carousel.addEventListener('scroll', () => {
+                    if (window.innerWidth >= 1024) return;
+                    const scrollPosition = carousel.scrollLeft;
+                    const cardWidth = carousel.offsetWidth;
+                    activeIndex = Math.round(scrollPosition / cardWidth);
+                    dots.forEach((dot, index) => {
+                        dot.className = index === activeIndex 
+                            ? 'w-6 h-2 rounded-full bg-brand-green transition-all duration-300' 
+                            : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
+                    });
+                });
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        const firstCard = carousel.firstElementChild;
+                        const cardWidth = firstCard ? firstCard.offsetWidth + 16 : carousel.offsetWidth; 
+                        carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                    });
+                });
+            }
+            setupMobileCarousel('whitepapers-carousel', 'whitepapers-dots');
+            setupMobileCarousel('legacy-carousel', 'legacy-dots');
+
+            // --- MODAL LOGIC (Original logic untouched) ---
+            const previewContent = {
+                'global-bridge': `<h3 class="text-xl md:text-2xl font-bold mb-4">The Global Bridge Method – Preview</h3><p class="mb-4"><strong>Chapter 1: The East African Opportunity</strong></p><p class="mb-4">This chapter outlines the macroeconomic trends driving investment into Tanzania and the EAC...</p>`,
+                'tax-reforms': `<h3 class="text-lg md:text-xl font-bold">TRA Digital Tax Reforms – Executive Summary</h3><p class="mt-4">Overview of e‑filing, VAT automation, and compliance deadlines...</p>`,
+                'trade-corridors': `<h3 class="text-lg md:text-xl font-bold">East African Trade Corridors – Key Findings</h3><p class="mt-4">Analysis of Central Corridor vs. Northern Corridor efficiency...</p>`,
+                'ifrs-sme': `<h3 class="text-lg md:text-xl font-bold">IFRS for SMEs – Implementation Preview</h3><p class="mt-4">Step‑by‑step transition guide, including sample financial statements.</p>`,
+                'journal-vol4': `<h3 class="text-lg md:text-xl font-bold">Vol.4 Digital Finance – Preview</h3><p class="mt-4">Interview with fintech CEO on mobile money interoperability.</p>`,
+                'journal-vol3': `<h3 class="text-lg md:text-xl font-bold">Vol.3 Cross‑Border Trade – Preview</h3><p class="mt-4">Feature article: "Reducing border delays through single window systems."</p>`,
+                'journal-vol2': `<h3 class="text-lg md:text-xl font-bold">Vol.2 Audit Innovation – Preview</h3><p class="mt-4">How AI is reshaping audit procedures in East Africa.</p>`,
+                'journal-vol1': `<h3 class="text-lg md:text-xl font-bold">Vol.1 Investment Landscape – Preview</h3><p class="mt-4">Introduction to Tanzania's special economic zones.</p>`,
+            };
+
+            const previewModal = document.getElementById('preview-modal');
+            const previewContentDiv = document.getElementById('preview-content');
+            const previewTriggers = document.querySelectorAll('.preview-trigger');
+            const closeButtons = document.querySelectorAll('.close-modal');
+
+            function openPreview(contentKey) {
+                const content = previewContent[contentKey] || '<p>Preview not available for this item.</p>';
+                previewContentDiv.innerHTML = content;
+                previewModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            previewTriggers.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openPreview(btn.getAttribute('data-preview'));
+                });
+            });
+
+            const preorderModal = document.getElementById('preorder-modal');
+            const openPreorderBtn = document.getElementById('open-preorder-modal');
+            const checkboxes = document.querySelectorAll('.book-checkbox');
+            const totalSpan = document.getElementById('total-price');
+
+            function updateTotal() {
+                let total = 0;
+                checkboxes.forEach(cb => { if (cb.checked) total += parseInt(cb.dataset.price); });
+                totalSpan.textContent = `TZS ${total.toLocaleString()}`;
+            }
+
+            checkboxes.forEach(cb => cb.addEventListener('change', updateTotal));
+
+            if(openPreorderBtn) {
+                openPreorderBtn.addEventListener('click', () => {
+                    preorderModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    updateTotal();
+                });
+            }
+
+            function closeAllModals() {
+                previewModal.classList.remove('active');
+                preorderModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            closeButtons.forEach(btn => btn.addEventListener('click', closeAllModals));
+            document.querySelectorAll('.modal-overlay').forEach(overlay => overlay.addEventListener('click', closeAllModals));
+
+            document.getElementById('preorder-form').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const selectedBooks = [];
+                checkboxes.forEach(cb => { if(cb.checked) selectedBooks.push(cb.value); });
+                if (selectedBooks.length === 0) {
+                    alert('Please select at least one book.');
+                    return;
+                }
+                alert(`Thank you! Your pre‑order for: ${selectedBooks.join(', ')} has been received. We'll contact you shortly.`);
+                closeAllModals();
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') closeAllModals();
+            });
+        })();
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

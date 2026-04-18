@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>Volunteer Hub | Reach Global Consultant — Strategic Philanthropy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+            --brand-gold: #F6C445;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        .text-brand-gold { color: var(--brand-gold); }
+        .bg-brand-green\/10 { background-color: rgba(31, 171, 137, 0.1); }
+        .bg-brand-green\/20 { background-color: rgba(31, 171, 137, 0.2); }
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .hover-lift:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 30px -12px rgba(10, 37, 64, 0.15);
+        }
+        .stat-number {
+            font-feature-settings: "tnum";
+            font-variant-numeric: tabular-nums;
+        }
+        .gradient-overlay {
+            background: linear-gradient(to top, rgba(10,37,64,0.9) 0%, rgba(10,37,64,0.4) 100%);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion.active .accordion-content {
+            max-height: 300px;
+        }
+        @keyframes subtlePulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .animate-pie-pulse {
+            animation: subtlePulse 3s infinite ease-in-out;
+        }
+        /* Mobile Horizontal Scrollbar Hider */
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+    <div id="header-container"></div>
+
+<!-- Hero Section with Animated Stats -->
+<section class="relative py-24 md:py-40 mt-12 bg-brand-blue overflow-hidden">
+    <div class="absolute inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=2000" 
+             class="w-full h-full object-cover opacity-30" alt="Community empowerment">
+        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/80 to-transparent"></div>
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
+    </div>
+    <div class="relative z-10 max-w-6xl mx-auto pt-12 px-4 sm:px-6 lg:px-8 text-center">
+        
+        <div class="inline-flex items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-brand-green/20 backdrop-blur-sm border border-brand-green/30 mb-4 md:mb-6">
+            <span class="w-2 h-2 rounded-full bg-brand-green animate-pulse"></span>
+            <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest text-center">Strategic Philanthropy · Verified Impact</span>
+        </div>
+        
+        <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-white leading-[1.15] mb-4 md:mb-6 tracking-tight">
+            Empower <span class="text-brand-green">Lives</span>,<br class="block md:hidden"> 
+            <span class="hidden md:inline"> </span>Transform <span class="text-brand-green">Communities</span>
+        </h1>
+        
+        <p class="text-blue-100/90 text-sm md:text-xl max-w-3xl mx-auto leading-relaxed font-medium mb-6 md:mb-8 px-2 text-justify md:text-center">
+            Reach Global's Volunteer Hub connects compassionate individuals and corporations with high‑integrity, verified community needs. 100% of designated funds reach beneficiaries — we cover all operational overhead.
+        </p>
+        
+        <div class="flex flex-row flex-wrap justify-center items-center gap-3 md:gap-4 mb-10 md:mb-0">
+            <a href="#support-now" class="inline-flex flex-1 sm:flex-none justify-center items-center gap-2 bg-brand-green text-white px-4 py-3 md:px-8 md:py-4 rounded-xl font-bold shadow-lg shadow-brand-green/20 hover:bg-white hover:text-brand-blue transition-all text-xs md:text-lg whitespace-nowrap">
+                Support a Case <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <a href="#volunteer-form" class="inline-flex flex-1 sm:flex-none justify-center items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/30 text-white px-4 py-3 md:px-8 md:py-4 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition-all text-xs md:text-lg whitespace-nowrap">
+                Become a Partner <i class="fa-regular fa-handshake"></i>
+            </a>
+        </div>
+        
+        <div class="flex flex-row flex-wrap justify-center gap-6 sm:gap-8 md:gap-16 mt-8 md:mt-14">
+            <div class="text-center w-20 sm:w-24 md:w-auto">
+                <span class="block text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="100">0</span>
+                <span class="text-blue-100/70 text-[9px] md:text-xs uppercase tracking-wider">% to cause</span>
+            </div>
+            <div class="text-center w-20 sm:w-24 md:w-auto">
+                <span class="block text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="215">0</span>
+                <span class="text-blue-100/70 text-[9px] md:text-xs uppercase tracking-wider">Lives changed</span>
+            </div>
+            <div class="text-center w-20 sm:w-24 md:w-auto">
+                <span class="block text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="18">0</span>
+                <span class="text-blue-100/70 text-[9px] md:text-xs uppercase tracking-wider">Campaigns</span>
+            </div>
+        </div>
+        
+    </div>
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 40" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+            <path d="M0 20L60 22C120 24 240 28 360 26C480 24 600 18 720 17C840 16 960 20 1080 22C1200 24 1320 22 1380 21L1440 20V40H1380C1320 40 1200 40 1080 40C960 40 840 40 720 40C600 40 480 40 360 40C240 40 120 40 60 40H0V20Z" fill="#ffffff"/>
+        </svg>
+    </div>
+</section>
+
+<!-- Animated Counter Script -->
+<script>
+    (function() {
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCounter);
+        } else {
+            initCounter();
+        }
+
+        function initCounter() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            if (statNumbers.length === 0) return;
+
+            // Store original targets
+            statNumbers.forEach(el => {
+                const target = parseInt(el.getAttribute('data-target'), 10);
+                if (!isNaN(target)) {
+                    el.dataset.targetValue = target;
+                    el.textContent = '0';
+                }
+            });
+
+            // Intersection Observer to trigger animation when stats are visible
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseInt(el.dataset.targetValue, 10);
+                        if (!isNaN(target) && !el.classList.contains('counted')) {
+                            el.classList.add('counted');
+                            animateNumber(el, target);
+                        }
+                        // Optional: unobserve after animation starts to prevent retrigger
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 }); // Trigger when at least 50% visible
+
+            statNumbers.forEach(el => observer.observe(el));
+
+            // Also check immediately in case stats are already visible (e.g., page loaded scrolled)
+            setTimeout(() => {
+                statNumbers.forEach(el => {
+                    const rect = el.getBoundingClientRect();
+                    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                    if (isVisible && !el.classList.contains('counted')) {
+                        const target = parseInt(el.dataset.targetValue, 10);
+                        if (!isNaN(target)) {
+                            el.classList.add('counted');
+                            animateNumber(el, target);
+                            observer.unobserve(el);
+                        }
+                    }
+                });
+            }, 100);
+        }
+
+        function animateNumber(element, target) {
+            const duration = 2000; // 2 seconds
+            const startTime = performance.now();
+            const startValue = 0;
+
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                // Easing function: easeOutQuart
+                const easeProgress = 1 - Math.pow(1 - progress, 4);
+                const currentValue = Math.floor(startValue + (target - startValue) * easeProgress);
+                element.textContent = currentValue;
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    element.textContent = target; // Ensure final value is exact
+                }
+            }
+
+            requestAnimationFrame(update);
+        }
+    })();
+</script>
+
+    <section class="py-16 md:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10 md:mb-14">
+                <span class="text-brand-green font-bold tracking-widest uppercase text-xs">Transparent & Impactful</span>
+                <h2 class="text-3xl md:text-5xl font-black text-brand-blue mt-3 mb-4">Why Partner With Our Hub</h2>
+                <p class="text-gray-500 max-w-3xl mx-auto text-sm md:text-lg">We combine corporate due diligence with deep community roots — ensuring every contribution creates measurable change.</p>
+            </div>
+            
+<div class="relative">
+                <div id="partner-carousel" class="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0" style="-ms-overflow-style: none; scrollbar-width: none;">
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white shadow-md hover:shadow-xl p-6 md:p-8 rounded-2xl border border-gray-100 flex flex-row md:flex-col items-center md:items-start text-left gap-4 md:gap-0 transition-shadow duration-300">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-green/10 rounded-xl flex items-center justify-center md:mb-5 flex-shrink-0">
+                            <i class="fa-solid fa-clipboard-check text-xl md:text-2xl text-brand-green"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base md:text-xl font-bold text-brand-blue mb-1 md:mb-3">100% Verification</h3>
+                            <p class="text-gray-500 text-xs md:text-sm leading-relaxed">Every case is personally vetted by our Social Responsibility Officer and local partners.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white shadow-md hover:shadow-xl p-6 md:p-8 rounded-2xl border border-gray-100 flex flex-row md:flex-col items-center md:items-start text-left gap-4 md:gap-0 transition-shadow duration-300">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-green/10 rounded-xl flex items-center justify-center md:mb-5 flex-shrink-0">
+                            <i class="fa-solid fa-chart-simple text-xl md:text-2xl text-brand-green"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base md:text-xl font-bold text-brand-blue mb-1 md:mb-3">Zero Admin Fees</h3>
+                            <p class="text-gray-500 text-xs md:text-sm leading-relaxed">Reach Global covers all operational costs. 100% of your donation goes to the beneficiary.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white shadow-md hover:shadow-xl p-6 md:p-8 rounded-2xl border border-gray-100 flex flex-row md:flex-col items-center md:items-start text-left gap-4 md:gap-0 transition-shadow duration-300">
+                        <div class="w-12 h-12 md:w-14 md:h-14 bg-brand-green/10 rounded-xl flex items-center justify-center md:mb-5 flex-shrink-0">
+                            <i class="fa-solid fa-file-signature text-xl md:text-2xl text-brand-green"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base md:text-xl font-bold text-brand-blue mb-1 md:mb-3">Impact Reporting</h3>
+                            <p class="text-gray-500 text-xs md:text-sm leading-relaxed">Receive quarterly updates with stories, financial summaries, and photos of your impact.</p>
+                        </div>
+                    </div>
+
+                    <div class="w-2 flex-shrink-0 sm:hidden"></div>
+
+                </div>
+                
+                <div class="flex justify-center items-center gap-2 mt-4 md:hidden" id="partner-dots">
+                    <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                    <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="support-now" class="py-16 md:py-28 bg-gray-50 relative">
+    <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 md:mb-12 gap-4 md:gap-6">
+            <div class="max-w-2xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-green/10 border border-brand-green/20 mb-3 md:mb-4">
+                    <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest">Urgent · Verified Needs</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-black text-brand-blue leading-tight">
+                    Immediate Assistance Cases
+                </h2>
+            </div>
+            <p class="text-gray-500 max-w-md text-sm ">Select a case to view comprehensive details, breakdown of needs, and instructions on how to coordinate your support.</p>
+        </div>
+
+        <div class="relative">
+            <div id="cases-carousel" class="flex lg:grid lg:grid-cols-2 gap-4 md:gap-8 overflow-x-auto lg:overflow-visible snap-x snap-mandatory scrollbar-hide pb-4 lg:pb-0">
+                
+                <!-- Amani James Card -->
+                <div class="case-card flex-shrink-0 w-[90vw] sm:w-[500px] lg:w-auto snap-center bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row hover-lift">
+                    <div class="w-full md:w-2/5 relative overflow-hidden h-48 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-700 hover:scale-105" alt="Amani">
+                        <div class="absolute top-3 left-3 bg-red-600 text-white text-[9px] font-bold px-3 py-1 rounded-full shadow-lg">IMMEDIATE EVICTION RISK</div>
+                    </div>
+                    <div class="w-full md:w-3/5 p-5 md:p-8 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2 md:mb-3">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-black text-brand-blue">Amani James</h3>
+                                    <p class="text-brand-green font-bold text-[10px] md:text-xs uppercase tracking-widest mt-1">Dar es Salaam · 14 years old</p>
+                                </div>
+                                <span class="bg-brand-green/10 text-brand-green text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap">#RGC-142</span>
+                            </div>
+                            <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">Amani is a high‑achieving student who lost his sole guardian. He faces eviction and cannot afford final semester fees. Support covers tuition, uniform, and basic food for three months.</p>
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Total needed</span><span class="text-brand-green font-black text-sm md:text-base">650k TZS</span></div>
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Funded</span><span class="text-brand-green font-black text-sm md:text-base">15%</span></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100">
+                            <button class="w-full donate-btn py-3 bg-brand-blue text-white rounded-xl hover:bg-brand-green transition text-xs md:text-sm font-bold flex items-center justify-center gap-2" data-case="Amani James">
+                                Read More & Support <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mwakila Family Card -->
+                <div class="case-card flex-shrink-0 w-[90vw] sm:w-[500px] lg:w-auto snap-center bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row hover-lift">
+                    <div class="w-full md:w-2/5 relative overflow-hidden h-48 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-700 hover:scale-105" alt="Mwakila">
+                        <div class="absolute top-3 left-3 bg-brand-green text-white text-[9px] font-bold px-3 py-1 rounded-full shadow-lg">MICRO‑ENTERPRISE</div>
+                    </div>
+                    <div class="w-full md:w-3/5 p-5 md:p-8 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2 md:mb-3">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-black text-brand-blue">Mwakila Family</h3>
+                                    <p class="text-brand-green font-bold text-[10px] md:text-xs uppercase tracking-widest mt-1">Bugarika · 5 dependents</p>
+                                </div>
+                                <span class="bg-brand-green/10 text-brand-green text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap">#RGC-211</span>
+                            </div>
+                            <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">After losing their poultry business to disease, this family struggles to afford rent. A small loan will restock 200 chicks, feed, and basic housing repairs.</p>
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Total goal</span><span class="text-brand-green font-black text-sm md:text-base">2.5M TZS</span></div>
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Funded</span><span class="text-brand-green font-black text-sm md:text-base">40%</span></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100">
+                            <button class="w-full donate-btn py-3 bg-brand-blue text-white rounded-xl hover:bg-brand-green transition text-xs md:text-sm font-bold flex items-center justify-center gap-2" data-case="Mwakila Family">
+                                Read More & Support <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Neema Center Card (hidden on lg) -->
+                <div class="case-card flex-shrink-0 w-[90vw] sm:w-[500px] lg:w-auto snap-center lg:hidden bg-white rounded-2xl md:rounded-3xl shadow-xl border border-gray-100 overflow-hidden flex flex-col md:flex-row hover-lift">
+                    <div class="w-full md:w-2/5 relative overflow-hidden h-48 md:h-auto">
+                        <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=600" class="w-full h-full object-cover transition duration-700 hover:scale-105" alt="Neema">
+                        <div class="absolute top-3 left-3 bg-orange-500 text-white text-[9px] font-bold px-3 py-1 rounded-full shadow-lg">FOOD SECURITY</div>
+                    </div>
+                    <div class="w-full md:w-3/5 p-5 md:p-8 flex flex-col justify-between">
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start mb-2 md:mb-3">
+                                <div>
+                                    <h3 class="text-xl md:text-2xl font-black text-brand-blue">Neema Center</h3>
+                                    <p class="text-brand-green font-bold text-[10px] md:text-xs uppercase tracking-widest mt-1">Kigamboni · 45 Orphans</p>
+                                </div>
+                                <span class="bg-brand-green/10 text-brand-green text-[10px] font-bold px-2 py-1 rounded-full whitespace-nowrap">#RGC-088</span>
+                            </div>
+                            <p class="text-gray-600 text-xs md:text-sm leading-relaxed mb-4 line-clamp-3">The orphanage kitchen appliances recently broke down. They urgently need a commercial stove and a 3-month supply of maize and beans.</p>
+                            <div class="grid grid-cols-2 gap-2 mb-4">
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Total goal</span><span class="text-brand-green font-black text-sm md:text-base">1.2M TZS</span></div>
+                                <div class="bg-blue-50/50 p-2 rounded-lg"><span class="text-[9px] font-bold text-brand-blue block">Funded</span><span class="text-brand-green font-black text-sm md:text-base">60%</span></div>
+                            </div>
+                        </div>
+                        <div class="pt-4 border-t border-gray-100">
+                            <button class="w-full donate-btn py-3 bg-brand-blue text-white rounded-xl hover:bg-brand-green transition text-xs md:text-sm font-bold flex items-center justify-center gap-2" data-case="Neema Center">
+                                Read More & Support <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex justify-center items-center gap-2 mt-2 lg:hidden" id="cases-dots">
+                <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+            </div>
+        </div>
+
+        <div class="mt-8 text-center hidden lg:block">
+            <button id="view-more-btn" class="inline-flex items-center gap-2 bg-white border border-gray-200 text-brand-blue px-10 py-4 rounded-full font-bold hover:border-brand-green hover:text-brand-green transition shadow-sm">
+                View More Cases <i class="fa-solid fa-chevron-down"></i>
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Collective Impact Campaigns Section -->
+<section class="py-16 md:py-28 bg-white">
+    <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 md:mb-16">
+            <span class="text-brand-green font-bold tracking-widest uppercase text-xs">Scalable initiatives</span>
+            <h2 class="text-3xl md:text-5xl font-black text-brand-blue mt-3 mb-4">Collective Impact Campaigns</h2>
+            <p class="text-gray-500 text-sm md:text-lg max-w-3xl">Join forces with other donors to fund larger community projects with transparent reporting.</p>
+        </div>
+        
+        <div class="relative">
+            <div id="campaigns-carousel" class="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide pb-4 md:pb-0">
+                
+                <!-- Love Packs Campaign -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-gray-50 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 hover-lift">
+                    <div class="relative h-40 md:h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-brand-green text-white text-[9px] font-bold px-3 py-1 rounded-full">EDUCATION</div>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">Love Packs for Learning</h3>
+                        <p class="text-gray-600 text-sm md:text-sm mb-4">260 vulnerable children receive uniforms, books, and supplies for the 2026 academic year.</p>
+                        <div class="space-y-2 mb-4 md:mb-5">
+                            <div class="flex justify-between text-[10px] md:text-xs font-bold"><span>Raised: 6.2M TZS</span><span>Goal: 8.5M TZS</span></div>
+                            <div class="w-full h-2 bg-gray-200 rounded-full"><div class="h-full bg-brand-green rounded-full" style="width:73%"></div></div>
+                        </div>
+                        <button class="donate-btn block w-full text-center bg-brand-blue text-white py-3 rounded-xl font-bold hover:bg-brand-green transition text-sm" data-case="Love Packs Campaign">
+                            Read More & Support
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Youth Biz Accelerator -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-gray-50 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 hover-lift">
+                    <div class="relative h-40 md:h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-brand-green text-white text-[9px] font-bold px-3 py-1 rounded-full">MENTORSHIP</div>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">Youth Biz Accelerator</h3>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4">12‑week mentorship for 30 young entrepreneurs; includes seed grants and coaching.</p>
+                        <div class="mb-4 md:mb-5"><span class="bg-blue-50 text-brand-blue text-[10px] md:text-xs px-3 py-1 rounded-full">Seeking 20 mentors</span></div>
+                        <button class="donate-btn block w-full text-center bg-brand-blue text-white py-3 rounded-xl font-bold hover:bg-brand-green transition text-sm" data-case="Youth Biz Accelerator">
+                            Read More & Apply
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Bugarika Water Project -->
+                <div class="flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-gray-50 rounded-2xl md:rounded-3xl overflow-hidden border border-gray-100 hover-lift">
+                    <div class="relative h-40 md:h-52 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover">
+                        <div class="absolute top-3 left-3 bg-brand-green text-white text-[9px] font-bold px-3 py-1 rounded-full">WATER & HEALTH</div>
+                    </div>
+                    <div class="p-5 md:p-6">
+                        <h3 class="text-lg md:text-xl font-bold text-brand-blue mb-2">Bugarika Water Project</h3>
+                        <p class="text-gray-600 text-xs md:text-sm mb-4">Installation of 2 community boreholes and hygiene training for 500+ residents.</p>
+                        <div class="space-y-2 mb-4 md:mb-5">
+                            <div class="flex justify-between text-[10px] md:text-xs font-bold"><span>Raised: 4.1M TZS</span><span>Goal: 12M TZS</span></div>
+                            <div class="w-full h-2 bg-gray-200 rounded-full"><div class="h-full bg-brand-green rounded-full" style="width:34%"></div></div>
+                        </div>
+                        <button class="donate-btn block w-full text-center bg-brand-blue text-white py-3 rounded-xl font-bold hover:bg-brand-green transition text-sm" data-case="Bugarika Water Project">
+                            Read More & Support
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center items-center gap-2 mt-2 md:hidden" id="campaigns-dots">
+                <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Transparency Section -->
+<section class="py-16 md:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-6 md:p-12 relative overflow-hidden">
+            <a href="#" class="absolute top-6 right-6 hidden md:inline-flex items-center gap-2 bg-brand-blue/5 text-brand-blue hover:bg-brand-green hover:text-white px-4 py-2 rounded-full font-bold text-xs transition-colors">
+                <i class="fa-solid fa-download"></i> 2025 Impact Report
+            </a>
+
+            <div class="flex flex-col md:flex-row gap-8 md:gap-10 items-center">
+                <div class="md:w-1/2">
+                    <span class="text-brand-green font-bold text-xs uppercase tracking-widest">Full Transparency</span>
+                    <h3 class="text-2xl md:text-3xl font-black text-brand-blue mt-2 mb-3">Where Every Shilling Goes</h3>
+                    <p class="text-gray-600 text-sm md:text-base mb-5">Reach Global absorbs all administrative and platform costs. 100% of your designated donation reaches the beneficiary or campaign.</p>
+                    <ul class="space-y-3 text-xs md:text-sm">
+                        <li class="flex items-start gap-3"><span class="w-3 h-3 mt-1 bg-brand-green rounded-full flex-shrink-0"></span> <div><span class="font-bold text-brand-blue">92% Direct aid</span> <span class="text-gray-500 block sm:inline">(tuition, food, medical, micro‑grants)</span></div></li>
+                        <li class="flex items-start gap-3"><span class="w-3 h-3 mt-1 bg-brand-blue rounded-full flex-shrink-0"></span> <div><span class="font-bold text-brand-blue">8% Capacity building</span> <span class="text-gray-500 block sm:inline">(mentorship, training materials)</span></div></li>
+                        <li class="flex items-start gap-3"><span class="w-3 h-3 mt-1 bg-gray-400 rounded-full flex-shrink-0"></span> <div><span class="font-bold text-brand-blue">0% Overhead</span> <span class="text-gray-500 block sm:inline">covered by Reach Global's core business</span></div></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/2 bg-gray-50 p-6 rounded-2xl">
+                    <div class="flex justify-center">
+                        <div class="relative w-48 h-48 md:w-56 md:h-56 animate-pie-pulse">
+                            <svg viewBox="0 0 36 36" class="w-full h-full">
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="#E5E7EB" stroke-width="2" />
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#1FAB89" stroke-width="3" stroke-dasharray="92, 100" />
+                                <path d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831" fill="none" stroke="#0A2540" stroke-width="3" stroke-dasharray="8, 100" stroke-dashoffset="-92" />
+                                <text x="18" y="20" text-anchor="middle" fill="#0A2540" font-weight="900" font-size="5">100%</text>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-4 md:gap-6 mt-4 text-[10px] md:text-sm">
+                        <div class="flex items-center"><span class="w-2 h-2 md:w-3 md:h-3 bg-brand-green rounded-full mr-1 md:mr-2"></span> Direct aid</div>
+                        <div class="flex items-center"><span class="w-2 h-2 md:w-3 md:h-3 bg-brand-blue rounded-full mr-1 md:mr-2"></span> Capacity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal (appears below the main header) -->
+<div id="donate-modal" class="fixed inset-0 z-[100] flex items-start justify-center pt-20 hidden">
+    <div id="modal-backdrop" class="absolute inset-0 bg-brand-blue/80 backdrop-blur-md transition-opacity duration-300 cursor-pointer"></div>
+    <div class="relative bg-white w-full max-w-4xl mx-4 rounded-3xl md:rounded-[2.5rem] shadow-2xl transform transition-all duration-300 scale-95 opacity-0 max-h-[calc(90vh-5rem)] flex flex-col" id="modal-content">
+        <!-- Sticky Modal Header -->
+        <div class="sticky top-0 bg-white z-10 px-6 md:px-8 pt-6 md:pt-8 pb-4 border-b border-gray-100 rounded-t-3xl md:rounded-t-[2.5rem]">
+            <button id="close-modal" class="absolute top-4 right-4 w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center text-gray-500 hover:bg-red-100 hover:text-red-500 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div class="pr-8">
+                <span class="text-brand-green font-bold tracking-widest uppercase text-[10px] md:text-xs" id="modal-case-tag">Case Details</span>
+                <h3 id="modal-case-name" class="text-2xl md:text-3xl font-black text-brand-blue mt-1 mb-2">Selected Case Name</h3>
+                <p class="text-gray-500 text-xs md:text-sm" id="modal-case-location">Location · ID</p>
+            </div>
+        </div>
+
+        <!-- Scrollable Content -->
+        <div class="overflow-y-auto px-6 md:px-8 pb-6 md:pb-8">
+            <!-- Image Gallery -->
+            <div class="mb-8 pt-4">
+                <div class="relative rounded-2xl overflow-hidden bg-gray-100">
+                    <img id="modal-main-image" src="" alt="Case main image" class="w-full h-64 md:h-80 object-cover">
+                    <button id="gallery-prev" class="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition">
+                        <i class="fa-solid fa-chevron-left text-brand-blue"></i>
+                    </button>
+                    <button id="gallery-next" class="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-white/80 rounded-full flex items-center justify-center hover:bg-white transition">
+                        <i class="fa-solid fa-chevron-right text-brand-blue"></i>
+                    </button>
+                </div>
+                <div id="gallery-thumbnails" class="flex gap-2 mt-3 overflow-x-auto pb-1"></div>
+            </div>
+
+            <!-- Comprehensive Information -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="md:col-span-2">
+                    <h4 class="font-bold text-brand-blue mb-2">Full Description</h4>
+                    <p id="modal-full-description" class="text-gray-600 text-sm leading-relaxed"></p>
+                    <div class="mt-4 space-y-2">
+                        <h4 class="font-bold text-brand-blue">Specific Needs</h4>
+                        <ul id="modal-needs-list" class="list-disc list-inside text-sm text-gray-600 space-y-1"></ul>
+                    </div>
+                </div>
+                <div class="bg-gray-50 p-5 rounded-2xl">
+                    <h4 class="font-bold text-brand-blue mb-3">Funding Status</h4>
+                    <div id="modal-funding-details" class="space-y-3 text-sm"></div>
+                    <div class="mt-4 pt-4 border-t border-gray-200">
+                        <div class="flex justify-between text-xs font-bold mb-1"><span>Progress</span><span id="modal-progress-percent">0%</span></div>
+                        <div class="w-full h-2 bg-gray-200 rounded-full"><div id="modal-progress-bar" class="h-full bg-brand-green rounded-full" style="width:0%"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Support Form -->
+            <div class="border-t border-gray-100 pt-6">
+                <h4 class="font-bold text-brand-blue mb-4">Provide Support</h4>
+                <form id="modal-support-form" class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">First Name *</label>
+                            <input type="text" placeholder="Your first name" required class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Last Name *</label>
+                            <input type="text" placeholder="Your last name" required class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Email *</label>
+                            <input type="email" placeholder="you@example.com" required class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">WhatsApp Number *</label>
+                            <input type="tel" placeholder="+255 XXX XXX XXX" required class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Country of Origin</label>
+                            <input type="text" placeholder="e.g., Tanzania" class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Company / Organization <span class="text-gray-400">(optional)</span></label>
+                            <input type="text" placeholder="Your company" class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Support Amount (TZS)</label>
+                            <input type="number" placeholder="e.g., 50000" class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-600 mb-1">Support Type</label>
+                            <select class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm">
+                                <option>One-time donation</option>
+                                <option>Monthly pledge</option>
+                                <option>In-kind / Services</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-gray-600 mb-1">Message (optional)</label>
+                        <textarea rows="2" placeholder="Any additional note..." class="w-full px-4 py-2 border border-gray-200 rounded-xl text-sm"></textarea>
+                    </div>
+                    <div class="flex gap-3 pt-2">
+                        <button type="submit" class="bg-brand-green text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-blue transition text-sm">Confirm Support</button>
+                        <button type="button" class="border border-gray-300 text-gray-600 px-6 py-3 rounded-xl font-bold hover:bg-gray-50 transition text-sm" id="modal-volunteer-btn">
+                            Book Consultation / Volunteer
+                        </button>
+                    </div>
+                    <p class="text-[10px] text-gray-400 mt-2">100% of your donation goes directly to this case. Reach Global covers all fees.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    (function() {
+        const casesData = {
+            "Amani James": {
+                tag: "IMMEDIATE EVICTION RISK",
+                location: "Dar es Salaam · 14 years old · #RGC-142",
+                fullDescription: "Amani is a high‑achieving Form Two student at Mbezi Secondary School. After losing his grandmother (his sole guardian) last month, he now faces eviction from the rented room and cannot pay the final semester fees of 180,000 TZS. Without immediate support, he will be forced to drop out and live on the streets. Support will cover: tuition fees, school uniform, exam registration, and a basic food package for three months while a long‑term guardian is sought.",
+                needs: ["Tuition & exam fees: 180,000 TZS", "Uniform & supplies: 70,000 TZS", "Food support (3 months): 300,000 TZS", "Emergency rent: 100,000 TZS"],
+                goal: 650000,
+                raised: 97500,
+                images: [
+                    "https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1511949860663-92c5c57d48a7?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1586769852044-692d6e3703f0?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=600"
+                ]
+            },
+            "Mwakila Family": {
+                tag: "MICRO‑ENTERPRISE",
+                location: "Bugarika · 5 dependents · #RGC-211",
+                fullDescription: "The Mwakila family previously sustained themselves through a small poultry business with 300 layers. After a disease outbreak, they lost all their birds and now struggle to pay rent and feed five children. A microloan of 2.5M TZS will restock 200 improved chicks, provide feed for the first two months, and repair the chicken coop. The family has a proven track record and a ready market for eggs in Mwanza.",
+                needs: ["200 day‑old chicks: 800,000 TZS", "Feed & supplements: 900,000 TZS", "Coop repair & equipment: 500,000 TZS", "Working capital (rent/food): 300,000 TZS"],
+                goal: 2500000,
+                raised: 1000000,
+                images: [
+                    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1589923188908-9b2e5f5b1e5e?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1504202309148-9d3a7e3b7b7c?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1595433707802-6b5e9e7b1c0e?auto=format&fit=crop&q=80&w=600"
+                ]
+            },
+            "Neema Center": {
+                tag: "FOOD SECURITY",
+                location: "Kigamboni · 45 Orphans · #RGC-088",
+                fullDescription: "Neema Children's Center provides shelter and education to 45 orphaned and vulnerable children. Their kitchen equipment—a two‑burner stove and a charcoal jiko—recently broke beyond repair. They urgently need a commercial gas stove (4 burners + oven) and a 3‑month supply of maize and beans to ensure the children receive two nutritious meals daily. The center also seeks to start a small vegetable garden.",
+                needs: ["Commercial stove: 750,000 TZS", "Maize & beans (3 months): 350,000 TZS", "Cooking utensils: 100,000 TZS"],
+                goal: 1200000,
+                raised: 720000,
+                images: [
+                    "https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1485962398705-ef6a13c41e9f?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1511690656952-34342bb7c2f5?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=600",
+                    "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=600"
+                ]
+            },
+            "Love Packs Campaign": {
+                tag: "EDUCATION · COLLECTIVE",
+                location: "260 children · Target: 8.5M TZS",
+                fullDescription: "Love Packs for Learning aims to equip 260 vulnerable primary and secondary students across three wards with new uniforms, school bags, books, and stationery for the 2026 academic year. Many of these children currently attend school in torn clothes without basic supplies. Your contribution will be pooled with others to purchase items in bulk, reducing costs.",
+                needs: ["Uniforms (260 sets): 4.2M TZS", "School supplies & bags: 3.1M TZS", "Distribution & logistics: 1.2M TZS"],
+                goal: 8500000,
+                raised: 6200000,
+                images: [
+                    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&q=80&w=800"
+                ]
+            },
+            "Youth Biz Accelerator": {
+                tag: "MENTORSHIP",
+                location: "30 young entrepreneurs · Seeking mentors",
+                fullDescription: "This 12‑week accelerator provides business training, one‑on‑one mentorship, and seed grants of up to 500,000 TZS to 30 promising youth in Mwanza. The program covers business plan development, financial literacy, and market access. You can support as a mentor or fund a grant.",
+                needs: ["Seed grants (30 x 500k): 15M TZS", "Training materials: 2M TZS", "Mentor stipends: 3M TZS"],
+                goal: 20000000,
+                raised: 4000000,
+                images: [
+                    "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800"
+                ]
+            },
+            "Bugarika Water Project": {
+                tag: "WATER & HEALTH",
+                location: "Bugarika · 500+ residents",
+                fullDescription: "This project will install two solar‑powered boreholes in Bugarika ward, providing clean water to over 500 people who currently walk more than 2 km to fetch unsafe water. The project includes community hygiene training and formation of a water committee for sustainability.",
+                needs: ["Borehole drilling (2): 8M TZS", "Solar pumps & tanks: 3M TZS", "Hygiene training: 1M TZS"],
+                goal: 12000000,
+                raised: 4100000,
+                images: [
+                    "https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1542884748-2b87b36c6b90?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1461354464878-ad92f492a5a0?auto=format&fit=crop&q=80&w=800",
+                    "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&q=80&w=800"
+                ]
+            }
+        };
+
+        const modal = document.getElementById('donate-modal');
+        const modalContent = document.getElementById('modal-content');
+        const closeBtn = document.getElementById('close-modal');
+        const backdrop = document.getElementById('modal-backdrop');
+        
+        const caseNameEl = document.getElementById('modal-case-name');
+        const caseTagEl = document.getElementById('modal-case-tag');
+        const caseLocationEl = document.getElementById('modal-case-location');
+        const fullDescEl = document.getElementById('modal-full-description');
+        const needsListEl = document.getElementById('modal-needs-list');
+        const fundingDetailsEl = document.getElementById('modal-funding-details');
+        const progressPercentEl = document.getElementById('modal-progress-percent');
+        const progressBarEl = document.getElementById('modal-progress-bar');
+        const mainImageEl = document.getElementById('modal-main-image');
+        const thumbnailsContainer = document.getElementById('gallery-thumbnails');
+
+        let currentImages = [];
+        let currentIndex = 0;
+
+        function openModal(caseKey) {
+            const data = casesData[caseKey];
+            if (!data) return;
+
+            caseNameEl.textContent = caseKey;
+            caseTagEl.textContent = data.tag;
+            caseLocationEl.textContent = data.location;
+            fullDescEl.textContent = data.fullDescription;
+            
+            needsListEl.innerHTML = data.needs.map(n => `<li>${n}</li>`).join('');
+            
+            const percent = Math.round((data.raised / data.goal) * 100);
+            progressPercentEl.textContent = percent + '%';
+            progressBarEl.style.width = percent + '%';
+            
+            fundingDetailsEl.innerHTML = `
+                <div class="flex justify-between"><span>Goal:</span><span class="font-bold">${data.goal.toLocaleString()} TZS</span></div>
+                <div class="flex justify-between"><span>Raised:</span><span class="font-bold text-brand-green">${data.raised.toLocaleString()} TZS</span></div>
+                <div class="flex justify-between"><span>Remaining:</span><span class="font-bold">${(data.goal - data.raised).toLocaleString()} TZS</span></div>
+            `;
+
+            currentImages = data.images;
+            currentIndex = 0;
+            updateMainImage();
+            renderThumbnails();
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modalContent.classList.remove('scale-95', 'opacity-0');
+                modalContent.classList.add('scale-100', 'opacity-100');
+            }, 10);
+        }
+
+        function updateMainImage() {
+            if (currentImages.length) {
+                mainImageEl.src = currentImages[currentIndex];
+            }
+        }
+
+        function renderThumbnails() {
+            thumbnailsContainer.innerHTML = currentImages.map((img, idx) => `
+                <div class="flex-shrink-0 w-16 h-16 rounded-lg overflow-hidden border-2 cursor-pointer ${idx === currentIndex ? 'border-brand-green' : 'border-transparent'}" data-index="${idx}">
+                    <img src="${img}" class="w-full h-full object-cover">
+                </div>
+            `).join('');
+            
+            document.querySelectorAll('#gallery-thumbnails > div').forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    currentIndex = parseInt(thumb.dataset.index);
+                    updateMainImage();
+                    renderThumbnails();
+                });
+            });
+        }
+
+        document.getElementById('gallery-next').addEventListener('click', () => {
+            if (currentImages.length) {
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                updateMainImage();
+                renderThumbnails();
+            }
+        });
+        document.getElementById('gallery-prev').addEventListener('click', () => {
+            if (currentImages.length) {
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                updateMainImage();
+                renderThumbnails();
+            }
+        });
+
+        function closeModal() {
+            modalContent.classList.add('scale-95', 'opacity-0');
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        }
+
+        closeBtn.addEventListener('click', closeModal);
+        backdrop.addEventListener('click', closeModal);
+
+        document.querySelectorAll('.donate-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const caseName = btn.getAttribute('data-case');
+                if (caseName && casesData[caseName]) {
+                    openModal(caseName);
+                } else {
+                    alert('Detailed information for this case is being prepared. Please check back soon.');
+                }
+            });
+        });
+
+        document.getElementById('modal-volunteer-btn')?.addEventListener('click', () => {
+            alert('Thank you for your interest! A volunteer coordinator will contact you within 24 hours to schedule a consultation. You can also reach us at volunteer@reachglobal.org');
+        });
+
+        document.getElementById('modal-support-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your support! A representative will contact you shortly to complete the process.');
+            closeModal();
+        });
+
+        document.getElementById('view-more-btn')?.addEventListener('click', () => {
+            openModal('Love Packs Campaign');
+        });
+    })();
+</script>
+
+    <script src="script.js"></script>
+</body>
+</html>
