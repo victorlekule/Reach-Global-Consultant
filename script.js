@@ -374,8 +374,11 @@ window.addEventListener('DOMContentLoaded', () => {
                         <li><a href="index.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Home</a></li>
                         <li><a href="about.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>About Us</a></li>
                         <li><a href="services.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Our Services</a></li>
-                        <li><a href="cases.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Impact Cases</a></li>
-                        <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Insights</a></li>
+                        <li><a href="cases.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Gallery</a></li>
+                        <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Volunter Hub</a></li>
+                         <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Blog</a></li>
+                          <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Journals & Publicity</a></li>
+                           <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>News & Updates</a></li>
                     </ul>
                 </div>
 
@@ -383,11 +386,11 @@ window.addEventListener('DOMContentLoaded', () => {
                 <div>
                     <h4 class="text-lg font-bold mb-4">Related Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="blog.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Blog</a></li>
-                        <li><a href="careers.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Careers</a></li>
-                        <li><a href="volunteer.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Volunteer Hub</a></li>
-                        <li><a href="privacy.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Privacy Policy</a></li>
-                        <li><a href="terms.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Terms of Use</a></li>
+                        <li><a href="blog.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>BRELA</a></li>
+                        <li><a href="careers.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>TRA</a></li>
+                        <li><a href="volunteer.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>ECA</a></li>
+                        <li><a href="privacy.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>others</a></li>
+                        <li><a href="terms.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>others</a></li>
                     </ul>
                 </div>
 
@@ -425,9 +428,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     &copy; ${new Date().getFullYear()} Reach Global Consultant Company. All rights reserved.
                 </p>
                 <div class="flex items-center gap-4 text-xs order-1 md:order-2">
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Sitemap</a>
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Accessibility</a>
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Cookies</a>
+                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Privacy Policy</a>
+                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Terms of Service</a>
+                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">FAQ</a>
                 </div>
             </div>
         </div>

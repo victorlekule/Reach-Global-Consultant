@@ -282,32 +282,47 @@
                     </div>
                 </div>
                 
-                <div class="mt-4 md:mt-0">
+                <div class="mt-4 md:mt-0 overflow-hidden">
                     <div class="flex items-center gap-3 mb-6 md:mb-8">
                         <div class="w-8 h-8 md:w-10 md:h-10 bg-brand-blue/5 rounded-xl flex items-center justify-center"><i class="fa-regular fa-newspaper text-brand-blue"></i></div>
                         <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Press & Media</h2>
                     </div>
                     
-                    <div id="press-carousel" class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-3 md:gap-0 pb-4 md:pb-0 bg-transparent md:bg-gray-50 rounded-none md:rounded-2xl md:divide-y border-none md:border border-gray-100">
-                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
-                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
-                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                        </div>
-                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
-                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
-                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                        </div>
-                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Daily News · Jan 2026</span>
-                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Victor Lekule on the future of tax compliance"</h4>
-                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                        </div>
-                        <div class="flex-shrink-0 w-[75vw] sm:w-auto snap-center p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                            <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Tanzania Business · Dec 2025</span>
-                            <h4 class="font-bold text-brand-blue text-sm md:text-base">"Volunteer Hub transforms community giving"</h4>
-                            <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                    <div class="relative w-full overflow-hidden" id="press-ticker-wrapper">
+                        <div id="press-carousel" class="flex flex-row md:flex-col gap-3 md:gap-0 pb-4 md:pb-0 bg-transparent md:bg-gray-50 rounded-none md:rounded-2xl md:divide-y border-none md:border border-gray-100 w-max md:w-auto">
+                            
+                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Daily News · Jan 2026</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Victor Lekule on the future of tax compliance"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Tanzania Business · Dec 2025</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Volunteer Hub transforms community giving"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+                            
+                            <div class="press-item cloned-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition md:hidden">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+                            <div class="press-item cloned-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition md:hidden">
+                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
+                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
+                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
+                            </div>
+
                         </div>
                     </div>
                     
@@ -460,6 +475,70 @@
             e.preventDefault();
             alert('More updates coming soon!');
         });
+        // --- Smooth Infinite News Ticker Logic (Mobile Only) ---
+        function initPressTicker() {
+            const track = document.getElementById('press-carousel');
+            const wrapper = document.getElementById('press-ticker-wrapper');
+            if (!track || !wrapper) return;
+
+            let scrollPos = 0;
+            let animationFrameId;
+            let isPaused = false;
+            
+            // Speed of the animation (pixels per frame)
+            const speed = 1; 
+
+            function animateTicker() {
+                // Only animate on mobile screens (< 768px)
+                if (window.innerWidth >= 768) {
+                    track.style.transform = 'translateX(0)';
+                    if(animationFrameId) cancelAnimationFrame(animationFrameId);
+                    return;
+                }
+
+                if (!isPaused) {
+                    scrollPos += speed;
+                    
+                    // We placed 4 original items and 2 cloned items. 
+                    // Calculate width of original items (total width / total items * original items count)
+                    const totalItems = track.querySelectorAll('.press-item').length;
+                    const originalItems = totalItems - 2; // We added 2 clones
+                    const resetPoint = (track.scrollWidth / totalItems) * originalItems;
+
+                    // If we've scrolled past the original content, instantly reset to 0
+                    if (scrollPos >= resetPoint) {
+                        scrollPos = 0;
+                    }
+
+                    // Apply the movement using CSS transform (much smoother than scrollLeft)
+                    track.style.transform = `translateX(-${scrollPos}px)`;
+                }
+
+                animationFrameId = requestAnimationFrame(animateTicker);
+            }
+
+            // Pause on touch/interaction so users can read or click
+            wrapper.addEventListener('touchstart', () => isPaused = true, { passive: true });
+            wrapper.addEventListener('touchend', () => {
+                setTimeout(() => isPaused = false, 1000); // Resume 1 second after touch ends
+            });
+
+            // Start loop
+            animateTicker();
+
+            // Handle window resizing
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    isPaused = true;
+                    track.style.transform = 'translateX(0)';
+                } else {
+                    isPaused = false;
+                }
+            });
+        }
+
+        // Initialize the ticker
+        initPressTicker();
     </script>
     <script src="script.js"></script>
 </body>
