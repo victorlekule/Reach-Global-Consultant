@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ | Reach Global Consultant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Remix Icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-blue: #0A2540;
+            --brand-green: #1FAB89;
+        }
+        .bg-brand-blue { background-color: var(--brand-blue); }
+        .bg-brand-green { background-color: var(--brand-green); }
+        .text-brand-blue { color: var(--brand-blue); }
+        .text-brand-green { color: var(--brand-green); }
+        .border-brand-green { border-color: var(--brand-green); }
+        
+        html { scroll-behavior: smooth; }
+        
+        /* FAQ accordion styles */
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .faq-question {
+            cursor: pointer;
+            padding: 1.25rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--brand-blue);
+            transition: color 0.2s;
+        }
+        .faq-question:hover {
+            color: var(--brand-green);
+        }
+        .faq-question i {
+            font-size: 1.25rem;
+            color: var(--brand-green);
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            padding: 0 0 0 0;
+            color: #475569;
+            line-height: 1.7;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 500px; /* enough for content */
+            padding-bottom: 1.5rem;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(45deg);
+        }
+        
+        /* Category pills */
+        .category-pill {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background-color: #f1f5f9;
+            color: #334155;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+        .category-pill:hover {
+            background-color: #e2e8f0;
+        }
+        .category-pill.active {
+            background-color: var(--brand-green);
+            color: white;
+        }
+        
+        /* Search highlight */
+        .highlight {
+            background-color: #fef08a;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans antialiased">
+
+    <!-- HEADER PLACEHOLDER -->
+    <div id="header-container"></div>
+
+    <!-- HERO SECTION -->
+    <section class="bg-brand-blue text-white pt-32  mt-24 pb-16 px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 px-4 py-2 rounded-full mb-6">
+                <i class="ri-question-answer-line text-brand-green"></i>
+                <span class="text-xs font-bold uppercase tracking-widest">Got Questions? We've Got Answers</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-black mb-4">
+                Frequently Asked <span class="text-brand-green">Questions</span>
+            </h1>
+            <p class="text-white/80 text-lg max-w-2xl mx-auto">
+                Everything you need to know about our consulting services, volunteering opportunities, and how we create impact.
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="mt-8 max-w-xl mx-auto relative">
+                <i class="ri-search-line absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"></i>
+                <input type="text" id="faq-search" placeholder="Search for a question..." 
+                       class="w-full pl-12 pr-4 py-4 rounded-xl bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-2 focus:ring-brand-green">
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORY FILTERS -->
+    <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 -mt-6">
+        <div class="bg-white rounded-2xl shadow-lg border border-gray-100 p-4">
+            <div class="flex flex-wrap justify-center gap-3">
+                <button class="category-pill active" data-category="all"><i class="ri-apps-line mr-1"></i> All Questions</button>
+                <button class="category-pill" data-category="consulting"><i class="ri-briefcase-line mr-1"></i> Consulting Services</button>
+                <button class="category-pill" data-category="volunteering"><i class="ri-heart-line mr-1"></i> Volunteering</button>
+                <button class="category-pill" data-category="donations"><i class="ri-hand-coin-line mr-1"></i> Donations & Support</button>
+                <button class="category-pill" data-category="general"><i class="ri-information-line mr-1"></i> General</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ ACCORDION SECTION -->
+    <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div id="faq-container" class="space-y-0">
+            <!-- FAQ items will be injected via JS -->
+        </div>
+        
+        <!-- No results message -->
+        <div id="no-results" class="hidden text-center py-12">
+            <i class="ri-emotion-sad-line text-5xl text-gray-300 mb-4"></i>
+            <h3 class="text-xl font-bold text-brand-blue mb-2">No matching questions</h3>
+            <p class="text-gray-500">Try adjusting your search or browse by category.</p>
+            <button id="clear-search" class="mt-4 text-brand-green font-medium hover:underline">Clear search</button>
+        </div>
+        
+        <!-- Still have questions CTA -->
+        <div class="mt-16 bg-brand-blue/5 rounded-2xl p-8 text-center border border-brand-green/20">
+            <i class="ri-customer-service-2-line text-4xl text-brand-green mb-3"></i>
+            <h3 class="text-2xl font-bold text-brand-blue mb-2">Still have questions?</h3>
+            <p class="text-gray-600 mb-6">Our team is ready to help. Reach out and we'll respond within 24 hours.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="contact.html" class="inline-flex items-center gap-2 bg-brand-green text-white px-6 py-3 rounded-xl font-bold hover:bg-brand-blue transition">
+                    <i class="ri-mail-send-line"></i> Contact Us
+                </a>
+                <a href="book.html" class="inline-flex items-center gap-2 bg-white border border-gray-300 text-brand-blue px-6 py-3 rounded-xl font-bold hover:border-brand-green transition">
+                    <i class="ri-calendar-line"></i> Book a Consultation
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER PLACEHOLDER -->
+    <div id="global-footer"></div>
+
+    <script>
+        (function() {
+            // Comprehensive FAQ data
+            const faqData = [
+                // CONSULTING
+                {
+                    question: "What consulting services does Reach Global offer?",
+                    answer: "We provide strategic advisory for market entry into East Africa, regulatory compliance and licensing, partner due diligence and introductions, operational setup, and interim management. Our services are tailored to each client's specific industry and goals.",
+                    category: "consulting"
+                },
+                {
+                    question: "Which industries do you specialize in?",
+                    answer: "We have deep expertise in agriculture, renewable energy, healthcare, technology, and manufacturing. However, our methodologies apply across sectors, and we've successfully supported clients in construction, logistics, and financial services.",
+                    category: "consulting"
+                },
+                {
+                    question: "How do you charge for your consulting services?",
+                    answer: "Fees are project-based and outlined in a Statement of Work (SOW). We offer fixed-price engagements for defined scopes, retainer arrangements for ongoing advisory, or milestone-based payments. A typical engagement ranges from $5,000 to $50,000+ depending on complexity.",
+                    category: "consulting"
+                },
+                {
+                    question: "Do you work with startups and small businesses?",
+                    answer: "Absolutely. We have flexible packages for early-stage companies, including market validation studies and partner identification. We also offer discounted rates for social enterprises and businesses aligned with our impact mission.",
+                    category: "consulting"
+                },
+                {
+                    question: "How long does a typical consulting engagement take?",
+                    answer: "Timelines vary by scope. A market assessment may take 4-6 weeks, while full market entry support (registration, compliance, partner setup) can extend 3-6 months. We provide clear project plans with milestones.",
+                    category: "consulting"
+                },
+                {
+                    question: "Can you help with company registration in Tanzania?",
+                    answer: "Yes. We guide clients through the entire process, from name reservation and BRELA registration to obtaining necessary permits (TIN, business license, sector-specific approvals). We work with vetted local legal partners to ensure full compliance.",
+                    category: "consulting"
+                },
+                {
+                    question: "Do you provide ongoing support after the initial engagement?",
+                    answer: "Yes, many clients retain us on a monthly basis for ongoing compliance monitoring, local representation, or ad-hoc advisory. We're your long-term partner in East Africa.",
+                    category: "consulting"
+                },
+                // VOLUNTEERING
+                {
+                    question: "How can I volunteer with Reach Global?",
+                    answer: "We welcome skilled volunteers! You can apply through our 'Volunteer Hub' page. We seek professionals in law, finance, marketing, IT, and education to support our community programs and capacity-building initiatives. Opportunities range from remote mentoring to in-country assignments.",
+                    category: "volunteering"
+                },
+                {
+                    question: "What types of volunteer opportunities are available?",
+                    answer: "Current opportunities include: business mentorship for young entrepreneurs, legal aid for micro-enterprises, financial literacy training, English tutoring, and IT support for partner NGOs. We also need grant writers and impact measurement specialists.",
+                    category: "volunteering"
+                },
+                {
+                    question: "Is there a minimum time commitment for volunteering?",
+                    answer: "It depends on the role. Some remote mentoring requires just 2-3 hours per week for 3 months. In-country placements typically ask for a minimum of 2 weeks. We're flexible and appreciate any time you can give.",
+                    category: "volunteering"
+                },
+                {
+                    question: "Do you cover expenses for volunteers?",
+                    answer: "For in-country volunteers, we provide accommodation and a modest stipend for meals and local transport. Airfare is usually the volunteer's responsibility, though we can provide letters of support for fundraising or grant applications.",
+                    category: "volunteering"
+                },
+                {
+                    question: "Can I volunteer remotely from another country?",
+                    answer: "Yes, many of our mentorship and professional support roles are fully remote. We use Zoom, WhatsApp, and collaborative tools to connect you with entrepreneurs and community leaders in Tanzania.",
+                    category: "volunteering"
+                },
+                {
+                    question: "Will I receive training before starting?",
+                    answer: "Absolutely. All volunteers undergo an orientation session covering cultural context, our code of conduct, and role-specific training. You'll also have a dedicated point of contact throughout your assignment.",
+                    category: "volunteering"
+                },
+                {
+                    question: "Can groups or corporate teams volunteer together?",
+                    answer: "Yes! We design custom corporate volunteering programs, from one-day community projects to week-long pro bono consulting sprints. Contact our partnerships team to discuss options.",
+                    category: "volunteering"
+                },
+                // DONATIONS & SUPPORT
+                {
+                    question: "How can I donate to support Reach Global's work?",
+                    answer: "You can make a one-time or recurring donation through our 'Support a Case' page. We also accept bank transfers and mobile money (M-Pesa, Tigo Pesa). 100% of designated donations go directly to beneficiaries; we cover all overhead.",
+                    category: "donations"
+                },
+                {
+                    question: "Is my donation tax-deductible?",
+                    answer: "Reach Global is a registered NGO in Tanzania (Reg. No. 00NGO/XXXXX). Donations are tax-deductible in Tanzania. For international donors, we can provide documentation for your tax purposes, but please consult your local tax advisor.",
+                    category: "donations"
+                },
+                {
+                    question: "Can I choose which specific case or project to support?",
+                    answer: "Yes! Our platform lists verified cases (individuals, families, community projects). You can select exactly where your funds go and receive updates on the impact.",
+                    category: "donations"
+                },
+                {
+                    question: "How do I know my donation is being used effectively?",
+                    answer: "We provide transparent reporting for every campaign and case. Donors receive impact updates with photos and stories. Our financials are audited annually and available upon request.",
+                    category: "donations"
+                },
+                {
+                    question: "Do you accept in-kind donations (goods, equipment)?",
+                    answer: "We do, on a case-by-case basis. Commonly needed items include laptops for students, school supplies, and medical equipment. Please contact us to discuss logistics and current needs.",
+                    category: "donations"
+                },
+                {
+                    question: "Can I set up a monthly recurring donation?",
+                    answer: "Yes, recurring donations are a powerful way to provide sustained support. You can set this up on our donation page, and you can cancel or modify at any time.",
+                    category: "donations"
+                },
+                // GENERAL
+                {
+                    question: "Where is Reach Global Consultant located?",
+                    answer: "Our main office is in Mbezi Beach, Dar es Salaam, Tanzania. We also have a satellite team in Arusha and partner networks across East Africa.",
+                    category: "general"
+                },
+                {
+                    question: "How can I contact Reach Global?",
+                    answer: "You can email us at hello@reachglobal.co.tz, call +255 123 456 789, or use the contact form on our website. We're available Monday-Friday, 9am-5pm EAT.",
+                    category: "general"
+                },
+                {
+                    question: "Are you hiring?",
+                    answer: "We occasionally have openings for consultants, project managers, and interns. Check our Careers page or follow us on LinkedIn for announcements.",
+                    category: "general"
+                },
+                {
+                    question: "Do you partner with other organizations?",
+                    answer: "Yes, we collaborate with local NGOs, international development agencies, and corporate foundations. If you're interested in partnership, please reach out to partnerships@reachglobal.co.tz.",
+                    category: "general"
+                }
+            ];
+
+            const container = document.getElementById('faq-container');
+            const searchInput = document.getElementById('faq-search');
+            const noResultsDiv = document.getElementById('no-results');
+            const clearSearchBtn = document.getElementById('clear-search');
+            const categoryPills = document.querySelectorAll('.category-pill');
+            
+            let activeCategory = 'all';
+            let searchTerm = '';
+
+            // Render FAQ items
+            function renderFAQs() {
+                const filtered = faqData.filter(item => {
+                    const matchesCategory = activeCategory === 'all' || item.category === activeCategory;
+                    const matchesSearch = searchTerm === '' || 
+                        item.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                        item.answer.toLowerCase().includes(searchTerm.toLowerCase());
+                    return matchesCategory && matchesSearch;
+                });
+
+                if (filtered.length === 0) {
+                    container.innerHTML = '';
+                    noResultsDiv.classList.remove('hidden');
+                    return;
+                }
+                
+                noResultsDiv.classList.add('hidden');
+                
+                let html = '';
+                filtered.forEach((item, index) => {
+                    // Highlight search term if present
+                    let question = item.question;
+                    let answer = item.answer;
+                    if (searchTerm) {
+                        const regex = new RegExp(`(${searchTerm.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+                        question = question.replace(regex, '<span class="highlight">$1</span>');
+                        answer = answer.replace(regex, '<span class="highlight">$1</span>');
+                    }
+                    
+                    html += `
+                        <div class="faq-item" data-category="${item.category}">
+                            <div class="faq-question">
+                                <span>${question}</span>
+                                <i class="ri-add-line"></i>
+                            </div>
+                            <div class="faq-answer">
+                                <p>${answer}</p>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                container.innerHTML = html;
+                
+                // Attach click listeners to new FAQ items
+                document.querySelectorAll('.faq-question').forEach(questionEl => {
+                    questionEl.addEventListener('click', function() {
+                        const faqItem = this.closest('.faq-item');
+                        faqItem.classList.toggle('active');
+                    });
+                });
+            }
+
+            // Search handler
+            searchInput.addEventListener('input', (e) => {
+                searchTerm = e.target.value;
+                renderFAQs();
+            });
+            
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                searchTerm = '';
+                renderFAQs();
+            });
+
+            // Category filter
+            categoryPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    categoryPills.forEach(p => p.classList.remove('active'));
+                    pill.classList.add('active');
+                    activeCategory = pill.dataset.category;
+                    renderFAQs();
+                });
+            });
+
+            // Initial render
+            renderFAQs();
+            
+            // Open first FAQ by default? Optional.
+            setTimeout(() => {
+                if (document.querySelector('.faq-item')) {
+                    // Optionally open none; keep all closed initially.
+                }
+            }, 100);
+        })();
+    </script>
+
+    <!-- Load Header/Footer JS (adjust paths) -->
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -10,9 +10,10 @@
                     colors: {
                         brand: {
                             green: '#16a34a', // You can change this hex code to your exact logo green
-                            blue: '#172554',  // Your exact logo dark blue
+                            blue: '#0071BC',  // Your exact logo dark blue
                             light: '#f8fafc',
-                            dark: '#0f172a'
+                            yellow: '#FCEE21',
+                            dark: '#000000'
                         }
                     }
                 }
@@ -343,7 +344,7 @@ window.addEventListener('DOMContentLoaded', () => {
 (function() {
     // Create footer element
     const footer = document.createElement('footer');
-    footer.className = 'bg-brand-blue text-white pt-16 pb-8 border-t border-white/10';
+    footer.className = 'bg-brand-dark text-white pt-16 pb-8 border-t border-white/10';
     
     footer.innerHTML = `
         <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
@@ -428,9 +429,9 @@ window.addEventListener('DOMContentLoaded', () => {
                     &copy; ${new Date().getFullYear()} Reach Global Consultant Company. All rights reserved.
                 </p>
                 <div class="flex items-center gap-4 text-xs order-1 md:order-2">
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Privacy Policy</a>
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">Terms of Service</a>
-                    <a href="#" class="text-blue-100/50 hover:text-brand-green transition">FAQ</a>
+                    <a href="privacy.html" class="text-blue-100/50 hover:text-brand-green transition">Privacy Policy</a>
+                    <a href="terms.html" class="text-blue-100/50 hover:text-brand-green transition">Terms of Service</a>
+                    <a href="faq.html" class="text-blue-100/50 hover:text-brand-green transition">FAQ</a>
                 </div>
             </div>
         </div>
