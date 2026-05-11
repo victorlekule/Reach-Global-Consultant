@@ -99,7 +99,8 @@ const headerHTML = `
     <header class="fixed w-full top-0 z-50 shadow-lg bg-white">
         
         <div class="bg-gradient-to-r from-blue-950 to-blue-900 text-white py-2 md:py-3">
-            <div class="max-w-[95rem] mx-auto px-6 lg:px-8 flex flex-row justify-between items-center w-full">
+            <!-- Made w-full to fit screen and reduced lg padding to px-4 -->
+            <div class="w-full px-6 lg:px-4 flex flex-row justify-between items-center">
                 
                 <div class="hidden lg:flex w-1/4 text-xs font-medium tracking-wider text-blue-200 uppercase">
                     Your Global Growth Partner
@@ -122,28 +123,38 @@ const headerHTML = `
                     </a>
                 </div>
                 
-                <div class="flex justify-end lg:w-1/4 relative">
-                    <button id="lang-btn" class="bg-blue-800/60 hover:bg-blue-800 rounded px-4 py-1.5 md:px-5 md:py-2 flex items-center gap-2 border border-blue-700/50 transition-all shadow-sm focus:outline-none">
-                        <img id="current-flag-img" src="https://flagcdn.com/w40/gb.png" alt="English" class="w-5 h-3.5 md:h-4 object-cover rounded-sm shadow-sm">
-                        <span id="current-lang-text" class="font-semibold text-xs md:text-sm tracking-wide">English</span>
-                        <i class="fa-solid fa-caret-down text-white text-[10px] md:text-xs ml-1 transition-transform duration-200" id="lang-arrow"></i>
-                    </button>
-                    
-                    <div id="lang-menu" class="hidden absolute top-full right-0 mt-2 w-44 bg-white rounded-md shadow-2xl border border-gray-100 overflow-hidden z-50">
-                        <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="en">
-                            <img src="https://flagcdn.com/w40/gb.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> English
-                        </div>
-                        <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="de">
-                            <img src="https://flagcdn.com/w40/de.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> Deutsch
-                        </div>
-                        <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="fr">
-                            <img src="https://flagcdn.com/w40/fr.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> Français
-                        </div>
-                        <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="zh">
-                            <img src="https://flagcdn.com/w40/cn.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> 中文
-                        </div>
-                        <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm" data-lang="ar">
-                            <img src="https://flagcdn.com/w40/sa.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> العربية
+                <div class="flex justify-end items-center gap-5 lg:w-1/4">
+                    <!-- FAQ, Privacy, and Terms added here (Visible on large screens only) -->
+                    <div class="hidden lg:flex items-center gap-4 text-[11px] uppercase tracking-wider font-medium text-blue-200">
+                        <a href="faq.html" class="hover:text-white transition-colors">FAQ</a>
+                        <a href="privacy.html" class="hover:text-white transition-colors">Privacy</a>
+                        <a href="terms.html" class="hover:text-white transition-colors">Terms & Conditions</a>
+                    </div>
+
+                    <!-- Language Dropdown Wrapper -->
+                    <div class="relative">
+                        <button id="lang-btn" class="bg-blue-800/60 hover:bg-blue-800 rounded px-4 py-1.5 md:px-5 md:py-2 flex items-center gap-2 border border-blue-700/50 transition-all shadow-sm focus:outline-none">
+                            <img id="current-flag-img" src="https://flagcdn.com/w40/gb.png" alt="English" class="w-5 h-3.5 md:h-4 object-cover rounded-sm shadow-sm">
+                            <span id="current-lang-text" class="font-semibold text-xs md:text-sm tracking-wide">English</span>
+                            <i class="fa-solid fa-caret-down text-white text-[10px] md:text-xs ml-1 transition-transform duration-200" id="lang-arrow"></i>
+                        </button>
+                        
+                        <div id="lang-menu" class="hidden absolute top-full right-0 mt-2 w-44 bg-white rounded-md shadow-2xl border border-gray-100 overflow-hidden z-50">
+                            <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="en">
+                                <img src="https://flagcdn.com/w40/gb.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> English
+                            </div>
+                            <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="de">
+                                <img src="https://flagcdn.com/w40/de.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> Deutsch
+                            </div>
+                            <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="fr">
+                                <img src="https://flagcdn.com/w40/fr.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> Français
+                            </div>
+                            <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm border-b border-gray-50" data-lang="zh">
+                                <img src="https://flagcdn.com/w40/cn.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> 中文
+                            </div>
+                            <div class="lang-option flex items-center gap-4 px-5 py-3 hover:bg-green-50 cursor-pointer text-blue-950 font-bold text-sm" data-lang="ar">
+                                <img src="https://flagcdn.com/w40/sa.png" class="w-6 h-4 object-cover rounded-sm shadow-sm"> العربية
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -152,8 +163,9 @@ const headerHTML = `
         </div>
 
         <div class="border-b-4 border-green-600 bg-white">
-            <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-flex h-24 relative w-full gap-2">
+            <!-- Made w-full to fit screen and reduced lg padding to px-4 -->
+            <div class="w-full px-4 sm:px-6 lg:px-4">
+                <div class="flex justify-between items-center h-24 relative w-full gap-2">
                     
                  <div class="flex items-center justify-start pl-0.5 z-10">
                     <a href="index.html" class="flex items-center gap-[10px] cursor-pointer group">
@@ -347,12 +359,13 @@ window.addEventListener('DOMContentLoaded', () => {
     footer.className = 'bg-brand-dark text-white pt-16 pb-8 border-t border-white/10';
     
     footer.innerHTML = `
-        <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-full mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Main Footer Content -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+            <div class="grid grid-cols-2 lg:grid-cols-5 gap-x-4 gap-y-10 sm:gap-10 mb-12">
                 
                 <!-- About Reach Global -->
-                <div>
+                <!-- Spans full width on mobile, 1 column on large screens -->
+                <div class="col-span-2 lg:col-span-1">
                     <h4 class="text-lg font-bold mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-globe text-brand-green"></i>
                         <span>Reach Global</span>
@@ -369,70 +382,119 @@ window.addEventListener('DOMContentLoaded', () => {
                 </div>
 
                 <!-- Quick Links -->
-                <div>
+                <!-- Spans 1 column (50% width on mobile) -->
+                <div class="col-span-1">
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-3 text-sm">
                         <li><a href="index.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Home</a></li>
                         <li><a href="about.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>About Us</a></li>
-                        <li><a href="services.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Our Services</a></li>
-                        <li><a href="cases.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Gallery</a></li>
-                        <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Volunter Hub</a></li>
-                         <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Blog</a></li>
-                          <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Journals & Publicity</a></li>
-                           <li><a href="insights.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>News & Updates</a></li>
+                        <li><a href="service.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Our Services</a></li>
+                        <li><a href="gallery.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Gallery</a></li>
+                        <li><a href="volunter.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Volunteer Hub</a></li>
+                        <li><a href="blog.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Blog</a></li>
+                        <li><a href="publicity.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>Journals & Publicity</a></li>
+                        <li><a href="news.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>News & Updates</a></li>
                     </ul>
                 </div>
 
                 <!-- Related Links -->
-                <div>
+                <!-- Spans 1 column (50% width on mobile) -->
+                <div class="col-span-1">
                     <h4 class="text-lg font-bold mb-4">Related Links</h4>
                     <ul class="space-y-3 text-sm">
-                        <li><a href="blog.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>BRELA</a></li>
-                        <li><a href="careers.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>TRA</a></li>
-                        <li><a href="volunteer.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>ECA</a></li>
-                        <li><a href="privacy.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>others</a></li>
-                        <li><a href="terms.html" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>others</a></li>
+                        <li><a href="https://bos.brela.go.tz/" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>BRELA</a></li>
+                        <li><a href="https://www.tra.go.tz/#e-service" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>TRA</a></li>
+                        <li><a href="https://www.eac.int/" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>ECA</a></li>
+                        <li><a href="https://tausi.tamisemi.go.tz/#/welcome" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>TAUSI</a></li>
+                        <li><a href="https://www.bot.go.tz" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>BOT</a></li>
+                        <li><a href="https://www.tic.go.tz/welcome" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>TIC</a></li>
+                        <li><a href="https://www.nbaa.go.tz/" class="text-blue-100/70 hover:text-brand-green transition-colors flex items-center gap-2"><i class="fa-solid fa-chevron-right text-[10px] text-brand-green"></i>NBA</a></li>
                     </ul>
+                </div>
+
+                <!-- Follow Us -->
+                <!-- Changed to col-span-1 so it sits side-by-side with Contact Us on mobile -->
+                <div class="col-span-1">
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex flex-col gap-3">
+                        <a href="https://www.instagram.com/reachglobal" target="_blank" class="group flex items-center gap-3 w-fit">
+                            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-brand-green group-hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></span>
+                            <span class="text-sm text-blue-100/70 group-hover:text-brand-green transition-colors">Instagram</span>
+                        </a>
+                        <a href="https://www.tiktok.com/@reachglobal" target="_blank" class="group flex items-center gap-3 w-fit">
+                            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-brand-green group-hover:text-white transition-all"><i class="fa-brands fa-tiktok"></i></span>
+                            <span class="text-sm text-blue-100/70 group-hover:text-brand-green transition-colors">TikTok</span>
+                        </a>
+                        <a href="https://www.linkedin.com/company/reachglobal" target="_blank" class="group flex items-center gap-3 w-fit">
+                            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-brand-green group-hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></span>
+                            <span class="text-sm text-blue-100/70 group-hover:text-brand-green transition-colors">LinkedIn</span>
+                        </a>
+                        <a href="https://www.facebook.com/reachglobal" target="_blank" class="group flex items-center gap-3 w-fit">
+                            <span class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 group-hover:bg-brand-green group-hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></span>
+                            <span class="text-sm text-blue-100/70 group-hover:text-brand-green transition-colors">Facebook</span>
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Contact Us -->
-                <div>
+                <!-- Changed to col-span-1 so it sits side-by-side with Follow Us on mobile -->
+              <div class="col-span-1">
                     <h4 class="text-lg font-bold mb-4">Contact Us</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-start gap-3">
-                            <i class="fa-solid fa-location-dot text-brand-green mt-1"></i>
-                            <span class="text-blue-100/70">Mbezi Beach, Dar es Salaam<br>Tanzania</span>
+                    <ul class="space-y-3 text-sm lg:mb-8">
+                        <li class="flex items-start gap-2 sm:gap-3">
+                            <i class="fa-solid fa-location-dot text-brand-green mt-1 flex-shrink-0"></i>
+                            <span class="text-blue-100/70">A.I.C.C Arusha Tanzania</span>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-phone text-brand-green"></i>
-                            <a href="tel:+255123456789" class="text-blue-100/70 hover:text-brand-green transition">+255 123 456 789</a>
+                        
+                        <li class="flex items-center gap-2 sm:gap-3">
+                            <i class="fa-solid fa-phone text-brand-green flex-shrink-0"></i>
+                            <a href="tel:+255752761705" class="text-blue-100/70 hover:text-brand-green transition break-words">+255 752 761 705</a>
                         </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fa-solid fa-envelope text-brand-green"></i>
-                            <a href="mailto:hello@reachglobal.co.tz" class="text-blue-100/70 hover:text-brand-green transition">hello@reachglobal.co.tz</a>
+
+                        <!-- WhatsApp Integration Added Here -->
+                        <li class="flex items-center gap-2 sm:gap-3">
+                            <i class="fa-brands fa-whatsapp text-brand-green flex-shrink-0 text-lg"></i>
+                            <a href="https://wa.me/255752761705" target="_blank" rel="noopener noreferrer" class="text-blue-100/70 hover:text-brand-green transition break-words">
+                                WhatsApp Us
+                            </a>
+                        </li>
+
+                        <li class="flex items-center gap-2 sm:gap-3">
+                            <i class="fa-solid fa-envelope text-brand-green flex-shrink-0"></i>
+                            <a href="mailto:info@reachglobal.co.tz" class="text-blue-100/70 hover:text-brand-green transition break-all">info@reachglobal.co.tz</a>
                         </li>
                     </ul>
-                    
-                    <!-- Social Icons -->
-                    <div class="flex gap-4 mt-6">
-                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-brand-green hover:text-white transition-all"><i class="fa-brands fa-linkedin-in"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-brand-green hover:text-white transition-all"><i class="fa-brands fa-x-twitter"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-brand-green hover:text-white transition-all"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white/70 hover:bg-brand-green hover:text-white transition-all"><i class="fa-brands fa-instagram"></i></a>
-                    </div>
                 </div>
+                                
             </div>
 
             <!-- Bottom Bar -->
-            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-blue-100/50 text-xs order-2 md:order-1">
-                    &copy; ${new Date().getFullYear()} Reach Global Consultant Company. All rights reserved.
-                </p>
-                <div class="flex items-center gap-4 text-xs order-1 md:order-2">
-                    <a href="privacy.html" class="text-blue-100/50 hover:text-brand-green transition">Privacy Policy</a>
-                    <a href="terms.html" class="text-blue-100/50 hover:text-brand-green transition">Terms of Service</a>
-                    <a href="faq.html" class="text-blue-100/50 hover:text-brand-green transition">FAQ</a>
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 md:gap-0">
+                
+                <!-- Left: Copyright -->
+                <div class="w-full md:w-1/3 flex justify-center md:justify-start order-3 md:order-1">
+                    <p class="text-white text-xs text-center md:text-left">
+                        &copy; ${new Date().getFullYear()} Reach Global. All rights reserved.
+                    </p>
                 </div>
+
+                <!-- Center: Legal Links -->
+                <div class="w-full md:w-1/3 flex justify-center items-center gap-3 text-xs order-1 md:order-2">
+                    <a href="privacy.html" class="text-white hover:text-brand-green transition">Privacy Policy</a>
+                    <span class="text-white/20">|</span>
+                    <a href="terms.html" class="text-white hover:text-brand-green transition">Terms of Service</a>
+                    <span class="text-white/20">|</span>
+                    <a href="faq.html" class="text-white hover:text-brand-green transition">FAQ</a>
+                </div>
+
+                <!-- Right: Powered By -->
+                <div class="w-full md:w-1/3 flex justify-center md:justify-end order-2 md:order-3">
+                    <p class="text-yellow-400 text-xs flex items-center gap-1">
+                        Powered by 
+                        <a href="https://africanatech.com" target="_blank" class="text-white hover:text-brand-green font-bold transition">Africana Tech</a>
+                    </p>
+                </div>
+
             </div>
         </div>
     `;

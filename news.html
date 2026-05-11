@@ -60,486 +60,651 @@
 
     <div id="header-container"></div>
 
-    <section class="relative pt-28 pb-16 md:py-28 mt-20 md:mt-24 bg-brand-blue overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
-        <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-green/20 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-brand-blue/80 to-transparent"></div>
-        
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-10 md:gap-12 items-center text-center md:text-left">
-                <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 md:mb-6">
-                        <span class="w-2 h-2 rounded-full bg-brand-gold animate-pulse"></span>
-                        <span class="text-brand-gold text-[10px] md:text-xs font-bold uppercase tracking-widest">Featured Story</span>
-                    </div>
-                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-4">
-                        Reach Global <br class="hidden md:block">
-                        <span class="text-brand-green italic font-serif">in the News</span>
-                    </h1>
-                    <p class="text-blue-100/80 text-sm md:text-lg mb-6 md:mb-8 leading-relaxed max-w-lg mx-auto md:mx-0">
-                        From corporate milestones to community impact — stay informed with the latest updates from our consulting practice and Volunteer Hub.
-                    </p>
-                    <div class="flex flex-row flex-wrap justify-center md:justify-start gap-3">
-                        <a href="#latest" class="flex-1 md:flex-none flex justify-center bg-brand-green text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition items-center gap-2 text-xs md:text-base whitespace-nowrap"><i class="fa-regular fa-newspaper"></i> Latest Updates</a>
-                        <a href="#impact" class="flex-1 md:flex-none flex justify-center border border-white/30 text-white px-4 py-3 md:px-6 md:py-3 rounded-xl font-bold hover:bg-white/10 transition items-center gap-2 text-xs md:text-base whitespace-nowrap"><i class="fa-regular fa-heart"></i> Impact Stories</a>
-                    </div>
-                </div>
-                <div class="bg-white/5 backdrop-blur-md rounded-2xl md:rounded-3xl p-5 md:p-6 border border-white/10 text-left">
-                    <div class="relative rounded-xl md:rounded-2xl overflow-hidden mb-4 md:mb-5">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Team meeting" class="w-full h-40 md:h-56 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-blue/60 to-transparent"></div>
-                        <span class="absolute bottom-3 left-3 bg-brand-green text-white text-[10px] md:text-xs font-bold px-3 py-1 rounded-full">EXCLUSIVE</span>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold text-white mb-2 leading-snug">Reach Global Expands Volunteer Hub, Doubles Community Impact in Q1 2026</h3>
-                    <p class="text-blue-100/60 text-xs md:text-sm mb-4 line-clamp-2 md:line-clamp-none">Through strategic partnerships and verified case management, our Volunteer Hub has transformed over 340 lives this year alone.</p>
-                    <a href="#" class="text-brand-green font-bold text-xs md:text-sm flex items-center gap-1 hover:gap-2 transition-all">Read full story <i class="fa-regular fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-24 mt-16 md:mt-24 bg-[#0A2540] overflow-hidden isolate border-b border-white/10">
+    
+    <!-- Subtle Background Pattern (Light Dot Grid for dark background) -->
+    <div class="absolute inset-0 opacity-[0.05] pointer-events-none -z-10" 
+         style="background-image: radial-gradient(rgba(255,255,255,0.8) 2px, transparent 2px); background-size: 30px 30px;">
+    </div>
 
-    <section id="latest" class="py-16 md:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 md:mb-12 gap-4">
-                <div>
-                    <span class="text-brand-green text-[10px] md:text-xs font-bold uppercase tracking-widest bg-brand-green/10 px-3 py-1.5 rounded-full">Newsroom</span>
-                    <h2 class="text-3xl md:text-4xl font-black text-brand-blue mt-3 md:mt-4">Latest Updates</h2>
-                </div>
-                <div class="flex flex-row overflow-x-auto scrollbar-hide gap-2 pb-2 md:pb-0 w-full md:w-auto">
-                    <button class="filter-btn active flex-shrink-0 bg-brand-blue text-white px-4 py-2 rounded-full text-xs md:text-sm font-medium transition" data-filter="all">All</button>
-                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="consulting">Consulting</button>
-                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="volunteer">Volunteer Hub</button>
-                    <button class="filter-btn flex-shrink-0 bg-gray-100 text-brand-blue px-4 py-2 rounded-full text-xs md:text-sm font-medium hover:bg-gray-200 transition" data-filter="events">Events</button>
-                </div>
-            </div>
+    <!-- Decorative Top Accent Line -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#16a34a] via-[#FCEE21] to-[#0A2540]"></div>
 
-            <div class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide pb-6 md:pb-0" id="news-grid">
+    <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center text-center md:text-left">
+            
+            <!-- Left Column: Text & CTAs (Inverted for Dark Background) -->
+            <div class="flex flex-col justify-center">
                 
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="consulting">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-blue-100 text-brand-blue">Consulting</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 2 days ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">New Tax Advisory Division Launched</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global introduces specialized tax advisory to help multinationals navigate TRA reforms.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
+                <!-- Premium News Tag -->
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/10 shadow-sm mb-6 mx-auto md:mx-0 w-fit">
+                    <span class="w-2 h-2 rounded-full bg-[#16a34a] animate-pulse shadow-[0_0_8px_#16a34a]"></span>
+                    <span class="text-white text-[10px] md:text-xs font-bold uppercase tracking-widest">News & Media</span>
                 </div>
-
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="volunteer">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-brand-green/10 text-brand-green">Volunteer Hub</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 5 days ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Amani James: Fully Funded for School!</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Thanks to 14 donors, Amani's tuition and living expenses are covered for the entire year.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read impact story →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
-                </div>
-
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="events">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-amber-100 text-amber-700">Event</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 1 week ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Webinar: TRA Digital Tax Compliance</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Join our free webinar on April 28 to master the new e‑filing system.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Register →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
-                </div>
-
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="volunteer">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-brand-green/10 text-brand-green">Volunteer Hub</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 2 weeks ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Mwakila Family Poultry Farm Restocked</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Micro‑financing campaign successfully funded; family now self‑sustaining.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
-                </div>
-
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="consulting">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-blue-100 text-brand-blue">Consulting</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 3 weeks ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">500th Audit Milestone Achieved</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global completes 500 successful audits with 100% compliance rate.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">Read more →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
-                </div>
-
-                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl p-5 md:p-6 shadow-sm" data-category="events">
-                    <div class="flex items-center gap-3 mb-3 md:mb-4">
-                        <span class="category-badge bg-amber-100 text-amber-700">Event</span>
-                        <span class="text-[10px] md:text-xs text-gray-400"><i class="fa-regular fa-clock mr-1"></i> 1 month ago</span>
-                    </div>
-                    <h3 class="text-base md:text-lg font-bold text-brand-blue mb-2">Dar Business Mixer – Recap & Photos</h3>
-                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Over 80 entrepreneurs and investors connected at our flagship networking event.</p>
-                    <div class="flex items-center justify-between mt-auto">
-                        <a href="#" class="text-brand-green font-medium text-xs md:text-sm">View gallery →</a>
-                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-brand-green"></i>
-                    </div>
+                
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-black text-white leading-[1.05] mb-6 tracking-tight drop-shadow-lg">
+                    Reach Global <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] to-[#FCEE21] italic font-serif">in the News.</span>
+                </h1>
+                
+                <p class="text-white/80 text-base md:text-lg lg:text-xl mb-8 leading-relaxed max-w-lg mx-auto md:mx-0 font-normal">
+                    From corporate milestones to community impact — stay informed with the latest updates from our consulting practice and Volunteer Hub.
+                </p>
+                
+                <!-- Call to Action Buttons (Fixed to stay horizontal on mobile) -->
+                <div class="flex flex-row justify-center md:justify-start gap-2 sm:gap-4 w-full">
+                    <a href="#latest" class="flex-1 sm:flex-none flex justify-center items-center gap-1.5 sm:gap-3 bg-[#16a34a] text-white px-2 py-3 sm:px-8 sm:py-4 rounded-xl font-bold shadow-[0_0_20px_rgba(22,163,74,0.3)] hover:bg-white hover:text-[#0A2540] transition-all duration-300 text-[11px] sm:text-sm md:text-base group whitespace-nowrap">
+                        Latest Updates 
+                        <i class="fa-regular fa-newspaper transform group-hover:scale-110 transition-transform"></i>
+                    </a>
+                    <a href="#impact" class="flex-1 sm:flex-none flex justify-center items-center gap-1.5 sm:gap-3 bg-white/5 backdrop-blur-md border border-white/20 text-white px-2 py-3 sm:px-8 sm:py-4 rounded-xl font-bold hover:bg-white hover:text-[#0A2540] transition-all duration-300 text-[11px] sm:text-sm md:text-base group whitespace-nowrap">
+                        Impact Stories 
+                        <i class="fa-regular fa-heart text-[#16a34a] group-hover:text-[#0A2540] transform group-hover:scale-110 transition-transform"></i>
+                    </a>
                 </div>
             </div>
 
-            <div class="flex justify-center items-center gap-2 mt-2 md:hidden" id="news-dots">
-                <button class="w-6 h-2 rounded-full bg-brand-green transition-all duration-300"></button>
-                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
-                <button class="w-2 h-2 rounded-full bg-gray-300 transition-all duration-300"></button>
+            <!-- Right Column: Premium Featured Card -->
+            <div class="relative w-full flex justify-center lg:justify-end mt-8 lg:mt-0">
+                
+                <!-- Decorative background element for the card (Updated to glow on dark bg) -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[520px] h-[105%] bg-gradient-to-br from-[#16a34a]/30 to-transparent rounded-[40px] -z-10 rotate-3 blur-sm border border-white/5"></div>
+
+                <!-- The White Card (Stays white to create high contrast) -->
+                <div class="bg-white rounded-3xl p-5 md:p-6 shadow-2xl border border-gray-100 text-left w-full max-w-[500px] transform transition-transform hover:-translate-y-2 duration-500">
+                    
+                    <!-- Card Image -->
+                    <div class="relative rounded-2xl overflow-hidden mb-5">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" 
+                             alt="Team meeting" 
+                             class="w-full h-48 md:h-64 object-cover transform hover:scale-105 transition-transform duration-700">
+                        <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-md text-[#0A2540] text-[10px] md:text-xs font-black px-4 py-1.5 rounded-full uppercase tracking-wider shadow-sm">
+                            Featured
+                        </span>
+                    </div>
+                    
+                    <!-- Card Content -->
+                    <h3 class="text-xl md:text-2xl font-black text-[#0A2540] mb-3 leading-snug hover:text-[#16a34a] transition-colors cursor-pointer">
+                        Reach Global Expands Volunteer Hub, Doubles Community Impact in Q1 2026
+                    </h3>
+                    
+                    <p class="text-gray-500 text-sm md:text-base mb-6 line-clamp-2 md:line-clamp-none leading-relaxed">
+                        Through strategic partnerships and verified case management, our Volunteer Hub has transformed over 340 lives this year alone.
+                    </p>
+                    
+                    <!-- Card Footer -->
+                    <div class="pt-5 border-t border-gray-100 flex items-center justify-between">
+                        <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">May 11, 2026</span>
+                        <a href="#" class="text-[#16a34a] font-bold text-sm flex items-center gap-2 group">
+                            Read full story <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                    
+                </div>
             </div>
 
-            <div class="text-center mt-8 md:mt-10">
-                <button id="load-more-news" class="border border-gray-300 text-brand-blue px-6 md:px-8 py-3 rounded-full text-sm md:text-base font-medium hover:border-brand-green transition">Load more updates</button>
-            </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section id="impact" class="py-16 md:py-28 bg-brand-blue relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-            <div class="text-center mb-10 md:mb-16">
-                <span class="text-brand-gold text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/10 px-4 py-1.5 rounded-full">Making a Difference</span>
-                <h2 class="text-3xl md:text-5xl font-black text-white mt-4 md:mt-5">Impact by the Numbers</h2>
+<section id="latest" class="py-16 md:py-28 bg-white overflow-hidden">
+    <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 relative">
+        
+        <!-- Header & Filters -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 md:mb-12 gap-6">
+            <div>
+                <!-- Newsroom Tag -->
+                <div class="inline-flex items-center gap-2 bg-[#16a34a]/10 px-3 py-1.5 rounded-full mb-3 w-fit">
+                    <span class="w-1.5 h-1.5 rounded-full bg-[#16a34a] animate-pulse"></span>
+                    <span class="text-[#16a34a] text-[10px] md:text-xs font-bold uppercase tracking-widest">Newsroom</span>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-black text-[#0A2540] mt-1">Latest Updates</h2>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6 text-center mb-12 md:mb-20">
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
-                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="342">0</span>
-                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Lives Transformed</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
-                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="18">0</span>
-                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Active Cases</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
-                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="500">0</span>
-                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Audits Done</p>
-                </div>
-                <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-4 md:p-6 border border-white/10">
-                    <span class="text-3xl md:text-5xl font-black text-brand-green stat-number" data-target="12">0</span>
-                    <p class="text-blue-100/60 text-[10px] md:text-sm uppercase tracking-wider mt-1 md:mt-2">Awards</p>
-                </div>
-            </div>
-
-            <div class="bg-transparent md:bg-white/5 backdrop-blur-sm rounded-3xl md:p-8 border-none md:border border-white/10">
-                <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3"><i class="fa-regular fa-timeline text-brand-green"></i> Recent Milestones</h3>
-                
-                <div id="milestones-carousel" class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-4 md:gap-6 pb-4 md:pb-0">
-                    
-                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-calendar"></i></div>
-                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">MAR 2026</span><h4 class="text-white font-bold text-base md:text-lg">Awarded Top Consultant 2026</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Tanzania Business Awards recognition.</p></div>
-                    </div>
-                    
-                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-hand-holding-heart"></i></div>
-                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">FEB 2026</span><h4 class="text-white font-bold text-base md:text-lg">Volunteer Hub surpasses 300 lives</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Milestone reached through verified case support.</p></div>
-                    </div>
-                    
-                    <div class="flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto snap-center flex flex-col md:flex-row gap-3 md:gap-5 bg-white/5 md:bg-transparent p-5 md:p-0 rounded-2xl md:rounded-none border border-white/10 md:border-none text-left">
-                        <div class="w-10 h-10 md:w-12 md:h-12 bg-brand-green/20 rounded-xl flex items-center justify-center text-brand-green flex-shrink-0"><i class="fa-regular fa-building"></i></div>
-                        <div><span class="text-brand-gold text-[10px] md:text-xs font-bold">JAN 2026</span><h4 class="text-white font-bold text-base md:text-lg">Arusha office opened</h4><p class="text-blue-100/60 text-xs md:text-sm mt-1">Expanded regional footprint.</p></div>
-                    </div>
-                </div>
+            <!-- Filter Buttons -->
+            <div class="flex flex-row overflow-x-auto scrollbar-hide gap-2 pb-2 md:pb-0 w-full md:w-auto">
+                <button class="filter-btn flex-shrink-0 bg-[#16a34a] text-white px-5 py-2.5 rounded-full text-xs md:text-sm font-bold transition-all" data-filter="all">All</button>
+                <button class="filter-btn flex-shrink-0 bg-gray-100 text-[#0A2540] px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:bg-[#16a34a] hover:text-white transition-all" data-filter="consulting">Consulting</button>
+                <button class="filter-btn flex-shrink-0 bg-gray-100 text-[#0A2540] px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:bg-[#16a34a] hover:text-white transition-all" data-filter="volunteer">Volunteer Hub</button>
+                <button class="filter-btn flex-shrink-0 bg-gray-100 text-[#0A2540] px-5 py-2.5 rounded-full text-xs md:text-sm font-bold hover:bg-[#16a34a] hover:text-white transition-all" data-filter="events">Events</button>
             </div>
         </div>
-    </section>
 
-    <section class="py-16 md:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <!-- Snap Carousel (Mobile) / Grid Layout (Desktop) -->
+        <div class="relative w-full">
+            <!-- Added md:grid, md:grid-cols-2, lg:grid-cols-3 and md:overflow-visible -->
+            <div id="news-slider" class="flex md:grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide pb-6 pt-2 scroll-smooth">
                 
-                <div>
-                    <div class="flex items-center gap-3 mb-6 md:mb-8">
-                        <div class="w-8 h-8 md:w-10 md:h-10 bg-brand-green/10 rounded-xl flex items-center justify-center"><i class="fa-regular fa-calendar-check text-brand-green"></i></div>
-                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Upcoming Events</h2>
+                <!-- Card 1 -->
+                <!-- Changed md:w-[380px] to md:w-auto -->
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center sm:snap-start bg-white rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 transition-transform" data-category="consulting">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="bg-blue-100 text-[#0A2540] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Consulting</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> 2 days ago</span>
                     </div>
-                    <div class="space-y-3 md:space-y-4">
-                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">APR</span><span class="block text-xl md:text-2xl font-black text-brand-blue">28</span></div>
-                            <div><span class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded-full">Webinar</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">TRA Digital Tax Compliance</h4><p class="text-gray-500 text-[11px] md:text-sm">11:00 AM EAT · Free</p></div>
-                        </div>
-                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">MAY</span><span class="block text-xl md:text-2xl font-black text-brand-blue">15</span></div>
-                            <div><span class="text-[10px] bg-blue-100 text-brand-blue px-2 py-0.5 rounded-full">In‑Person</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">Dar Business Mixer</h4><p class="text-gray-500 text-[11px] md:text-sm">6:00 PM · Serena Hotel</p></div>
-                        </div>
-                        <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100">
-                            <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm"><span class="block text-[10px] md:text-xs font-bold text-brand-green">MAY</span><span class="block text-xl md:text-2xl font-black text-brand-blue">22</span></div>
-                            <div><span class="text-[10px] bg-brand-green/10 text-brand-green px-2 py-0.5 rounded-full">Workshop</span><h4 class="font-bold text-brand-blue text-sm md:text-base mt-1">Financial Modeling Masterclass</h4><p class="text-gray-500 text-[11px] md:text-sm">9:00 AM · Virtual</p></div>
-                        </div>
+                    <h3 class="text-base md:text-lg font-bold text-[#0A2540] mb-2 leading-snug">New Tax Advisory Division Launched</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global introduces specialized tax advisory to help multinationals navigate TRA reforms.</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-gray-50 pt-4">
+                        <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm flex items-center gap-1 group">Read more <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i></a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-[#16a34a] cursor-pointer transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center sm:snap-start bg-white rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 transition-transform" data-category="volunteer">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="bg-[#16a34a]/10 text-[#16a34a] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Volunteer Hub</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> 5 days ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-[#0A2540] mb-2 leading-snug">Amani James: Fully Funded for School!</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Thanks to 14 donors, Amani's tuition and living expenses are covered for the entire year.</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-gray-50 pt-4">
+                        <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm flex items-center gap-1 group">Read impact story <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i></a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-[#16a34a] cursor-pointer transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center sm:snap-start bg-white rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 transition-transform" data-category="events">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Event</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> 1 week ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-[#0A2540] mb-2 leading-snug">Webinar: TRA Digital Tax Compliance</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Join our free webinar on April 28 to master the new e‑filing system.</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-gray-50 pt-4">
+                        <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm flex items-center gap-1 group">Register <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i></a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-[#16a34a] cursor-pointer transition-colors"></i>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center sm:snap-start bg-white rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 transition-transform" data-category="volunteer">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="bg-[#16a34a]/10 text-[#16a34a] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Volunteer Hub</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> 2 weeks ago</span>
+                    </div>
+                    <h3 class="text-base md:text-lg font-bold text-[#0A2540] mb-2 leading-snug">Poultry Farm Restocked</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Micro‑financing campaign successfully funded; family now self‑sustaining.</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-gray-50 pt-4">
+                        <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm flex items-center gap-1 group">Read more <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i></a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-[#16a34a] cursor-pointer transition-colors"></i>
                     </div>
                 </div>
                 
-                <div class="mt-4 md:mt-0 overflow-hidden">
-                    <div class="flex items-center gap-3 mb-6 md:mb-8">
-                        <div class="w-8 h-8 md:w-10 md:h-10 bg-brand-blue/5 rounded-xl flex items-center justify-center"><i class="fa-regular fa-newspaper text-brand-blue"></i></div>
-                        <h2 class="text-2xl md:text-3xl font-black text-brand-blue">Press & Media</h2>
+                <!-- Card 5 -->
+                <div class="news-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center sm:snap-start bg-white rounded-2xl p-5 md:p-6 shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 hover:-translate-y-1 transition-transform" data-category="consulting">
+                    <div class="flex items-center gap-3 mb-3 md:mb-4">
+                        <span class="bg-blue-100 text-[#0A2540] px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider">Consulting</span>
+                        <span class="text-[10px] md:text-xs text-gray-400 font-medium"><i class="fa-regular fa-clock mr-1"></i> 3 weeks ago</span>
                     </div>
-                    
-                    <div class="relative w-full overflow-hidden" id="press-ticker-wrapper">
-                        <div id="press-carousel" class="flex flex-row md:flex-col gap-3 md:gap-0 pb-4 md:pb-0 bg-transparent md:bg-gray-50 rounded-none md:rounded-2xl md:divide-y border-none md:border border-gray-100 w-max md:w-auto">
-                            
-                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Daily News · Jan 2026</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Victor Lekule on the future of tax compliance"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-                            <div class="press-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Tanzania Business · Dec 2025</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Volunteer Hub transforms community giving"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-                            
-                            <div class="press-item cloned-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition md:hidden">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">Financial Times · Mar 2026</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"Reach Global's audit methodology sets new standard"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-                            <div class="press-item cloned-item flex-shrink-0 w-[75vw] sm:w-[300px] md:w-auto p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition md:hidden">
-                                <span class="text-[10px] md:text-xs text-gray-400 block mb-1">The Citizen · Feb 2026</span>
-                                <h4 class="font-bold text-brand-blue text-sm md:text-base">"How local consultancy is driving global investment"</h4>
-                                <a href="#" class="text-brand-green text-xs md:text-sm mt-2 inline-block">Read article →</a>
-                            </div>
-
-                        </div>
-                    </div>
-                    
-                    <div class="mt-4 md:mt-6 p-4 md:p-5 bg-brand-blue/5 rounded-2xl">
-                        <p class="text-xs md:text-sm"><i class="fa-regular fa-envelope text-brand-green mr-2"></i> Media inquiries: <a href="mailto:press@reachglobal.co.tz" class="text-brand-green font-bold">press@reachglobal.co.tz</a></p>
+                    <h3 class="text-base md:text-lg font-bold text-[#0A2540] mb-2 leading-snug">500th Audit Milestone Achieved</h3>
+                    <p class="text-gray-500 text-xs md:text-sm mb-4 line-clamp-2">Reach Global completes 500 successful audits with an immaculate compliance rate.</p>
+                    <div class="flex items-center justify-between mt-auto border-t border-gray-50 pt-4">
+                        <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm flex items-center gap-1 group">Read more <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i></a>
+                        <i class="fa-regular fa-bookmark text-gray-300 hover:text-[#16a34a] cursor-pointer transition-colors"></i>
                     </div>
                 </div>
+
             </div>
+            
+            <!-- Fade gradients for edge of screen (Hidden on Desktop) -->
+            <div class="absolute top-0 left-0 h-full w-4 sm:w-8 bg-gradient-to-r from-white to-transparent pointer-events-none z-10 md:hidden"></div>
+            <div class="absolute top-0 right-0 h-full w-4 sm:w-8 bg-gradient-to-l from-white to-transparent pointer-events-none z-10 md:hidden"></div>
         </div>
-    </section>
 
-    <section class="py-12 md:py-16 bg-gray-50 border-t border-gray-200">
-        <div class="max-w-3xl mx-auto text-center px-4">
-            <h3 class="text-xl md:text-3xl font-black text-brand-blue mb-2 md:mb-3">Never miss an update</h3>
-            <p class="text-gray-500 text-sm md:text-base mb-6 md:mb-8">Subscribe for the latest news, impact stories, and event invitations.</p>
-            <form class="flex flex-col sm:flex-row gap-3">
-                <input type="email" placeholder="Your email address" class="flex-1 border border-gray-300 rounded-xl px-4 md:px-5 py-3 md:py-4 text-sm focus:border-brand-green outline-none">
-                <button class="bg-brand-green text-white px-6 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-brand-blue transition text-sm md:text-base">Subscribe</button>
-            </form>
+        <!-- Dynamic Dots Container (Hidden on Desktop) -->
+        <div class="flex md:hidden justify-center items-center gap-2 mt-4" id="slider-dots">
+            <!-- JavaScript will populate dots here -->
         </div>
-    </section>
+
+        <div class="text-center mt-8 md:mt-12">
+            <button class="border-2 border-gray-200 text-[#0A2540] px-8 py-3 rounded-full text-sm font-bold hover:border-[#16a34a] hover:text-[#16a34a] transition-colors shadow-sm">View Full Newsroom</button>
+        </div>
+    </div>
+
+    <style>
+        /* Hide scrollbar but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
 
     <script>
-        // --- News Filter Logic ---
-        const filterBtns = document.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('[data-category]');
-        
-        filterBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                // Update active state
-                filterBtns.forEach(b => { 
-                    b.classList.remove('active', 'bg-brand-blue', 'text-white'); 
-                    b.classList.add('bg-gray-100', 'text-brand-blue'); 
-                });
-                btn.classList.add('active', 'bg-brand-blue', 'text-white');
-                btn.classList.remove('bg-gray-100', 'text-brand-blue');
-                
-                // Filter cards using Tailwind hidden class to preserve flex properties
-                const filter = btn.dataset.filter;
-                cards.forEach(card => {
-                    if (filter === 'all' || card.dataset.category === filter) {
-                        card.classList.remove('hidden');
-                    } else {
-                        card.classList.add('hidden');
-                    }
-                });
-            });
-        });
-
-        // --- Robust Animated Horizontal Carousel Logic (Mobile Only) ---
-        function setupAnimatedCarousel(carouselId, dotsContainerId = null) {
-            const carousel = document.getElementById(carouselId);
-            if (!carousel) return;
+        document.addEventListener("DOMContentLoaded", () => {
+            const slider = document.getElementById('news-slider');
+            const dotsContainer = document.getElementById('slider-dots');
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const allCards = Array.from(document.querySelectorAll('.news-card'));
             
-            const dots = dotsContainerId ? document.querySelectorAll(`#${dotsContainerId} button`) : [];
-            let autoPlayInterval;
-            let isUserInteracting = false;
+            let visibleCards = allCards;
 
-            // Sync dots on swipe
-            carousel.addEventListener('scroll', () => {
-                if (window.innerWidth >= 768 || dots.length === 0) return;
-                
-                const firstCard = carousel.firstElementChild;
-                const cardWidth = firstCard ? firstCard.offsetWidth : carousel.offsetWidth;
-                let activeIndex = Math.round(carousel.scrollLeft / cardWidth);
-                
-                dots.forEach((dot, index) => {
-                    dot.className = index === activeIndex 
-                        ? 'w-6 h-2 rounded-full bg-brand-green transition-all duration-300' 
-                        : 'w-2 h-2 rounded-full bg-gray-300 transition-all duration-300';
-                });
-            });
-
-            // Click dots to navigate
-            if (dots.length > 0) {
-                dots.forEach((dot, index) => {
+            // 1. Build and Update Dots (Mobile Only)
+            function renderDots() {
+                dotsContainer.innerHTML = '';
+                visibleCards.forEach((card, index) => {
+                    const dot = document.createElement('button');
+                    // Give active dot the brand-green color and wide shape
+                    dot.className = index === 0 
+                        ? 'transition-all duration-300 rounded-full h-2 w-6 bg-[#16a34a]' 
+                        : 'transition-all duration-300 rounded-full h-2 w-2 bg-gray-300';
+                    
                     dot.addEventListener('click', () => {
-                        const firstCard = carousel.firstElementChild;
-                        const cardWidth = firstCard ? firstCard.offsetWidth : carousel.offsetWidth;
-                        carousel.scrollTo({ left: cardWidth * index, behavior: 'smooth' });
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
                     });
+                    dotsContainer.appendChild(dot);
                 });
             }
 
-            // The Autoplay Animation (Animates right to left continuously)
-            const startAutoPlay = () => {
-                autoPlayInterval = setInterval(() => {
-                    if (window.innerWidth >= 768 || isUserInteracting) return; // Only animate on mobile
-                    
-                    // Calculate if we have reached the end of the scrollable container
-                    const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                    
-                    // If we hit the end, smoothly rewind to the start
-                    if (carousel.scrollLeft >= maxScroll - 10) {
-                        carousel.scrollTo({ left: 0, behavior: 'smooth' }); 
+            // 2. Track Scroll to Update Active Dot
+            slider.addEventListener('scroll', () => {
+                if (visibleCards.length === 0 || window.innerWidth >= 768) return; // Ignore on desktop
+                
+                const scrollLeft = slider.scrollLeft;
+                const cardWidth = visibleCards[0].offsetWidth;
+                // Add gap calculation to index matching
+                const index = Math.round(scrollLeft / (cardWidth + 16)); 
+                
+                const dots = dotsContainer.children;
+                if(dots.length === 0) return;
+                
+                Array.from(dots).forEach((dot, i) => {
+                    if(i === index) {
+                        dot.className = 'transition-all duration-300 rounded-full h-2 w-6 bg-[#16a34a]';
                     } else {
-                        // Smoothly scroll right by one card width
-                        const firstCard = carousel.firstElementChild;
-                        const pushAmount = firstCard ? firstCard.offsetWidth : 300;
-                        carousel.scrollBy({ left: pushAmount, behavior: 'smooth' });
+                        dot.className = 'transition-all duration-300 rounded-full h-2 w-2 bg-gray-300 hover:bg-gray-400';
                     }
-                }, 2500); // Triggers every 2.5 seconds for a dynamic feel
-            };
-
-            // Pause animation when the user touches the screen so they can read
-            carousel.addEventListener('touchstart', () => {
-                isUserInteracting = true;
-                clearInterval(autoPlayInterval);
-            }, { passive: true });
-            
-            carousel.addEventListener('touchend', () => {
-                isUserInteracting = false;
-                startAutoPlay();
+                });
             });
 
-            // Start the animation immediately
-            startAutoPlay();
-        }
-
-        // Initialize ALL mobile carousels with the fully rewritten animation
-        setupAnimatedCarousel('news-grid', 'news-dots'); 
-        setupAnimatedCarousel('milestones-carousel'); 
-        setupAnimatedCarousel('press-carousel');     
-
-        // --- Stats Counter Logic ---
-        const stats = document.querySelectorAll('.stat-number');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const el = entry.target;
-                    const target = parseInt(el.dataset.target);
-                    if (!el.hasAttribute('data-animated')) {
-                        el.setAttribute('data-animated', 'true');
-                        let start = 0; const duration = 1500; 
-                        const step = (t) => { 
-                            if (!start) start = t; 
-                            const p = Math.min((t-start)/duration,1); 
-                            el.textContent = Math.floor(p*target); 
-                            if (p<1) requestAnimationFrame(step); else el.textContent = target; 
-                        };
-                        requestAnimationFrame(step);
-                    }
-                }
-            });
-        }, {threshold:0.5});
-        stats.forEach(s => observer.observe(s));
-
-        // Load more dummy
-        document.getElementById('load-more-news')?.addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('More updates coming soon!');
-        });
-        // --- Smooth Infinite News Ticker Logic (Mobile Only) ---
-        function initPressTicker() {
-            const track = document.getElementById('press-carousel');
-            const wrapper = document.getElementById('press-ticker-wrapper');
-            if (!track || !wrapper) return;
-
-            let scrollPos = 0;
-            let animationFrameId;
-            let isPaused = false;
-            
-            // Speed of the animation (pixels per frame)
-            const speed = 1; 
-
-            function animateTicker() {
-                // Only animate on mobile screens (< 768px)
-                if (window.innerWidth >= 768) {
-                    track.style.transform = 'translateX(0)';
-                    if(animationFrameId) cancelAnimationFrame(animationFrameId);
-                    return;
-                }
-
-                if (!isPaused) {
-                    scrollPos += speed;
+            // 3. Filter Buttons Logic
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Reset Button Styles
+                    filterBtns.forEach(b => {
+                        b.classList.remove('bg-[#16a34a]', 'text-white');
+                        b.classList.add('bg-gray-100', 'text-[#0A2540]');
+                    });
                     
-                    // We placed 4 original items and 2 cloned items. 
-                    // Calculate width of original items (total width / total items * original items count)
-                    const totalItems = track.querySelectorAll('.press-item').length;
-                    const originalItems = totalItems - 2; // We added 2 clones
-                    const resetPoint = (track.scrollWidth / totalItems) * originalItems;
+                    // Activate Clicked Button
+                    btn.classList.remove('bg-gray-100', 'text-[#0A2540]');
+                    btn.classList.add('bg-[#16a34a]', 'text-white');
 
-                    // If we've scrolled past the original content, instantly reset to 0
-                    if (scrollPos >= resetPoint) {
-                        scrollPos = 0;
-                    }
+                    const filter = btn.dataset.filter;
+                    
+                    // Filter Cards
+                    allCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
 
-                    // Apply the movement using CSS transform (much smoother than scrollLeft)
-                    track.style.transform = `translateX(-${scrollPos}px)`;
-                }
-
-                animationFrameId = requestAnimationFrame(animateTicker);
-            }
-
-            // Pause on touch/interaction so users can read or click
-            wrapper.addEventListener('touchstart', () => isPaused = true, { passive: true });
-            wrapper.addEventListener('touchend', () => {
-                setTimeout(() => isPaused = false, 1000); // Resume 1 second after touch ends
+                    // Update visible array, reset scroll, and re-render dots
+                    visibleCards = allCards.filter(card => card.style.display !== 'none');
+                    slider.scrollLeft = 0;
+                    renderDots();
+                });
             });
 
-            // Start loop
-            animateTicker();
-
-            // Handle window resizing
-            window.addEventListener('resize', () => {
-                if (window.innerWidth >= 768) {
-                    isPaused = true;
-                    track.style.transform = 'translateX(0)';
-                } else {
-                    isPaused = false;
-                }
-            });
-        }
-
-        // Initialize the ticker
-        initPressTicker();
+            // Initialize
+            renderDots();
+        });
     </script>
+</section>
+
+<section id="impact" class="py-16 md:py-28 bg-[#0A2540] relative overflow-hidden">
+    <!-- Background texture -->
+    <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-5 pointer-events-none"></div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+        
+        <!-- Section Header (Text remains white/gold) -->
+        <div class="text-center mb-10 md:mb-16">
+            <span class="text-[#FCEE21] text-[10px] md:text-xs font-bold uppercase tracking-widest bg-white/10 px-4 py-1.5 rounded-full border border-white/10">Making a Difference</span>
+            <h2 class="text-3xl md:text-5xl font-black text-white mt-4 md:mt-5 tracking-tight">Impact by the Numbers</h2>
+        </div>
+        
+        <!-- Stat Cards (Changed to White Cards with Blue Text) -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 text-center mb-16 md:mb-24">
+            
+            <div class="bg-white rounded-2xl p-5 md:p-8 shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                <span class="text-4xl md:text-5xl font-black text-[#16a34a] stat-number block mb-1 md:mb-2" data-target="342">342</span>
+                <p class="text-[#0A2540] text-[11px] md:text-sm font-bold uppercase tracking-wider">Lives Transformed</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-5 md:p-8 shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                <span class="text-4xl md:text-5xl font-black text-[#16a34a] stat-number block mb-1 md:mb-2" data-target="18">18</span>
+                <p class="text-[#0A2540] text-[11px] md:text-sm font-bold uppercase tracking-wider">Active Cases</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-5 md:p-8 shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                <span class="text-4xl md:text-5xl font-black text-[#16a34a] stat-number block mb-1 md:mb-2" data-target="500">500</span>
+                <p class="text-[#0A2540] text-[11px] md:text-sm font-bold uppercase tracking-wider">Audits Done</p>
+            </div>
+            
+            <div class="bg-white rounded-2xl p-5 md:p-8 shadow-xl transform transition-transform duration-300 hover:-translate-y-2">
+                <span class="text-4xl md:text-5xl font-black text-[#16a34a] stat-number block mb-1 md:mb-2" data-target="12">12</span>
+                <p class="text-[#0A2540] text-[11px] md:text-sm font-bold uppercase tracking-wider">Awards Won</p>
+            </div>
+            
+        </div>
+
+        <!-- Milestones Section -->
+        <div>
+            <!-- Outside Text remains White -->
+            <h3 class="text-2xl md:text-3xl font-bold text-white mb-6 md:mb-8 flex items-center gap-3">
+                <i class="fa-solid fa-timeline text-[#16a34a]"></i> Recent Milestones
+            </h3>
+            
+            <!-- Milestones Carousel -->
+            <div id="milestones-carousel" class="flex flex-row md:flex-col overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide gap-4 md:gap-6 pb-2 md:pb-0 -mx-4 px-4 md:mx-0 md:px-0 scroll-smooth">
+                
+                <!-- Milestone Card 1 -->
+                <div class="milestone-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-full snap-center flex flex-col md:flex-row gap-4 md:gap-6 bg-white p-5 md:p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-x-1 md:hover:translate-x-2 text-left">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-[#16a34a]/10 rounded-xl flex items-center justify-center text-[#16a34a] flex-shrink-0">
+                        <i class="fa-solid fa-trophy text-xl md:text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-[#16a34a] text-[10px] md:text-xs font-black uppercase tracking-widest mb-1">MAR 2026</span>
+                        <h4 class="text-[#0A2540] font-black text-lg md:text-xl leading-tight mb-1 md:mb-2">Awarded Top Consultant 2026</h4>
+                        <p class="text-gray-600 text-xs md:text-base leading-relaxed">Tanzania Business Awards recognition for excellence in corporate strategy.</p>
+                    </div>
+                </div>
+                
+                <!-- Milestone Card 2 -->
+                <div class="milestone-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-full snap-center flex flex-col md:flex-row gap-4 md:gap-6 bg-white p-5 md:p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-x-1 md:hover:translate-x-2 text-left">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-[#16a34a]/10 rounded-xl flex items-center justify-center text-[#16a34a] flex-shrink-0">
+                        <i class="fa-solid fa-hand-holding-heart text-xl md:text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-[#16a34a] text-[10px] md:text-xs font-black uppercase tracking-widest mb-1">FEB 2026</span>
+                        <h4 class="text-[#0A2540] font-black text-lg md:text-xl leading-tight mb-1 md:mb-2">Volunteer Hub surpasses 300 lives</h4>
+                        <p class="text-gray-600 text-xs md:text-base leading-relaxed">Major social impact milestone reached through verified case support operations.</p>
+                    </div>
+                </div>
+                
+                <!-- Milestone Card 3 -->
+                <div class="milestone-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-full snap-center flex flex-col md:flex-row gap-4 md:gap-6 bg-white p-5 md:p-6 rounded-2xl shadow-lg transform transition-transform duration-300 hover:-translate-x-1 md:hover:translate-x-2 text-left">
+                    <div class="w-12 h-12 md:w-16 md:h-16 bg-[#16a34a]/10 rounded-xl flex items-center justify-center text-[#16a34a] flex-shrink-0">
+                        <i class="fa-solid fa-building text-xl md:text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col justify-center">
+                        <span class="text-[#16a34a] text-[10px] md:text-xs font-black uppercase tracking-widest mb-1">JAN 2026</span>
+                        <h4 class="text-[#0A2540] font-black text-lg md:text-xl leading-tight mb-1 md:mb-2">Arusha Headquarters Opened</h4>
+                        <p class="text-gray-600 text-xs md:text-base leading-relaxed">Expanded our regional footprint to better serve clients across Northern Tanzania.</p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!-- Mobile Navigation Arrows (Visible on mobile only) -->
+            <div class="flex md:hidden justify-center items-center gap-4 mt-6">
+                <button id="prev-milestone" class="w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#16a34a] hover:text-white transition-colors focus:outline-none border border-white/20">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <button id="next-milestone" class="w-12 h-12 rounded-full bg-white/10 text-white flex items-center justify-center hover:bg-[#16a34a] hover:text-white transition-colors focus:outline-none border border-white/20">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+        </div>
+        
+    </div>
+
+    <style>
+        /* Hide scrollbar for the mobile carousel but keep functionality */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
+    <!-- JavaScript for Mobile Arrows -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const carousel = document.getElementById('milestones-carousel');
+            const prevBtn = document.getElementById('prev-milestone');
+            const nextBtn = document.getElementById('next-milestone');
+
+            if (carousel && prevBtn && nextBtn) {
+                // Calculate scroll amount based on card width + gap
+                const getScrollAmount = () => {
+                    const card = carousel.querySelector('.milestone-card');
+                    return card ? card.offsetWidth + 16 : 300; // 16px roughly equals the gap
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                });
+            }
+        });
+    </script>
+</section>
+
+<section class="py-16 md:py-28 bg-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+            
+            <!-- Left Column: Upcoming Events -->
+            <div class="w-full">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-[#16a34a]/10 rounded-xl flex items-center justify-center"><i class="fa-regular fa-calendar-check text-[#16a34a]"></i></div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#0A2540]">Upcoming Events</h2>
+                </div>
+                <div class="space-y-3 md:space-y-4">
+                    <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer">
+                        <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                            <span class="block text-[10px] md:text-xs font-bold text-[#16a34a]">APR</span>
+                            <span class="block text-xl md:text-2xl font-black text-[#0A2540]">28</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-[10px] bg-[#16a34a]/10 text-[#16a34a] px-2 py-0.5 rounded-full font-bold">Webinar</span>
+                            <h4 class="font-bold text-[#0A2540] text-sm md:text-base mt-1 group-hover:text-[#16a34a] transition-colors">TRA Digital Tax Compliance</h4>
+                            <p class="text-gray-500 text-[11px] md:text-sm mt-0.5">11:00 AM EAT · Free</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer">
+                        <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                            <span class="block text-[10px] md:text-xs font-bold text-[#16a34a]">MAY</span>
+                            <span class="block text-xl md:text-2xl font-black text-[#0A2540]">15</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-[10px] bg-blue-100 text-[#0A2540] px-2 py-0.5 rounded-full font-bold">In‑Person</span>
+                            <h4 class="font-bold text-[#0A2540] text-sm md:text-base mt-1 group-hover:text-[#16a34a] transition-colors">Dar Business Mixer</h4>
+                            <p class="text-gray-500 text-[11px] md:text-sm mt-0.5">6:00 PM · Serena Hotel</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-3 md:gap-4 p-4 md:p-5 bg-gray-50 rounded-2xl border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer">
+                        <div class="bg-white rounded-xl p-2 md:p-3 text-center w-16 md:w-20 flex-shrink-0 shadow-sm transition-transform group-hover:scale-105">
+                            <span class="block text-[10px] md:text-xs font-bold text-[#16a34a]">MAY</span>
+                            <span class="block text-xl md:text-2xl font-black text-[#0A2540]">22</span>
+                        </div>
+                        <div class="flex-1">
+                            <span class="text-[10px] bg-[#16a34a]/10 text-[#16a34a] px-2 py-0.5 rounded-full font-bold">Workshop</span>
+                            <h4 class="font-bold text-[#0A2540] text-sm md:text-base mt-1 group-hover:text-[#16a34a] transition-colors">Financial Modeling Masterclass</h4>
+                            <p class="text-gray-500 text-[11px] md:text-sm mt-0.5">9:00 AM · Virtual</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column: Press & Media -->
+            <div class="mt-8 md:mt-0 w-full max-w-[100vw] overflow-hidden">
+                <div class="flex items-center gap-3 mb-6 md:mb-8">
+                    <div class="w-8 h-8 md:w-10 md:h-10 bg-[#0A2540]/5 rounded-xl flex items-center justify-center">
+                        <i class="fa-regular fa-newspaper text-[#0A2540]"></i>
+                    </div>
+                    <h2 class="text-2xl md:text-3xl font-black text-[#0A2540]">Press & Media</h2>
+                </div>
+                
+                <!-- Mobile Swiping Wrapper (Width explicitly constrained) -->
+                <div id="press-scroll-container" class="relative w-full overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4 md:pb-0">
+                    
+                    <div id="press-carousel" class="flex flex-row md:flex-col gap-4 md:gap-0 md:bg-gray-50 md:rounded-2xl md:divide-y md:border border-gray-100 w-max md:w-full">
+                        
+                        <!-- Press Item 1 -->
+                        <div class="press-item snap-center flex-shrink-0 w-[85vw] sm:w-[320px] md:w-full p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition-colors cursor-pointer group">
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold block mb-1 uppercase tracking-wider">Financial Times · Mar 2026</span>
+                            <h4 class="font-bold text-[#0A2540] text-base md:text-lg leading-snug group-hover:text-[#16a34a] transition-colors">"Reach Global's audit methodology sets new standard"</h4>
+                            <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        </div>
+                        
+                        <!-- Press Item 2 -->
+                        <div class="press-item snap-center flex-shrink-0 w-[85vw] sm:w-[320px] md:w-full p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition-colors cursor-pointer group">
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold block mb-1 uppercase tracking-wider">The Citizen · Feb 2026</span>
+                            <h4 class="font-bold text-[#0A2540] text-base md:text-lg leading-snug group-hover:text-[#16a34a] transition-colors">"How local consultancy is driving global investment"</h4>
+                            <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        </div>
+                        
+                        <!-- Press Item 3 -->
+                        <div class="press-item snap-center flex-shrink-0 w-[85vw] sm:w-[320px] md:w-full p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition-colors cursor-pointer group">
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold block mb-1 uppercase tracking-wider">Daily News · Jan 2026</span>
+                            <h4 class="font-bold text-[#0A2540] text-base md:text-lg leading-snug group-hover:text-[#16a34a] transition-colors">"Victor Lekule on the future of tax compliance"</h4>
+                            <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        </div>
+                        
+                        <!-- Press Item 4 -->
+                        <div class="press-item snap-center flex-shrink-0 w-[85vw] sm:w-[320px] md:w-full p-5 bg-gray-50 md:bg-transparent rounded-2xl md:rounded-none border border-gray-100 md:border-none hover:bg-white transition-colors cursor-pointer group">
+                            <span class="text-[10px] md:text-xs text-gray-400 font-bold block mb-1 uppercase tracking-wider">Tanzania Business · Dec 2025</span>
+                            <h4 class="font-bold text-[#0A2540] text-base md:text-lg leading-snug group-hover:text-[#16a34a] transition-colors">"Volunteer Hub transforms community giving"</h4>
+                            <a href="#" class="text-[#16a34a] font-bold text-xs md:text-sm mt-3 inline-flex items-center gap-1 group-hover:gap-2 transition-all">Read article <i class="fa-solid fa-arrow-right text-[10px]"></i></a>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <!-- Mobile Controls (Dots + Arrows) - Locked to stay on screen -->
+                <div class="flex flex-col items-center md:hidden mt-2 mb-6 w-full">
+                    <!-- Dots -->
+                    <div id="press-dots" class="flex justify-center items-center gap-2 mb-5"></div>
+                    
+                    <!-- Arrows -->
+                    <div class="flex justify-center items-center gap-4">
+                        <button id="press-prev" class="w-12 h-12 rounded-full bg-gray-50 text-[#0A2540] flex items-center justify-center hover:bg-[#16a34a] hover:text-white transition-colors focus:outline-none border border-gray-200 shadow-sm active:scale-95">
+                            <i class="fa-solid fa-arrow-left"></i>
+                        </button>
+                        <button id="press-next" class="w-12 h-12 rounded-full bg-gray-50 text-[#0A2540] flex items-center justify-center hover:bg-[#16a34a] hover:text-white transition-colors focus:outline-none border border-gray-200 shadow-sm active:scale-95">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Media Inquiries Box -->
+                <div class="mt-4 md:mt-6 p-4 md:p-5 bg-[#0A2540]/5 rounded-2xl flex items-center justify-between hover:bg-[#0A2540]/10 transition-colors">
+                    <p class="text-xs md:text-sm text-[#0A2540] font-medium"><i class="fa-regular fa-envelope text-[#16a34a] mr-2"></i> Media inquiries:</p>
+                    <a href="mailto:press@reachglobal.co.tz" class="text-[#16a34a] font-bold text-xs md:text-sm hover:underline">press@reachglobal.co.tz</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <style>
+        /* Ensure horizontal scrolling is completely hidden so layout doesn't break */
+        .scrollbar-hide::-webkit-scrollbar { display: none; }
+        .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+
+    <!-- Script for handling the mobile Press slider gestures, auto-play, and arrows -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const pressContainer = document.getElementById('press-scroll-container');
+            const pressDotsContainer = document.getElementById('press-dots');
+            const pressPrevBtn = document.getElementById('press-prev');
+            const pressNextBtn = document.getElementById('press-next');
+            const pressCards = Array.from(pressContainer.querySelectorAll('.press-item'));
+
+            // Only execute JS logic if we are on a mobile device
+            if (pressContainer && pressDotsContainer && window.innerWidth < 768) {
+                
+                let autoPlayInterval;
+
+                // 1. Initial Render of Dots
+                const renderDots = (activeIndex = 0) => {
+                    pressDotsContainer.innerHTML = '';
+                    pressCards.forEach((_, index) => {
+                        const dot = document.createElement('div');
+                        dot.className = index === activeIndex 
+                            ? 'transition-all duration-300 rounded-full h-2 w-6 bg-[#16a34a]' 
+                            : 'transition-all duration-300 rounded-full h-2 w-2 bg-gray-300';
+                        pressDotsContainer.appendChild(dot);
+                    });
+                };
+                
+                renderDots();
+
+                // 2. Observer to track active card based on Swipe Gestures
+                const observerOptions = {
+                    root: pressContainer,
+                    threshold: 0.6 
+                };
+
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const activeIndex = pressCards.indexOf(entry.target);
+                            renderDots(activeIndex);
+                        }
+                    });
+                }, observerOptions);
+
+                pressCards.forEach(card => observer.observe(card));
+
+                // 3. Arrow Logic & Auto-play right-to-left animation
+                const getScrollAmount = () => pressCards[0].offsetWidth + 16; 
+                
+                const scrollNext = () => {
+                    const maxScroll = pressContainer.scrollWidth - pressContainer.clientWidth;
+                    if (pressContainer.scrollLeft >= maxScroll - 10) {
+                        // Reset to beginning if at the end
+                        pressContainer.scrollTo({ left: 0, behavior: 'smooth' });
+                    } else {
+                        // Scroll to next
+                        pressContainer.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                    }
+                };
+
+                // Setup auto-play (Animate card right to left)
+                const startAutoPlay = () => {
+                    clearInterval(autoPlayInterval);
+                    autoPlayInterval = setInterval(scrollNext, 3500); // 3.5 seconds
+                };
+
+                // Start animation on load
+                startAutoPlay();
+
+                // Stop auto-play temporarily if the user interacts manually
+                const resetAutoPlay = () => {
+                    startAutoPlay();
+                };
+
+                // Arrows Click Logic
+                if(pressPrevBtn && pressNextBtn) {
+                    pressNextBtn.addEventListener('click', () => {
+                        scrollNext();
+                        resetAutoPlay();
+                    });
+                    
+                    pressPrevBtn.addEventListener('click', () => {
+                        pressContainer.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                        resetAutoPlay();
+                    });
+                }
+
+                // Reset timer if user swipes with finger
+                pressContainer.addEventListener('touchstart', () => clearInterval(autoPlayInterval));
+                pressContainer.addEventListener('touchend', startAutoPlay);
+            }
+        });
+    </script>
+</section>
+
+
+
+
     <script src="script.js"></script>
 </body>
 </html>

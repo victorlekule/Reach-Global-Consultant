@@ -104,31 +104,143 @@
     </section>
 
     <!-- QUICK SUMMARY CARDS (unique visual element) -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
-                <div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-4">
-                    <i class="ri-hand-heart-line text-2xl text-brand-blue"></i>
-                </div>
-                <h3 class="font-bold text-lg text-brand-blue mb-2">Binding Agreement</h3>
-                <p class="text-gray-600 text-sm">By using our services, you enter a legally enforceable contract with Reach Global Consultant.</p>
+<section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
+    
+    <!-- Added id and converted grid to flex for mobile scrolling, preserving your grid for md screens -->
+    <div id="policy-scroll-container" class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto md:overflow-visible snap-x snap-mandatory scrollbar-hide scroll-smooth pb-4 md:pb-0">
+        
+        <!-- Card 1 -->
+        <div class="policy-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
+            <div class="w-12 h-12 rounded-xl bg-brand-blue/10 flex items-center justify-center mb-4">
+                <i class="ri-hand-heart-line text-2xl text-brand-blue"></i>
             </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
-                <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center mb-4">
-                    <i class="ri-shield-check-line text-2xl text-brand-green"></i>
-                </div>
-                <h3 class="font-bold text-lg text-brand-blue mb-2">Clear Deliverables</h3>
-                <p class="text-gray-600 text-sm">All projects are governed by a Statement of Work detailing scope, timeline, and fees.</p>
-            </div>
-            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
-                <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-4">
-                    <i class="ri-chat-3-line text-2xl text-brand-gold"></i>
-                </div>
-                <h3 class="font-bold text-lg text-brand-blue mb-2">Dispute Resolution</h3>
-                <p class="text-gray-600 text-sm">We prioritize amicable resolution through negotiation and, if needed, arbitration in Tanzania.</p>
-            </div>
+            <h3 class="font-bold text-lg text-brand-blue mb-2">Binding Agreement</h3>
+            <p class="text-gray-600 text-sm">By using our services, you enter a legally enforceable contract with Reach Global Consultant.</p>
         </div>
-    </section>
+        
+        <!-- Card 2 -->
+        <div class="policy-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
+            <div class="w-12 h-12 rounded-xl bg-brand-green/10 flex items-center justify-center mb-4">
+                <i class="ri-shield-check-line text-2xl text-brand-green"></i>
+            </div>
+            <h3 class="font-bold text-lg text-brand-blue mb-2">Clear Deliverables</h3>
+            <p class="text-gray-600 text-sm">All projects are governed by a Statement of Work detailing scope, timeline, and fees.</p>
+        </div>
+        
+        <!-- Card 3 -->
+        <div class="policy-card flex-shrink-0 w-[85vw] sm:w-[350px] md:w-auto snap-center bg-white rounded-2xl shadow-xl border border-gray-100 p-6 hover-lift">
+            <div class="w-12 h-12 rounded-xl bg-brand-gold/10 flex items-center justify-center mb-4">
+                <i class="ri-chat-3-line text-2xl text-brand-gold"></i>
+            </div>
+            <h3 class="font-bold text-lg text-brand-blue mb-2">Dispute Resolution</h3>
+            <p class="text-gray-600 text-sm">We prioritize amicable resolution through negotiation and, if needed, arbitration in Tanzania.</p>
+        </div>
+        
+    </div>
+
+    <!-- Mobile-only Dots Container -->
+    <div id="policy-dots" class="flex md:hidden justify-center items-center gap-2 mt-2"></div>
+    
+</section>
+
+<!-- Hide the ugly default scrollbar -->
+<style>
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+<!-- Mobile Seamless Infinite Loop & Gesture Tracking Logic -->
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const policyContainer = document.getElementById('policy-scroll-container');
+        const policyDotsContainer = document.getElementById('policy-dots');
+        const originalCards = Array.from(policyContainer.querySelectorAll('.policy-card'));
+
+        // Run ONLY on mobile screens
+        if (policyContainer && policyDotsContainer && window.innerWidth < 768) {
+            
+            // 1. Clone the first card and append it to create a seamless loop "bridge"
+            const firstClone = originalCards[0].cloneNode(true);
+            firstClone.setAttribute('aria-hidden', 'true');
+            policyContainer.appendChild(firstClone);
+
+            // Re-select all cards (now including the clone)
+            const allCards = Array.from(policyContainer.querySelectorAll('.policy-card'));
+            let autoPlayInterval;
+
+            // 2. Render Tracking Dots (Only for the original 3 cards)
+            const renderDots = (activeIndex = 0) => {
+                // If the active card is the clone (index 3), highlight the first dot (index 0)
+                const dotIndex = activeIndex >= originalCards.length ? 0 : activeIndex;
+                
+                policyDotsContainer.innerHTML = '';
+                originalCards.forEach((card, index) => {
+                    const dot = document.createElement('div');
+                    dot.className = index === dotIndex 
+                        ? 'transition-all duration-300 rounded-full h-2 w-6 bg-brand-green cursor-pointer' 
+                        : 'transition-all duration-300 rounded-full h-2 w-2 bg-gray-300 cursor-pointer';
+                    
+                    // Allow clicking dots to scroll manually
+                    dot.addEventListener('click', () => {
+                        card.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                        startAutoPlay(); // Reset timer on interaction
+                    });
+                    
+                    policyDotsContainer.appendChild(dot);
+                });
+            };
+            
+            renderDots();
+
+            // 3. Observer for human swipe gestures and seamless teleportation
+            const observerOptions = {
+                root: policyContainer,
+                threshold: 0.6 // Card must be 60% visible to trigger
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const activeIndex = allCards.indexOf(entry.target);
+                        renderDots(activeIndex);
+
+                        // SEAMLESS LOOP MAGIC:
+                        // If the user or autoplay scrolled to the cloned card...
+                        if (activeIndex === originalCards.length) {
+                            // Wait for the smooth snapping animation to finish (500ms)
+                            // Then instantly and invisibly teleport back to the actual first card
+                            setTimeout(() => {
+                                policyContainer.scrollTo({ left: 0, behavior: 'auto' });
+                            }, 500); 
+                        }
+                    }
+                });
+            }, observerOptions);
+
+            allCards.forEach(card => observer.observe(card));
+
+            // 4. Auto-play logic (Always scrolls forward)
+            const scrollNext = () => {
+                // Get the exact width of the card + the gap (24px = gap-6 in Tailwind)
+                const cardWidth = originalCards[0].getBoundingClientRect().width + 24;
+                policyContainer.scrollBy({ left: cardWidth, behavior: 'smooth' });
+            };
+
+            const startAutoPlay = () => {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = setInterval(scrollNext, 3000); // Scrolls every 3 seconds
+            };
+
+            startAutoPlay();
+
+            // Pause animation when user touches screen to swipe manually
+            policyContainer.addEventListener('touchstart', () => clearInterval(autoPlayInterval));
+            policyContainer.addEventListener('touchend', startAutoPlay);
+        }
+    });
+</script>
+
+
 
     <!-- MAIN CONTENT: Two-Column Layout with Timeline -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

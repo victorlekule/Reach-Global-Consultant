@@ -10,53 +10,75 @@
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,500&display=swap');
         * { font-family: 'Inter', sans-serif; }
-        :root {
-            --brand-blue: #0A2540;
-            --brand-green: #1FAB89;
-            --brand-gold: #F6C445;
-        }
-        .bg-brand-blue { background-color: var(--brand-blue); }
-        .text-brand-blue { color: var(--brand-blue); }
-        .bg-brand-green { background-color: var(--brand-green); }
-        .text-brand-green { color: var(--brand-green); }
-        .border-brand-green { border-color: var(--brand-green); }
-        .text-brand-gold { color: var(--brand-gold); }
-        .font-serif { font-family: 'Playfair Display', serif; }
         
+        :root {
+            --brand-green: #16a34a;
+            --brand-blue: #0A2540;
+        }
+        
+        /* Grid Item & Animation Logic */
         .gallery-item {
             position: relative;
             overflow: hidden;
-            border-radius: 20px;
+            border-radius: 16px;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            display: none; /* Hidden by default, JS will show them */
+            width: 100%;
+            break-inside: avoid; /* Prevents item from splitting across columns */
+            margin-bottom: 0.75rem; /* Tighter gap for mobile */
+            
+            /* The Mixing Animation Base */
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.4s ease, transform 0.4s ease;
         }
+        
+        /* The Active State for Animation */
+        .gallery-item.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        @media (min-width: 768px) {
+            .gallery-item {
+                border-radius: 20px;
+                margin-bottom: 1.5rem;
+            }
+        }
+
         .gallery-item img {
             transition: transform 0.5s ease;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
         .gallery-item:hover img {
             transform: scale(1.08);
         }
+        
         .gallery-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(10,37,64,0.8) 0%, transparent 60%);
+            background: linear-gradient(to top, rgba(10,37,64,0.85) 0%, transparent 70%);
             opacity: 0;
             transition: opacity 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            padding: 20px;
+            padding: 16px;
+        }
+        @media (max-width: 768px) {
+            .gallery-overlay { 
+                opacity: 1; 
+                background: linear-gradient(to top, rgba(10,37,64,0.9) 0%, transparent 60%); 
+                padding: 12px;
+            }
         }
         .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
-        .filter-btn.active {
-            background-color: var(--brand-green);
-            color: white;
-        }
+        
         /* Lightbox */
         .lightbox {
             display: none;
@@ -70,46 +92,49 @@
         }
         .lightbox.active {
             display: flex;
+            flex-direction: column;
         }
         .lightbox-content {
-            max-width: 90%;
-            max-height: 85vh;
-            border-radius: 24px;
-            box-shadow: 0 0 40px rgba(31,171,137,0.3);
-            border: 1px solid rgba(31,171,137,0.2);
+            max-width: 95%;
+            max-height: 80vh;
+            border-radius: 16px;
+            box-shadow: 0 0 40px rgba(22,163,74,0.2);
+            object-fit: contain;
         }
         .lightbox-close {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 20px;
+            right: 20px;
             color: white;
             font-size: 2rem;
             cursor: pointer;
             background: rgba(255,255,255,0.1);
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
+            z-index: 1010;
         }
         .lightbox-close:hover {
             background: var(--brand-green);
             transform: rotate(90deg);
         }
         .lightbox-caption {
-            position: absolute;
-            bottom: 30px;
-            left: 0;
-            right: 0;
+            margin-top: 15px;
+            padding: 0 20px;
             text-align: center;
             color: white;
             font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            max-width: 600px;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 antialiased">
+<body class="bg-gray-50 text-gray-800 antialiased cursor-default">
 
     <div id="header-container"></div>
 
@@ -119,22 +144,14 @@
         <div class="absolute -top-40 -right-40 w-96 h-96 bg-brand-green/20 rounded-full blur-3xl"></div>
         <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-900/30 rounded-full blur-3xl"></div>
         <div class="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <nav class="flex justify-center mb-5 text-brand-gold/80 text-xs font-bold uppercase tracking-[0.3em]">
-                <span>Home</span>
-                <span class="mx-3 text-white/20">/</span>
-                <span class="text-white border-b-2 border-brand-green pb-1">Gallery</span>
-            </nav>
+            
             <h1 class="text-5xl md:text-7xl font-black text-white mb-5 tracking-tight">
-                Moments <span class="text-brand-green italic font-serif">Captured</span>
+                Moments <span class="text-yellow-400 italic font-serif">Captured</span>
             </h1>
-            <p class="text-blue-100/70 text-lg md:text-xl max-w-2xl mx-auto mb-8">
+            <p class="text-white text-lg md:text-xl max-w-2xl mx-auto mb-8">
                 A visual journey through our work, impact, and the people behind Reach Global Consultant.
             </p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm border border-white/20"><i class="fa-regular fa-images mr-2 text-brand-green"></i>Office & Culture</span>
-                <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm border border-white/20"><i class="fa-regular fa-hand-holding-heart mr-2 text-brand-green"></i>Volunteer Impact</span>
-                <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white text-sm border border-white/20"><i class="fa-regular fa-users mr-2 text-brand-green"></i>Events & Workshops</span>
-            </div>
+            
         </div>
         <div class="absolute bottom-0 left-0 right-0">
             <svg viewBox="0 0 1440 40" fill="none" preserveAspectRatio="none"><path d="M0 20L60 22C120 24 240 28 360 26C480 24 600 18 720 17C840 16 960 20 1080 22C1200 24 1320 22 1380 21L1440 20V40H1380C1320 40 1200 40 1080 40C960 40 840 40 720 40C600 40 480 40 360 40C240 40 120 40 60 40H0V20Z" fill="#f9fafb"/></svg>
@@ -142,181 +159,219 @@
     </section>
 
     <!-- ===== FILTERABLE GALLERY ===== -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- Filter buttons -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button data-filter="all" class="filter-btn active bg-brand-green text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all shadow-sm">All</button>
-                <button data-filter="office" class="filter-btn bg-gray-100 text-brand-blue px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all">Office & Culture</button>
-                <button data-filter="volunteer" class="filter-btn bg-gray-100 text-brand-blue px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all">Volunteer Hub</button>
-                <button data-filter="events" class="filter-btn bg-gray-100 text-brand-blue px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all">Events</button>
-                <button data-filter="consulting" class="filter-btn bg-gray-100 text-brand-blue px-6 py-2.5 rounded-full text-sm font-bold hover:bg-gray-200 transition-all">Consulting</button>
+    <section class="py-12 md:py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            
+            <!-- Filter buttons (FIXED CLASSES) -->
+            <div class="flex flex-wrap justify-center gap-2 md:gap-3 mb-10 md:mb-12">
+                <button data-filter="all" class="filter-btn active bg-brand-green text-white border border-transparent px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all shadow-sm">All</button>
+                <button data-filter="office" class="filter-btn bg-white text-brand-blue border border-gray-200 hover:bg-brand-green hover:text-white hover:border-transparent px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all">Office & Culture</button>
+                <button data-filter="volunteer" class="filter-btn bg-white text-brand-blue border border-gray-200 hover:bg-brand-green hover:text-white hover:border-transparent px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all">Volunteer Hub</button>
+                <button data-filter="events" class="filter-btn bg-white text-brand-blue border border-gray-200 hover:bg-brand-green hover:text-white hover:border-transparent px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all">Events</button>
+                <button data-filter="consulting" class="filter-btn bg-white text-brand-blue border border-gray-200 hover:bg-brand-green hover:text-white hover:border-transparent px-5 py-2 md:px-6 md:py-2.5 rounded-full text-xs md:text-sm font-bold transition-all">Consulting</button>
             </div>
 
-            <!-- Masonry-style grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6" id="gallery-grid">
-                <!-- Item 1: Office -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="office">
+            <!-- CSS Grid (Forces 2 columns horizontally on mobile, 3 on large screens) -->
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 md:gap-6" id="gallery-grid">
+                
+                <!-- Item 1 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="office">
                     <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800" alt="Modern office space">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Office</span>
-                        <h4 class="text-white font-bold text-lg">Arusha Headquarters</h4>
-                        <p class="text-blue-100/80 text-sm">Our state-of-the-art workspace</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Office</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Arusha HQ</h4>
                     </div>
                 </div>
-                <!-- Item 2: Volunteer -->
-                <div class="gallery-item h-80 sm:h-96 lg:h-[420px] row-span-1 sm:row-span-2" data-category="volunteer">
+                
+                <!-- Item 2 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="volunteer">
                     <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Community support">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Volunteer Hub</span>
-                        <h4 class="text-white font-bold text-lg">Mwakila Family Restocking</h4>
-                        <p class="text-blue-100/80 text-sm">Poultry farm relaunch after micro‑financing</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Volunteer Hub</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Mwakila Restocking</h4>
                     </div>
                 </div>
-                <!-- Item 3: Events -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="events">
+                
+                <!-- Item 3 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="events">
                     <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=800" alt="Business seminar">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Events</span>
-                        <h4 class="text-white font-bold text-lg">Dar Business Mixer</h4>
-                        <p class="text-blue-100/80 text-sm">Networking with 80+ entrepreneurs</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Events</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Dar Mixer</h4>
                     </div>
                 </div>
-                <!-- Item 4: Consulting -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="consulting">
+                
+                <!-- Item 4 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="office">
                     <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Strategy meeting">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Consulting</span>
-                        <h4 class="text-white font-bold text-lg">Strategic Planning Session</h4>
-                        <p class="text-blue-100/80 text-sm">Client workshop on market entry</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Office</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Strategy Session</h4>
                     </div>
                 </div>
-                <!-- Item 5: Volunteer (span 2 cols on large) -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80 lg:col-span-2" data-category="volunteer">
-                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=1200" alt="School support">
+                
+                <!-- Item 5 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="volunteer">
+                    <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&q=80&w=800" alt="School support">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Volunteer Hub</span>
-                        <h4 class="text-white font-bold text-lg">Love Packs for Learning</h4>
-                        <p class="text-blue-100/80 text-sm">260 children received school supplies</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Volunteer Hub</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Love Packs</h4>
                     </div>
                 </div>
-                <!-- Item 6: Office -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="office">
+                
+                <!-- Item 6 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="office">
                     <img src="https://images.unsplash.com/photo-1604328698692-f76ea9495e76?auto=format&fit=crop&q=80&w=800" alt="Team collaboration">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Office</span>
-                        <h4 class="text-white font-bold text-lg">Team Collaboration</h4>
-                        <p class="text-blue-100/80 text-sm">Daily stand‑up with audit team</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Office</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Team Collab</h4>
                     </div>
                 </div>
-                <!-- Item 7: Events -->
-                <div class="gallery-item h-80 sm:h-96 lg:h-[420px] row-span-1 sm:row-span-2" data-category="events">
+                
+                <!-- Item 7 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="events">
                     <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&q=80&w=800" alt="Workshop">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Events</span>
-                        <h4 class="text-white font-bold text-lg">Financial Modeling Masterclass</h4>
-                        <p class="text-blue-100/80 text-sm">Hands‑on session with 30 participants</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Events</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Masterclass</h4>
                     </div>
                 </div>
-                <!-- Item 8: Consulting -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="consulting">
+                
+                <!-- Item 8 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="consulting">
                     <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" alt="Audit review">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Consulting</span>
-                        <h4 class="text-white font-bold text-lg">Audit Committee Review</h4>
-                        <p class="text-blue-100/80 text-sm">Presenting findings to board</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Consulting</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Board Review</h4>
                     </div>
                 </div>
-                <!-- Item 9: Volunteer -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="volunteer">
+                
+                <!-- Item 9 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="volunteer">
                     <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?auto=format&fit=crop&q=80&w=800" alt="Water project">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Volunteer Hub</span>
-                        <h4 class="text-white font-bold text-lg">Bugarika Water Project</h4>
-                        <p class="text-blue-100/80 text-sm">Installing community boreholes</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Volunteer Hub</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Water Project</h4>
                     </div>
                 </div>
-                <!-- Item 10: Office -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80 lg:col-span-2" data-category="office">
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="Team photo">
+
+                <!-- Item 10 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="consulting">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" alt="Consulting Team">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Office</span>
-                        <h4 class="text-white font-bold text-lg">Reach Global Team 2026</h4>
-                        <p class="text-blue-100/80 text-sm">Our dedicated consultants and staff</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Consulting</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Tax Advisory</h4>
                     </div>
                 </div>
-                <!-- Item 11: Consulting -->
-                <div class="gallery-item h-80 sm:h-96 lg:h-[420px] row-span-1 sm:row-span-2" data-category="consulting">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" alt="Tax advisory">
+
+                <!-- Item 11 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="events">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="Networking">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Consulting</span>
-                        <h4 class="text-white font-bold text-lg">TRA Compliance Workshop</h4>
-                        <p class="text-blue-100/80 text-sm">Training session for corporate clients</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Events</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Gala Dinner</h4>
                     </div>
                 </div>
-                <!-- Item 12: Events -->
-                <div class="gallery-item h-64 sm:h-72 lg:h-80" data-category="events">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="Award ceremony">
+
+                <!-- Item 12 -->
+                <div class="gallery-item h-40 sm:h-64 lg:h-80" data-category="office">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1200" alt="Team Discussion">
                     <div class="gallery-overlay">
-                        <span class="text-white text-xs font-bold uppercase tracking-wider bg-brand-green/80 px-3 py-1 rounded-full w-fit mb-2">Events</span>
-                        <h4 class="text-white font-bold text-lg">Top Consultant Award 2026</h4>
-                        <p class="text-blue-100/80 text-sm">Receiving recognition at gala</p>
+                        <span class="text-white text-[9px] sm:text-[10px] font-bold uppercase tracking-wider bg-brand-green/90 px-2 sm:px-3 py-1 rounded-full w-fit mb-1 sm:mb-2">Office</span>
+                        <h4 class="text-white font-bold text-sm sm:text-base md:text-lg leading-tight">Team Sync</h4>
                     </div>
                 </div>
+
             </div>
 
-            <!-- Load more button (for demo) -->
-            <div class="text-center mt-12">
-                <button id="load-more-gallery" class="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-full font-bold hover:bg-brand-blue hover:text-white transition">Load More Moments</button>
+            <!-- Dynamic Load More Container -->
+            <div id="load-more-container" class="text-center mt-10 md:mt-12 hidden">
+                <button id="load-more-btn" class="border-2 border-brand-blue text-brand-blue px-8 py-3 rounded-full font-bold hover:bg-brand-blue hover:text-white transition shadow-sm text-sm md:text-base">
+                    Load More Moments
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- ===== CTA / SHARE YOUR MOMENT ===== -->
-    <section class="py-16 bg-brand-blue text-white">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <i class="fa-regular fa-camera-retro text-5xl text-brand-green mb-4"></i>
-            <h3 class="text-3xl font-black mb-3">Share Your Reach Global Moment</h3>
-            <p class="text-blue-100/70 mb-6">Tag us in your photos or use <span class="text-brand-gold font-bold">#ReachGlobalImpact</span> to be featured in our gallery.</p>
-            <a href="#" class="inline-flex items-center gap-2 bg-brand-green text-white px-8 py-4 rounded-xl font-bold hover:bg-white hover:text-brand-blue transition shadow-lg"><i class="fa-brands fa-instagram"></i> Follow on Instagram</a>
-        </div>
-    </section>
+
 
     <!-- LIGHTBOX -->
     <div id="lightbox" class="lightbox">
         <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" class="lightbox-content" src="" alt="">
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Expanded View">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
+    <!-- Scripts -->
     <script>
-        (function(){
-            // Filter functionality
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            const galleryItems = document.querySelectorAll('.gallery-item');
+        document.addEventListener("DOMContentLoaded", () => {
             
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const filter = btn.dataset.filter;
-                    
-                    filterBtns.forEach(b => {
-                        b.classList.remove('active', 'bg-brand-green', 'text-white');
-                        b.classList.add('bg-gray-100', 'text-brand-blue');
-                    });
-                    btn.classList.add('active', 'bg-brand-green', 'text-white');
-                    btn.classList.remove('bg-gray-100', 'text-brand-blue');
-                    
+            // Filter and Load More Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
+            const loadMoreBtn = document.getElementById('load-more-btn');
+            const loadMoreContainer = document.getElementById('load-more-container');
+            
+            let currentFilter = 'all';
+            let visibleLimit = 6; 
+
+            function renderGallery() {
+                galleryItems.forEach(item => {
+                    item.classList.remove('show');
+                });
+
+                setTimeout(() => {
+                    let matchCount = 0;
+
                     galleryItems.forEach(item => {
-                        if (filter === 'all' || item.dataset.category === filter) {
-                            item.style.display = 'block';
+                        const matchesFilter = currentFilter === 'all' || item.dataset.category === currentFilter;
+                        
+                        if (matchesFilter && matchCount < visibleLimit) {
+                            item.style.display = 'block'; 
+                            setTimeout(() => item.classList.add('show'), 50); 
+                            matchCount++;
                         } else {
                             item.style.display = 'none';
                         }
                     });
+
+                    const totalMatches = galleryItems.filter(item => currentFilter === 'all' || item.dataset.category === currentFilter).length;
+                    
+                    if (totalMatches > visibleLimit) {
+                        loadMoreContainer.style.display = 'block';
+                    } else {
+                        loadMoreContainer.style.display = 'none';
+                    }
+
+                }, 300); 
+            }
+
+            renderGallery();
+
+            // Filter Click Events
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active', 'bg-brand-green', 'text-white', 'border-transparent');
+                        b.classList.add('bg-white', 'text-brand-blue', 'border', 'border-gray-200');
+                    });
+                    
+                    btn.classList.add('active', 'bg-brand-green', 'text-white', 'border-transparent');
+                    btn.classList.remove('bg-white', 'text-brand-blue', 'border', 'border-gray-200');
+                    
+                    currentFilter = btn.dataset.filter;
+                    visibleLimit = 6; 
+                    renderGallery();
                 });
             });
 
-            // Lightbox
+            // Load More Click Event
+            loadMoreBtn.addEventListener('click', () => {
+                visibleLimit += 6; 
+                renderGallery();
+            });
+
+            // Lightbox Logic
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const lightboxCaption = document.getElementById('lightbox-caption');
@@ -327,11 +382,18 @@
                     const img = item.querySelector('img');
                     const title = item.querySelector('h4')?.textContent || '';
                     const desc = item.querySelector('p')?.textContent || '';
+                    
                     lightboxImg.src = img.src;
                     lightboxImg.alt = img.alt;
-                    lightboxCaption.textContent = `${title} — ${desc}`;
+                    
+                    if (title || desc) {
+                        lightboxCaption.innerHTML = `<span class="font-bold text-brand-green">${title}</span><br><span class="text-sm opacity-80">${desc}</span>`;
+                    } else {
+                        lightboxCaption.innerHTML = '';
+                    }
+                    
                     lightbox.classList.add('active');
-                    document.body.style.overflow = 'hidden';
+                    document.body.style.overflow = 'hidden'; 
                 });
             });
             
@@ -342,19 +404,13 @@
             
             closeBtn.addEventListener('click', closeLightbox);
             lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) closeLightbox();
+                if (e.target === lightbox || e.target === lightboxCaption) closeLightbox();
             });
             
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
             });
-
-            // Load more dummy
-            document.getElementById('load-more-gallery')?.addEventListener('click', (e) => {
-                e.preventDefault();
-                alert('More moments coming soon! Follow us for updates.');
-            });
-        })();
+        });
     </script>
 
     <script src="script.js"></script>

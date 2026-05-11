@@ -76,34 +76,117 @@
 
     <div id="header-container"></div>
 
-    <section class="relative pt-28 pb-16 md:py-32 mt-20 md:mt-24 bg-white overflow-hidden border-b border-gray-100">
-        <div class="absolute top-0 right-0 w-full md:w-1/2 h-full bg-gradient-to-l from-brand-blue/5 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative text-center md:text-left">
-            <div class="max-w-3xl mx-auto md:mx-0">
-                <nav class="flex items-center justify-center md:justify-start gap-2 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-4 md:mb-6">
-                    <span>Home</span>
-                    <span class="text-gray-300">/</span>
-                    <span class="text-brand-green">Publicity & Journals</span>
-                </nav>
-                <h1 class="text-4xl sm:text-5xl md:text-7xl font-black text-brand-blue leading-[1.1] mb-4 md:mb-6 tracking-tight">
-                    Intelligence <br>
-                    <span class="text-brand-green italic font-serif">Published.</span>
-                </h1>
-                <p class="text-sm md:text-xl text-gray-600 max-w-2xl leading-relaxed mb-8 px-2 md:px-0 text-justify md:text-left">
-                    Reach Global's publishing division delivers proprietary research, market analysis, and executive thought leadership. 
-                    Access our library of reports, journals, and limited‑edition print works.
-                </p>
-                <div class="flex flex-row flex-wrap justify-center md:justify-start gap-3 md:gap-4 px-2 md:px-0">
-                    <a href="#whitepapers" class="flex-1 md:flex-none flex justify-center items-center gap-2 bg-brand-blue text-white px-3 md:px-8 py-3 md:py-4 rounded-xl font-bold shadow-lg hover:bg-brand-green transition text-xs md:text-base whitespace-nowrap">
-                        Whitepapers <i class="fa-regular fa-arrow-right"></i>
+<section class="relative pt-32 pb-16 md:pt-40 md:pb-24 mt-16 md:mt-24 bg-[#Eef2f6] overflow-hidden isolate border-b border-gray-200">
+    
+    <!-- Subtle Background Pattern (Dot Grid for an editorial/technical feel) -->
+    <div class="absolute inset-0 opacity-[0.04] pointer-events-none -z-10" 
+         style="background-image: radial-gradient(#0A2540 2px, transparent 2px); background-size: 30px 30px;">
+    </div>
+
+    <!-- Decorative Top Accent Line -->
+    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#16a34a] via-[#FCEE21] to-[#0A2540]"></div>
+
+    <div class="max-w-[95rem] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <!-- Added flex-col and order logic to control mobile stacking -->
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-16">
+            
+            <!-- 1. Text Column (Order 1 on all screens) -->
+            <div class="w-full lg:w-1/2 text-center md:text-left flex flex-col justify-center order-1">
+                
+                <!-- Breadcrumb Navigation -->
+                <nav class="flex items-center justify-center md:justify-start gap-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-6 md:mb-8">
+                    <a href="index.html" class="hover:text-[#16a34a] transition-colors flex items-center gap-1">
+                        <i class="fa-solid fa-house"></i> Home
                     </a>
-                    <a href="#journals" class="flex-1 md:flex-none flex justify-center items-center gap-2 border-2 border-brand-blue text-brand-blue px-3 md:px-8 py-3 md:py-4 rounded-xl font-bold hover:bg-brand-blue hover:text-white transition text-xs md:text-base whitespace-nowrap">
-                        Journals <i class="fa-regular fa-newspaper"></i>
+                    <span class="text-gray-300">/</span>
+                    <span class="text-[#16a34a] bg-[#16a34a]/10 px-3 py-1 rounded-full">Publicity & Journals</span>
+                </nav>
+                
+                <!-- Main Headline -->
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-[#0A2540] leading-[1.05] mb-4 md:mb-6 tracking-tight">
+                    Intelligence <br class="hidden md:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#16a34a] to-[#0A2540] italic font-serif">Published.</span>
+                </h1>
+                
+                <!-- Hero Subtext -->
+                <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl leading-relaxed mb-2 lg:mb-10 text-justify sm:text-left font-normal mx-auto md:mx-0">
+                    Reach Global's publishing division delivers proprietary research, market analysis, and executive thought leadership. Access our library of reports, journals, and limited‑edition print works.
+                </p>
+                
+                <!-- Desktop Call to Action Buttons (Hidden on Mobile) -->
+                <div class="hidden lg:flex flex-row justify-start gap-4">
+                    <a href="#whitepapers" class="flex justify-center items-center gap-3 bg-[#0A2540] text-white px-8 py-4 rounded-xl font-bold shadow-xl hover:bg-[#16a34a] hover:-translate-y-1 transition-all duration-300 text-base group">
+                        Read Whitepapers 
+                        <i class="fa-solid fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                    <a href="#journals" class="flex justify-center items-center gap-3 bg-white border-2 border-gray-200 text-[#0A2540] px-8 py-4 rounded-xl font-bold hover:border-[#0A2540] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-base group">
+                        Browse Journals 
+                        <i class="fa-regular fa-newspaper transform group-hover:scale-110 transition-transform"></i>
                     </a>
                 </div>
             </div>
+
+            <!-- 2. Image Collage Column (Order 2 on all screens) -->
+            <!-- Drastically reduced height on mobile (h-[280px]) -->
+            <div class="w-full lg:w-1/2 relative h-[280px] sm:h-[450px] lg:h-[650px] order-2 flex items-center justify-center w-full">
+                
+                <!-- Background Accent Box -->
+                <div class="absolute right-0 sm:right-10 top-1/2 -translate-y-1/2 w-[80%] sm:w-[70%] h-[90%] sm:h-[80%] bg-gradient-to-br from-[#0A2540]/5 to-transparent rounded-3xl -z-10"></div>
+                
+                <!-- Secondary Image (Top Right) - Hidden on Mobile -->
+                <div class="absolute top-0 right-0 w-[55%] h-[60%] z-10 shadow-2xl rounded-2xl overflow-hidden border-[6px] border-white group hidden sm:block">
+                    <img src="picha/3.webp" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-110" 
+                         alt="Research Analysis">
+                    <div class="absolute inset-0 bg-[#0A2540]/10 transition-opacity duration-300 group-hover:opacity-0"></div>
+                </div>
+
+                <!-- Main Image (Bottom Left) -->
+                <!-- Scaled to fit perfectly in the small mobile container -->
+                <div class="absolute bottom-[10%] sm:bottom-[5%] left-0 sm:left-4 w-[90%] sm:w-[65%] h-[80%] sm:h-[70%] z-20 shadow-[0_20px_50px_rgba(10,37,64,0.15)] rounded-2xl overflow-hidden border-[4px] sm:border-[6px] border-white group">
+                    <img src="picha/2.webp" 
+                         class="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105" 
+                         alt="Reach Global Journals">
+                </div>
+
+                <!-- Floating Data Badge -->
+                <!-- Scaled down specifically for mobile so it fits inside the 280px height -->
+                <div class="absolute bottom-0 sm:bottom-0 right-0 sm:right-[15%] bg-white p-3 sm:p-5 rounded-xl sm:rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3 sm:gap-4 animate-[bounceSlow_5s_ease-in-out_infinite] z-30 min-w-[160px] sm:min-w-[200px]">
+                    <div class="w-8 h-8 sm:w-12 sm:h-12 bg-[#16a34a]/10 rounded-full flex items-center justify-center text-[#16a34a] flex-shrink-0">
+                        <i class="fa-solid fa-book-open text-sm sm:text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-[8px] sm:text-[10px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">Latest Issue</p>
+                        <p class="text-xs sm:text-base font-black text-[#0A2540] leading-tight">Q2 Economic Report</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 3. Mobile Call to Action Buttons (Order 3 - Forces them below the image on mobile) -->
+            <!-- Visible ONLY on mobile -->
+            <div class="flex lg:hidden flex-col sm:flex-row justify-center w-full gap-3 order-3 mt-4">
+                <a href="#whitepapers" class="flex justify-center items-center gap-3 bg-[#0A2540] text-white px-6 py-4 rounded-xl font-bold shadow-lg hover:bg-[#16a34a] transition-all duration-300 text-sm w-full">
+                    Read Whitepapers 
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#journals" class="flex justify-center items-center gap-3 bg-white border-2 border-gray-200 text-[#0A2540] px-6 py-4 rounded-xl font-bold hover:border-[#0A2540] transition-all duration-300 text-sm w-full">
+                    Browse Journals 
+                    <i class="fa-regular fa-newspaper"></i>
+                </a>
+            </div>
+            
         </div>
-    </section>
+    </div>
+
+    <!-- Animation Keyframes -->
+    <style>
+        @keyframes bounceSlow {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</section>
 
     <section class="py-16 md:py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
